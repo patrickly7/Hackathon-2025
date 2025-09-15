@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1iyr5h1mhct1"
-path="res://.godot/imported/Speech_Bubble.png-5f6305d6a659f105f8a17b40f3eb58c1.ctex"
+uid="uid://c3ssbvae82jk2"
+path="res://.godot/imported/GameTrackerBackground.png-3620b22b493f2c13774e2faadaf460cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Speech_Bubble.png"
-dest_files=["res://.godot/imported/Speech_Bubble.png-5f6305d6a659f105f8a17b40f3eb58c1.ctex"]
+source_file="res://assets/art/GameTrackerBackground.png"
+dest_files=["res://.godot/imported/GameTrackerBackground.png-3620b22b493f2c13774e2faadaf460cd.ctex"]
 
 [params]
 
