@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdkdtc6esq6y"]
+[gd_scene load_steps=4 format=3 uid="uid://cdkdtc6esq6y"]
 
 [ext_resource type="Script" uid="uid://daaoys0h7ft5x" path="res://scripts/dock_receive.gd" id="1_4x3rc"]
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="2_5omce"]
+[ext_resource type="Texture2D" uid="uid://bisdgal18ddge" path="res://assets/art/shohei.jpg" id="3_h80ef"]
 
 [node name="DockReceive" type="Node2D"]
 script = ExtResource("1_4x3rc")
@@ -14,5 +15,16 @@ offset_bottom = 72.0
 text = "Dock Receive"
 
 [node name="GameTimer" parent="." instance=ExtResource("2_5omce")]
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(553, 414)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_h80ef")
+
+[node name="Box" type="Sprite2D" parent="."]
+position = Vector2(193, 250)
+rotation = 1.5708
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_h80ef")
 
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
