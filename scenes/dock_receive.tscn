@@ -1,17 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdkdtc6esq6y"]
+[gd_scene load_steps=3 format=3 uid="uid://cdkdtc6esq6y"]
 
 [ext_resource type="Script" uid="uid://daaoys0h7ft5x" path="res://scripts/dock_receive.gd" id="1_4x3rc"]
+[ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="2_5omce"]
 
 [node name="DockReceive" type="Node2D"]
 script = ExtResource("1_4x3rc")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 504.0
-offset_top = 186.0
-offset_right = 606.0
-offset_bottom = 209.0
+offset_left = 506.0
+offset_top = 49.0
+offset_right = 608.0
+offset_bottom = 72.0
 text = "Dock Receive"
 
-[node name="Timer" type="Timer" parent="."]
+[node name="GameTimer" parent="." instance=ExtResource("2_5omce")]
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
