@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://qpmegosr3tca"]
+[gd_scene load_steps=3 format=3 uid="uid://qpmegosr3tca"]
+
+[ext_resource type="Script" uid="uid://cmokhxe51i514" path="res://scripts/inventory.gd" id="1_hj2ta"]
+[ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="2_ty45s"]
 
 [node name="Inventory" type="Node2D"]
+script = ExtResource("1_hj2ta")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 516.0
@@ -8,3 +12,13 @@ offset_top = 195.0
 offset_right = 618.0
 offset_bottom = 218.0
 text = "Inventory"
+
+[node name="GameTimer" parent="." instance=ExtResource("2_ty45s")]
+
+[node name="CardQuantityInput" type="SpinBox" parent="."]
+offset_left = 498.0
+offset_top = 488.0
+offset_right = 654.0
+offset_bottom = 558.0
+max_value = 20.0
+alignment = 1
