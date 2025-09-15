@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d26n8ihjlc5mo"]
 
 [ext_resource type="Texture2D" uid="uid://ddc62irbmj2l8" path="res://assets/art/Background_Confirm_Receive.png" id="1_4q0d1"]
-[ext_resource type="Script" uid="uid://3qge8t1k5e2f" path="res://scenes/confirm_receive.gd" id="1_ifspx"]
+[ext_resource type="Script" uid="uid://3qge8t1k5e2f" path="res://scripts/confirm_receive.gd" id="1_ifspx"]
 [ext_resource type="Texture2D" uid="uid://hrt2kkkircu0" path="res://assets/art/Exceptions_Box.png" id="2_lw6ba"]
 [ext_resource type="PackedScene" path="res://scenes/game_timer.tscn" id="2_t1atm"]
 [ext_resource type="Texture2D" uid="uid://uhld7odui7ul" path="res://assets/art/Accepted_Box.png" id="3_t1atm"]
@@ -48,7 +48,7 @@ text = "Accepted
 "
 
 [node name="Card" type="Sprite2D" parent="."]
-position = Vector2(579, 530)
+position = Vector2(581, 510)
 scale = Vector2(0.453489, 0.453489)
 texture = ExtResource("5_5khqj")
 
@@ -57,9 +57,3 @@ offset_left = 194.0
 offset_top = 36.0
 offset_right = 471.0
 offset_bottom = 312.0
-
-[node name="Label" type="Label" parent="CardTasks"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_5khqj")
-theme_override_font_sizes/font_size = 50
-text = "Red"
