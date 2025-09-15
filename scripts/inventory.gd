@@ -4,7 +4,7 @@ const GAME_TIME = 15
 var rng = RandomNumberGenerator.new()
 var shelf = 1
 var quantity = 0
-var correctQuantity = 0
+var mistakes = 0
 
 func _ready():
 	rng.randomize()
@@ -20,15 +20,26 @@ func _on_enter_button_pressed() -> void:
 
 func checkCardQuantityInput():
 	if $CardQuantityInput.value == quantity:
-		correctQuantity += 1
 		shelf+=1
 		openNextShelf()
+	else:
+		mistakes +=1
 
 func _on_game_timer_game_timer_end():
+	Global.INVENTORY_TIME_TAKEN = GAME_TIME - $GameTimer.timer
+	Global.INVENTORY_MISTAKES = mistakes
+	calculateMedal()
 	Global.NEXT_GAME_SCENE = "res://scenes/final_results_screen.tscn"
 	get_tree().change_scene_to_file("res://scenes/result_screen.tscn")
 
-	
+func calculateMedal():
+	if mistakes<2 and shelf >=6:
+		Global.INVENTORY_MEDAL = "Gold"
+	elif mistakes<5 and shelf >=4:
+		Global.INVENTORY_MEDAL = "Silver"
+	elif mistakes<6 and shelf >=3:
+		Global.INVENTORY_MEDAL = "Bronze"
+
 func openNextShelf():
 	match shelf:
 		1:
@@ -67,5 +78,16 @@ func openNextShelf():
 			$Drawer6.show()
 			for i in quantity:
 				$Drawer6.get_child(i).show()
+		7:
+			$Drawer6.hide()
+			$GameTimer.game_timer_end.emit()
+			
 			
 	
+
+
+func _on_card_quantity_input_value_changed(value: float) -> void:
+	if value == $CardQuantityInput.max_value:
+		$CardQuantityInput.value = $CardQuantityInput.min_value+1
+	elif value == $CardQuantityInput.min_value:
+		$CardQuantityInput.value = $CardQuantityInput.max_value-1
