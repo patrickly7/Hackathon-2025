@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd1xhx4xg0pbm"]
+
+[ext_resource type="Texture2D" uid="uid://dk8ywswe3meg5" path="res://assets/art/Graybox.png" id="1_or8ry"]
+[ext_resource type="Script" uid="uid://23plkc3uhwc6" path="res://scripts/dock_receive_box.gd" id="1_yyuov"]
+
+[node name="DockReceiveBox" type="Area2D"]
+scale = Vector2(1.1, 1.1)
+script = ExtResource("1_yyuov")
+
+[node name="Box" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_or8ry")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.1, 0.1)
+polygon = PackedVector2Array(-369, -391.5, -369, -389.3, -504.9, -240.5, -507, -240.5, -505, 386.5, -505, 389.5, 410.1, 389.5, 507.1, 243.5, 509.1, 243.5, 506.9, 205.5, 506, 205.5, 504, -388.5, 504, -391.5)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
