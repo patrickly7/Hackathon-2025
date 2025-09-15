@@ -1,24 +1,254 @@
-[gd_scene load_steps=3 format=3 uid="uid://qpmegosr3tca"]
+[gd_scene load_steps=10 format=3 uid="uid://qpmegosr3tca"]
 
 [ext_resource type="Script" uid="uid://cmokhxe51i514" path="res://scripts/inventory.gd" id="1_hj2ta"]
+[ext_resource type="Texture2D" uid="uid://wrnhcpfl17qj" path="res://assets/art/Background_Inventory.png" id="2_53g1v"]
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="2_ty45s"]
+[ext_resource type="Texture2D" uid="uid://dk8ywswe3meg5" path="res://assets/art/Graybox.png" id="4_yyk2a"]
+[ext_resource type="Texture2D" uid="uid://dbb8cek1jr8u7" path="res://assets/art/Card_Blue.png" id="5_sr8g6"]
+[ext_resource type="Texture2D" uid="uid://c3di1g16y5mcl" path="res://assets/art/Card_Green.png" id="6_p7iul"]
+[ext_resource type="Texture2D" uid="uid://4dtxr53ii61c" path="res://assets/art/Card_Orange.png" id="7_td2ew"]
+[ext_resource type="Texture2D" uid="uid://dgwve33dp1fvv" path="res://assets/art/Card_Purple.png" id="8_ylenm"]
+[ext_resource type="Texture2D" uid="uid://5iu52a761pr4" path="res://assets/art/Card_Red.png" id="9_0df5h"]
 
 [node name="Inventory" type="Node2D"]
 script = ExtResource("1_hj2ta")
 
+[node name="BackgroundInventory" type="Sprite2D" parent="."]
+position = Vector2(574, 323.5)
+scale = Vector2(0.598958, 0.599074)
+texture = ExtResource("2_53g1v")
+
 [node name="Label" type="Label" parent="."]
-offset_left = 516.0
-offset_top = 195.0
-offset_right = 618.0
-offset_bottom = 218.0
+offset_left = 480.0
+offset_top = -29.0
+offset_right = 582.0
+offset_bottom = -6.0
 text = "Inventory"
 
 [node name="GameTimer" parent="." instance=ExtResource("2_ty45s")]
 
 [node name="CardQuantityInput" type="SpinBox" parent="."]
-offset_left = 498.0
-offset_top = 488.0
-offset_right = 654.0
-offset_bottom = 558.0
+offset_left = 423.0
+offset_top = 533.0
+offset_right = 691.0
+offset_bottom = 634.0
 max_value = 20.0
 alignment = 1
+
+[node name="Drawer1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(297, 402)
+scale = Vector2(0.298715, 0.294879)
+texture = ExtResource("4_yyk2a")
+
+[node name="Card1" type="Sprite2D" parent="Drawer1"]
+visible = false
+position = Vector2(-93.7347, -240.777)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("5_sr8g6")
+
+[node name="Card2" type="Sprite2D" parent="Drawer1"]
+visible = false
+position = Vector2(217.598, -284.863)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("6_p7iul")
+
+[node name="Card3" type="Sprite2D" parent="Drawer1"]
+visible = false
+position = Vector2(177.426, -111.91)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("7_td2ew")
+
+[node name="Card4" type="Sprite2D" parent="Drawer1"]
+visible = false
+position = Vector2(130.559, 61.042)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("8_ylenm")
+
+[node name="Card5" type="Sprite2D" parent="Drawer1"]
+visible = false
+position = Vector2(-150.645, -94.9543)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("9_0df5h")
+
+[node name="Drawer2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(296, 204)
+scale = Vector2(0.305094, 0.297459)
+texture = ExtResource("4_yyk2a")
+
+[node name="Card1" type="Sprite2D" parent="Drawer2"]
+visible = false
+position = Vector2(-93.7347, -240.777)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("5_sr8g6")
+
+[node name="Card2" type="Sprite2D" parent="Drawer2"]
+visible = false
+position = Vector2(217.598, -284.863)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("6_p7iul")
+
+[node name="Card3" type="Sprite2D" parent="Drawer2"]
+visible = false
+position = Vector2(177.426, -111.91)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("7_td2ew")
+
+[node name="Card4" type="Sprite2D" parent="Drawer2"]
+visible = false
+position = Vector2(130.559, 61.042)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("8_ylenm")
+
+[node name="Card5" type="Sprite2D" parent="Drawer2"]
+visible = false
+position = Vector2(-150.645, -94.9543)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("9_0df5h")
+
+[node name="Drawer3" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(626, 203)
+scale = Vector2(0.300187, 0.288041)
+texture = ExtResource("4_yyk2a")
+
+[node name="Card1" type="Sprite2D" parent="Drawer3"]
+visible = false
+position = Vector2(-93.7347, -240.777)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("5_sr8g6")
+
+[node name="Card2" type="Sprite2D" parent="Drawer3"]
+visible = false
+position = Vector2(217.598, -284.863)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("6_p7iul")
+
+[node name="Card3" type="Sprite2D" parent="Drawer3"]
+visible = false
+position = Vector2(177.426, -111.91)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("7_td2ew")
+
+[node name="Card4" type="Sprite2D" parent="Drawer3"]
+visible = false
+position = Vector2(130.559, 61.042)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("8_ylenm")
+
+[node name="Card5" type="Sprite2D" parent="Drawer3"]
+visible = false
+position = Vector2(-150.645, -94.9543)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("9_0df5h")
+
+[node name="Drawer4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(626, 390)
+scale = Vector2(0.299976, 0.295065)
+texture = ExtResource("4_yyk2a")
+
+[node name="Card1" type="Sprite2D" parent="Drawer4"]
+visible = false
+position = Vector2(-93.7347, -240.777)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("5_sr8g6")
+
+[node name="Card2" type="Sprite2D" parent="Drawer4"]
+visible = false
+position = Vector2(217.598, -284.863)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("6_p7iul")
+
+[node name="Card3" type="Sprite2D" parent="Drawer4"]
+visible = false
+position = Vector2(177.426, -111.91)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("7_td2ew")
+
+[node name="Card4" type="Sprite2D" parent="Drawer4"]
+visible = false
+position = Vector2(130.559, 61.042)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("8_ylenm")
+
+[node name="Card5" type="Sprite2D" parent="Drawer4"]
+visible = false
+position = Vector2(-150.645, -94.9543)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("9_0df5h")
+
+[node name="Drawer5" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(961, 204)
+scale = Vector2(0.305034, 0.277631)
+texture = ExtResource("4_yyk2a")
+
+[node name="Card1" type="Sprite2D" parent="Drawer5"]
+visible = false
+position = Vector2(-93.7347, -240.777)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("5_sr8g6")
+
+[node name="Card2" type="Sprite2D" parent="Drawer5"]
+visible = false
+position = Vector2(217.598, -284.863)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("6_p7iul")
+
+[node name="Card3" type="Sprite2D" parent="Drawer5"]
+visible = false
+position = Vector2(177.426, -111.91)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("7_td2ew")
+
+[node name="Card4" type="Sprite2D" parent="Drawer5"]
+visible = false
+position = Vector2(130.559, 61.042)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("8_ylenm")
+
+[node name="Card5" type="Sprite2D" parent="Drawer5"]
+visible = false
+position = Vector2(-150.645, -94.9543)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("9_0df5h")
+
+[node name="Drawer6" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(964, 377)
+scale = Vector2(0.297808, 0.285414)
+texture = ExtResource("4_yyk2a")
+
+[node name="Card1" type="Sprite2D" parent="Drawer6"]
+visible = false
+position = Vector2(-93.7347, -240.777)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("5_sr8g6")
+
+[node name="Card2" type="Sprite2D" parent="Drawer6"]
+visible = false
+position = Vector2(217.598, -284.863)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("6_p7iul")
+
+[node name="Card3" type="Sprite2D" parent="Drawer6"]
+visible = false
+position = Vector2(177.426, -111.91)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("7_td2ew")
+
+[node name="Card4" type="Sprite2D" parent="Drawer6"]
+visible = false
+position = Vector2(130.559, 61.042)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("8_ylenm")
+
+[node name="Card5" type="Sprite2D" parent="Drawer6"]
+visible = false
+position = Vector2(-150.645, -94.9543)
+scale = Vector2(0.368624, 0.341037)
+texture = ExtResource("9_0df5h")

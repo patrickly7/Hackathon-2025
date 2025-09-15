@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvfcnhb5qqj12"]
+[gd_scene load_steps=5 format=3 uid="uid://bvfcnhb5qqj12"]
 
 [ext_resource type="Script" uid="uid://c7ckxuatbprfk" path="res://scripts/result_screen.gd" id="1_y7kih"]
+[ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="2_raeeo"]
+[ext_resource type="Texture2D" uid="uid://bisdgal18ddge" path="res://assets/art/shohei.jpg" id="3_im14c"]
+[ext_resource type="FontFile" uid="uid://dy3mkbdhno5r2" path="res://assets/fonts/Pixel Game Extrude.otf" id="4_l46iw"]
 
 [node name="ResultScreen" type="Control"]
 layout_mode = 3
@@ -11,20 +14,177 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y7kih")
 
-[node name="Label" type="Label" parent="."]
+[node name="Background" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 589.0
-offset_top = 247.0
-offset_right = 679.0
-offset_bottom = 270.0
-text = "Result Here"
+offset_right = 1151.0
+offset_bottom = 650.0
+
+[node name="StationTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 56.0
+offset_right = 1149.0
+offset_bottom = 186.0
+theme_override_fonts/font = ExtResource("2_raeeo")
+theme_override_font_sizes/font_size = 128
+text = "STATION Tile"
+vertical_alignment = 1
+
+[node name="TimeTakenText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 173.0
+offset_right = 1148.0
+offset_bottom = 303.0
+theme_override_fonts/font = ExtResource("2_raeeo")
+theme_override_font_sizes/font_size = 72
+text = "Time Taken: "
+vertical_alignment = 1
+
+[node name="TimeTakenValue" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 372.0
+offset_top = 173.0
+offset_right = 1148.0
+offset_bottom = 303.0
+theme_override_fonts/font = ExtResource("2_raeeo")
+theme_override_font_sizes/font_size = 72
+text = "1 million secs"
+vertical_alignment = 1
+
+[node name="MistakesText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 227.0
+offset_right = 1196.0
+offset_bottom = 357.0
+theme_override_fonts/font = ExtResource("2_raeeo")
+theme_override_font_sizes/font_size = 72
+text = "Mistakes:"
+vertical_alignment = 1
+
+[node name="MistakesValue" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 372.0
+offset_top = 227.0
+offset_right = 1196.0
+offset_bottom = 357.0
+theme_override_fonts/font = ExtResource("2_raeeo")
+theme_override_font_sizes/font_size = 72
+text = "100"
+vertical_alignment = 1
 
 [node name="ContinueButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 525.0
-offset_top = 321.0
-offset_right = 710.0
-offset_bottom = 423.0
+offset_left = 242.0
+offset_top = 414.0
+offset_right = 589.0
+offset_bottom = 544.0
+theme_override_fonts/font = ExtResource("2_raeeo")
+theme_override_font_sizes/font_size = 72
 text = "Continue"
+
+[node name="ResultMedal" type="Sprite2D" parent="."]
+position = Vector2(931, 298)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("3_im14c")
+
+[node name="GoodJobText" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 761.0
+offset_top = 468.0
+offset_right = 1106.0
+offset_bottom = 598.0
+
+[node name="BackText" type="Label" parent="GoodJobText"]
+layout_mode = 0
+offset_right = 1093.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(0.325647, 0.267426, 0.10774, 1)
+theme_override_fonts/font = ExtResource("4_l46iw")
+theme_override_font_sizes/font_size = 96
+text = "Good job!"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="UpperText" type="Label" parent="GoodJobText"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 13.0
+offset_right = 1101.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.726522, 0.558778, 0.250391, 1)
+theme_override_fonts/font = ExtResource("2_raeeo")
+theme_override_font_sizes/font_size = 96
+text = "Good job!"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="OkayJobText" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 756.0
+offset_top = 468.0
+offset_right = 1101.0
+offset_bottom = 598.0
+
+[node name="BackText" type="Label" parent="OkayJobText"]
+layout_mode = 0
+offset_right = 1093.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(0.303233, 0.303233, 0.303233, 1)
+theme_override_fonts/font = ExtResource("4_l46iw")
+theme_override_font_sizes/font_size = 96
+text = "okay job!"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="UpperText" type="Label" parent="OkayJobText"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 13.0
+offset_right = 1101.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.617455, 0.617455, 0.617455, 1)
+theme_override_fonts/font = ExtResource("2_raeeo")
+theme_override_font_sizes/font_size = 96
+text = "okay job!"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BadJobText" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 782.0
+offset_top = 468.0
+offset_right = 1127.0
+offset_bottom = 598.0
+
+[node name="BackText" type="Label" parent="BadJobText"]
+layout_mode = 0
+offset_right = 1093.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(0.215852, 0.10874, 0.0514399, 1)
+theme_override_fonts/font = ExtResource("4_l46iw")
+theme_override_font_sizes/font_size = 96
+text = "Bad job!"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="UpperText" type="Label" parent="BadJobText"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 13.0
+offset_right = 1101.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.539474, 0.319175, 0.178302, 1)
+theme_override_fonts/font = ExtResource("2_raeeo")
+theme_override_font_sizes/font_size = 96
+text = "Bad job!"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
