@@ -1,28 +1,35 @@
 extends Node
 
-const GAME_TIME = 10
+const GAME_TIME = 15
 var rng = RandomNumberGenerator.new()
 var shelf = 1
 var quantity = 0
+var correctQuantity = 0
 
 func _ready():
 	rng.randomize()
-	openShelf()
+	openNextShelf()
 	$GameTimer.startTimer(GAME_TIME)
-	$CardQuantityInput.value_changed.connect(on_spin_box_value_changed)
 
+func _input(event):
+	if event.is_action_pressed("ui_accept"): # "ui_accept" is the default action for Enter
+		checkCardQuantityInput()
 
-func on_spin_box_value_changed(new_value):
-	print("SpinBox value changed to: ", new_value)
-	shelf +=1
-	openShelf()
+func _on_enter_button_pressed() -> void:
+	checkCardQuantityInput()
+
+func checkCardQuantityInput():
+	if $CardQuantityInput.value == quantity:
+		correctQuantity += 1
+		shelf+=1
+		openNextShelf()
 
 func _on_game_timer_game_timer_end():
 	Global.NEXT_GAME_SCENE = "res://scenes/final_results_screen.tscn"
 	get_tree().change_scene_to_file("res://scenes/result_screen.tscn")
 
 	
-func openShelf():
+func openNextShelf():
 	match shelf:
 		1:
 			quantity = rng.randi_range(1,5)
@@ -61,5 +68,4 @@ func openShelf():
 			for i in quantity:
 				$Drawer6.get_child(i).show()
 			
-#func showCards(num):
 	

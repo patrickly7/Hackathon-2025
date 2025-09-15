@@ -1,14 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://qpmegosr3tca"]
+[gd_scene load_steps=13 format=3 uid="uid://qpmegosr3tca"]
 
 [ext_resource type="Script" uid="uid://cmokhxe51i514" path="res://scripts/inventory.gd" id="1_hj2ta"]
 [ext_resource type="Texture2D" uid="uid://wrnhcpfl17qj" path="res://assets/art/Background_Inventory.png" id="2_53g1v"]
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="2_ty45s"]
+[ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="4_p7iul"]
 [ext_resource type="Texture2D" uid="uid://dk8ywswe3meg5" path="res://assets/art/Graybox.png" id="4_yyk2a"]
 [ext_resource type="Texture2D" uid="uid://dbb8cek1jr8u7" path="res://assets/art/Card_Blue.png" id="5_sr8g6"]
 [ext_resource type="Texture2D" uid="uid://c3di1g16y5mcl" path="res://assets/art/Card_Green.png" id="6_p7iul"]
 [ext_resource type="Texture2D" uid="uid://4dtxr53ii61c" path="res://assets/art/Card_Orange.png" id="7_td2ew"]
 [ext_resource type="Texture2D" uid="uid://dgwve33dp1fvv" path="res://assets/art/Card_Purple.png" id="8_ylenm"]
 [ext_resource type="Texture2D" uid="uid://5iu52a761pr4" path="res://assets/art/Card_Red.png" id="9_0df5h"]
+
+[sub_resource type="Theme" id="Theme_td2ew"]
+default_font = ExtResource("4_p7iul")
+default_font_size = 64
+
+[sub_resource type="Theme" id="Theme_p7iul"]
+default_font = ExtResource("4_p7iul")
+default_font_size = 32
 
 [node name="Inventory" type="Node2D"]
 script = ExtResource("1_hj2ta")
@@ -28,15 +37,30 @@ text = "Inventory"
 [node name="GameTimer" parent="." instance=ExtResource("2_ty45s")]
 
 [node name="CardQuantityInput" type="SpinBox" parent="."]
-offset_left = 423.0
-offset_top = 533.0
-offset_right = 691.0
-offset_bottom = 634.0
-max_value = 20.0
+offset_left = 464.0
+offset_top = 520.0
+offset_right = 686.0
+offset_bottom = 594.0
+theme = SubResource("Theme_td2ew")
+max_value = 5.0
 alignment = 1
 
+[node name="EnterButton" type="TextureButton" parent="."]
+offset_left = 455.0
+offset_top = 593.0
+offset_right = 690.0
+offset_bottom = 648.0
+
+[node name="EnterLabel" type="Label" parent="EnterButton"]
+layout_mode = 0
+offset_right = 229.0
+offset_bottom = 53.0
+theme = SubResource("Theme_p7iul")
+text = "Enter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Drawer1" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(297, 402)
 scale = Vector2(0.298715, 0.294879)
 texture = ExtResource("4_yyk2a")
@@ -252,3 +276,5 @@ visible = false
 position = Vector2(-150.645, -94.9543)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("9_0df5h")
+
+[connection signal="pressed" from="EnterButton" to="." method="_on_enter_button_pressed"]
