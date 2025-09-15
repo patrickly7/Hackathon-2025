@@ -10,6 +10,7 @@ const RES_FORMAT = "res://assets/art/%s.png"
 var tasks = []
 var cards = []
 var answers = []
+var labels = []
 var currentTask = 0
 var incorrectGuesses = 0
 
@@ -62,6 +63,7 @@ func set_next_card():
 	if currentTask + 1 == NUM_TASKS:
 		_on_game_timer_game_timer_end()
 	else:
+		# Change task label color
 		currentTask = currentTask + 1
 		var texture = load(cards[currentTask])
 		$Card.texture = texture
@@ -71,6 +73,7 @@ func create_label(text: String):
 	label.text = text
 	label.add_theme_font_override("font", load("res://assets/fonts/Pixel Game.otf"))
 	label.add_theme_font_size_override("font_size", 45)
+	labels.append(label)
 	
 	return label
 
