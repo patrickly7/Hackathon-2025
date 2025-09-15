@@ -18,10 +18,15 @@ texture = ExtResource("1_4q0d1")
 
 [node name="GameTimer" parent="." instance=ExtResource("2_t1atm")]
 
-[node name="ExceptionsBox" type="Sprite2D" parent="."]
-position = Vector2(203, 493)
-scale = Vector2(0.347878, 0.347878)
-texture = ExtResource("2_lw6ba")
+[node name="ExceptionsBox" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(1, 1)
+offset_left = 17.0
+offset_top = 340.0
+offset_right = 392.0
+offset_bottom = 641.0
+texture_normal = ExtResource("2_lw6ba")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="ExceptionsLabel" type="Label" parent="."]
 offset_left = 172.0
@@ -32,10 +37,15 @@ theme_override_fonts/font = ExtResource("6_5khqj")
 theme_override_font_sizes/font_size = 45
 text = "Exceptions"
 
-[node name="AcceptedBox" type="Sprite2D" parent="."]
-position = Vector2(951, 491)
-scale = Vector2(0.340065, 0.340065)
-texture = ExtResource("3_t1atm")
+[node name="AcceptedBox" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(1, 1)
+offset_left = 773.0
+offset_top = 333.0
+offset_right = 1116.0
+offset_bottom = 637.0
+texture_normal = ExtResource("3_t1atm")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="AcceptedLabel" type="Label" parent="."]
 offset_left = 809.0
@@ -57,3 +67,6 @@ offset_left = 194.0
 offset_top = 36.0
 offset_right = 471.0
 offset_bottom = 312.0
+
+[connection signal="pressed" from="ExceptionsBox" to="." method="_on_exceptions_box_pressed"]
+[connection signal="pressed" from="AcceptedBox" to="." method="_on_accepted_box_pressed"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cmokhxe51i514" path="res://scripts/inventory.gd" id="1_hj2ta"]
 [ext_resource type="Texture2D" uid="uid://wrnhcpfl17qj" path="res://assets/art/Background_Inventory.png" id="2_53g1v"]
-[ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="2_ty45s"]
+[ext_resource type="PackedScene" path="res://scenes/game_timer.tscn" id="2_ty45s"]
 [ext_resource type="Texture2D" uid="uid://dk8ywswe3meg5" path="res://assets/art/Graybox.png" id="4_yyk2a"]
 [ext_resource type="Texture2D" uid="uid://dbb8cek1jr8u7" path="res://assets/art/Card_Blue.png" id="5_sr8g6"]
 [ext_resource type="Texture2D" uid="uid://c3di1g16y5mcl" path="res://assets/art/Card_Green.png" id="6_p7iul"]

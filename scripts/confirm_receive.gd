@@ -9,17 +9,17 @@ const RES_FORMAT = "res://assets/art/%s.png"
 
 var tasks = []
 var cards = []
+var answers = []
 var currentTask = 0
+var incorrectGuesses = 0
 
 func _ready():
 	init_game()
 	$GameTimer.startTimer(GAME_TIME)
-
-
-func _input(event):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		print("clickity")
-		# Handle sprite click
+	
+func _on_game_timer_game_timer_end():
+	Global.NEXT_GAME_SCENE = "res://scenes/inventory.tscn"
+	get_tree().change_scene_to_file("res://scenes/result_screen.tscn")
 
 
 func init_game():
@@ -32,6 +32,7 @@ func init_game():
 		
 		var cardImage = SPRITE_NAMES[cardIndex]
 		var isAccepted = coin_flip()
+		answers.append(isAccepted)
 		if !isAccepted:
 			var exceptionIndex = choose_card_except(cardIndex)
 			cardImage = SPRITE_NAMES[exceptionIndex]
@@ -56,6 +57,14 @@ func choose_card_except(position: int):
 		exceptionIndex = choose_card()
 	
 	return exceptionIndex
+	
+func set_next_card():
+	if currentTask + 1 == NUM_TASKS:
+		_on_game_timer_game_timer_end()
+	else:
+		currentTask = currentTask + 1
+		var texture = load(cards[currentTask])
+		$Card.texture = texture
 
 func create_label(text: String):
 	var label = Label.new()
@@ -64,3 +73,22 @@ func create_label(text: String):
 	label.add_theme_font_size_override("font_size", 45)
 	
 	return label
+
+
+func _on_exceptions_box_pressed():
+	if answers[currentTask] == false:
+		print("Correct!")
+		set_next_card()
+		
+	else:
+		print("Wrong!")
+		incorrectGuesses = incorrectGuesses + 1
+
+
+func _on_accepted_box_pressed():
+	if answers[currentTask] == true:
+		print("Correct!")
+		set_next_card()
+	else:
+		print("Wrong!")
+		incorrectGuesses = incorrectGuesses + 1
