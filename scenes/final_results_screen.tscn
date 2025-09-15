@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxxpi4v2yy1de"]
+
+[ext_resource type="Script" uid="uid://cjtu2ovujngms" path="res://scripts/final_results_screen.gd" id="1_uel5l"]
+
+[node name="FinalResultsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uel5l")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 219.0
+offset_right = 602.0
+offset_bottom = 242.0
+text = "Final Results"
+
+[node name="PlayAgainButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 294.0
+offset_right = 621.0
+offset_bottom = 357.0
+text = "Play Again"
+
+[node name="HomeButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 384.0
+offset_right = 621.0
+offset_bottom = 447.0
+text = "Home"
+
+[connection signal="pressed" from="PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]

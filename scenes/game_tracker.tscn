@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckwf7fhlqg36c"]
+
+[ext_resource type="Script" uid="uid://px2iqj748ysi" path="res://scripts/game_tracker.gd" id="1_5pqqo"]
+
+[node name="GameTracker" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5pqqo")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 156.0
+offset_right = 636.0
+offset_bottom = 179.0
+text = "Game Tracker"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 350.0
+offset_right = 766.0
+offset_bottom = 432.0
+text = "Temp Button (Make it global press enter/click to start later)"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

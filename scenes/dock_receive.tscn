@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cdkdtc6esq6y"]
+
+[node name="DockReceive" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 504.0
+offset_top = 186.0
+offset_right = 606.0
+offset_bottom = 209.0
+text = "Dock Receive"

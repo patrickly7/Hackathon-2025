@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://qpmegosr3tca"]
+
+[node name="Inventory" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 516.0
+offset_top = 195.0
+offset_right = 618.0
+offset_bottom = 218.0
+text = "Inventory"
