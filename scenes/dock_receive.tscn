@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://cdkdtc6esq6y"]
+[gd_scene load_steps=2 format=3 uid="uid://cdkdtc6esq6y"]
+
+[ext_resource type="Script" uid="uid://daaoys0h7ft5x" path="res://scripts/dock_receive.gd" id="1_4x3rc"]
 
 [node name="DockReceive" type="Node2D"]
+script = ExtResource("1_4x3rc")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 504.0
@@ -8,3 +11,7 @@ offset_top = 186.0
 offset_right = 606.0
 offset_bottom = 209.0
 text = "Dock Receive"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
