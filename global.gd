@@ -32,3 +32,20 @@ var PACKING_MEDAL = "Gold"
 var SHIPPING_TIME_TAKEN = 0
 var SHIPPING_MISTAKES = 0
 var SHIPPING_MEDAL = "Gold"
+
+func prepareNextGame():
+	match Global.CURRENT_GAME:
+		"Dock Receive":
+			CURRENT_GAME = "Confirm Receive"
+		"Confirm Receive":
+			CURRENT_GAME = "Inventory"
+		"Inventory":
+			CURRENT_GAME = "Picking"
+		"Picking":
+			CURRENT_GAME = "Packing"
+		"Packing":
+			CURRENT_GAME = "Shipping"
+		"Shipping":
+			CURRENT_GAME = ""
+		_:
+			pass

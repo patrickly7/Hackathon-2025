@@ -14,7 +14,3 @@ func _process(delta):
 	
 	if position.x >= RIGHT_BOUNDARY:
 		queue_free()
-
-
-func _on_body_entered(body):
-	print('test')
