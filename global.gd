@@ -33,6 +33,15 @@ var SHIPPING_TIME_TAKEN = 0
 var SHIPPING_MISTAKES = 0
 var SHIPPING_MEDAL = "Gold"
 
+var DESCRIPTION_DICT = {
+	"Dock Receive": "Long ago, the dock nations...",
+	"Confirm Receive": "Long ago, the confirm nations...",
+	"Inventory": "Long ago, the inventory nations...",
+	"Picking": "Long ago, the picking nations...",
+	"Packing": "Long ago, the packing nations...",
+	"Shipping": "Long ago, the shipping nations...",
+}
+
 func prepareNextGame():
 	match Global.CURRENT_GAME:
 		"Dock Receive":

@@ -2,6 +2,8 @@ extends Control
 
 func _ready():
 	$StationTitle.text = Global.CURRENT_GAME
+	$DescriptionText.text = Global.DESCRIPTION_DICT[Global.CURRENT_GAME]
+	
 	if (Global.CURRENT_GAME == "Dock Receive"):
 		$LastGameBubble.hide()
 		$MiniBubblesLeft.hide()

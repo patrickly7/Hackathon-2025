@@ -27,7 +27,7 @@ func _input(event):
 	elif event.is_action_pressed("action") && isTouchingBox && currentBox != null:
 		currentBox.queue_free()
 
-func _on_game_timer_game_timer_end():
+func _on_game_timer_game_timer_end(secondsLeft: int):
 	Global.NEXT_GAME_SCENE = "res://scenes/confirm_receive.tscn"
 	get_tree().change_scene_to_file("res://scenes/result_screen.tscn")
 
