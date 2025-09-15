@@ -1,10 +1,65 @@
-[gd_scene format=3 uid="uid://d26n8ihjlc5mo"]
+[gd_scene load_steps=8 format=3 uid="uid://d26n8ihjlc5mo"]
+
+[ext_resource type="Texture2D" uid="uid://ddc62irbmj2l8" path="res://assets/art/Background_Confirm_Receive.png" id="1_4q0d1"]
+[ext_resource type="Script" uid="uid://3qge8t1k5e2f" path="res://scenes/confirm_receive.gd" id="1_ifspx"]
+[ext_resource type="Texture2D" uid="uid://hrt2kkkircu0" path="res://assets/art/Exceptions_Box.png" id="2_lw6ba"]
+[ext_resource type="PackedScene" path="res://scenes/game_timer.tscn" id="2_t1atm"]
+[ext_resource type="Texture2D" uid="uid://uhld7odui7ul" path="res://assets/art/Accepted_Box.png" id="3_t1atm"]
+[ext_resource type="Texture2D" uid="uid://citi1rxcqtdgq" path="res://assets/art/Card_White.png" id="5_5khqj"]
+[ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="6_5khqj"]
 
 [node name="ConfirmReceive" type="Node2D"]
+script = ExtResource("1_ifspx")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 516.0
-offset_top = 195.0
-offset_right = 618.0
-offset_bottom = 218.0
-text = "Confirm Receive"
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_4q0d1")
+
+[node name="GameTimer" parent="." instance=ExtResource("2_t1atm")]
+
+[node name="ExceptionsBox" type="Sprite2D" parent="."]
+position = Vector2(203, 493)
+scale = Vector2(0.347878, 0.347878)
+texture = ExtResource("2_lw6ba")
+
+[node name="ExceptionsLabel" type="Label" parent="."]
+offset_left = 172.0
+offset_top = 587.0
+offset_right = 359.0
+offset_bottom = 684.0
+theme_override_fonts/font = ExtResource("6_5khqj")
+theme_override_font_sizes/font_size = 45
+text = "Exceptions"
+
+[node name="AcceptedBox" type="Sprite2D" parent="."]
+position = Vector2(951, 491)
+scale = Vector2(0.340065, 0.340065)
+texture = ExtResource("3_t1atm")
+
+[node name="AcceptedLabel" type="Label" parent="."]
+offset_left = 809.0
+offset_top = 583.0
+offset_right = 996.0
+offset_bottom = 680.0
+theme_override_fonts/font = ExtResource("6_5khqj")
+theme_override_font_sizes/font_size = 45
+text = "Accepted
+"
+
+[node name="Card" type="Sprite2D" parent="."]
+position = Vector2(579, 530)
+scale = Vector2(0.453489, 0.453489)
+texture = ExtResource("5_5khqj")
+
+[node name="CardTasks" type="VBoxContainer" parent="."]
+offset_left = 194.0
+offset_top = 36.0
+offset_right = 471.0
+offset_bottom = 312.0
+
+[node name="Label" type="Label" parent="CardTasks"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_5khqj")
+theme_override_font_sizes/font_size = 50
+text = "Red"
