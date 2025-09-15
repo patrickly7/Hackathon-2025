@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckwf7fhlqg36c"]
+[gd_scene load_steps=8 format=3 uid="uid://ckwf7fhlqg36c"]
 
 [ext_resource type="Script" uid="uid://px2iqj748ysi" path="res://scripts/game_tracker.gd" id="1_5pqqo"]
+[ext_resource type="Texture2D" uid="uid://c3ssbvae82jk2" path="res://assets/art/GameTrackerBackground.png" id="2_h0i2o"]
+[ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="3_velld"]
+[ext_resource type="Texture2D" uid="uid://cwwschqjxu33v" path="res://assets/art/GameTracker_Station_Bubble.png" id="4_3vjfg"]
+[ext_resource type="Texture2D" uid="uid://b6k61tluj0y52" path="res://assets/art/GameTracker_Mini-Bubble.png" id="5_2nb3p"]
+[ext_resource type="Texture2D" uid="uid://d1iyr5h1mhct1" path="res://assets/art/Speech_Bubble.png" id="6_velld"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0b0py"]
+texture = ExtResource("2_h0i2o")
 
 [node name="GameTracker" type="Control"]
 layout_mode = 3
@@ -11,20 +19,113 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5pqqo")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 527.0
-offset_top = 156.0
-offset_right = 636.0
-offset_bottom = 179.0
-text = "Game Tracker"
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0b0py")
 
-[node name="Button" type="Button" parent="."]
+[node name="StationTitle" type="Label" parent="."]
 layout_mode = 0
-offset_left = 301.0
-offset_top = 350.0
-offset_right = 766.0
-offset_bottom = 432.0
-text = "Temp Button (Make it global press enter/click to start later)"
+offset_left = 1.0
+offset_top = 34.0
+offset_right = 1148.0
+offset_bottom = 164.0
+theme_override_fonts/font = ExtResource("3_velld")
+theme_override_font_sizes/font_size = 96
+text = "DOCK RECEIVE"
+horizontal_alignment = 1
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="LastGameBubble" type="Sprite2D" parent="."]
+position = Vector2(10, 449)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_3vjfg")
+
+[node name="CurrentGameBubble" type="Sprite2D" parent="."]
+position = Vector2(560, 449)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_3vjfg")
+
+[node name="NextGameBubble" type="Sprite2D" parent="."]
+position = Vector2(1110, 449)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_3vjfg")
+
+[node name="MiniBubblesLeft" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -143.0
+offset_top = 79.0
+offset_right = 411.0
+offset_bottom = 642.0
+
+[node name="MiniBubble" type="Sprite2D" parent="MiniBubblesLeft"]
+position = Vector2(347, 362)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_2nb3p")
+metadata/_edit_lock_ = true
+
+[node name="MiniBubble2" type="Sprite2D" parent="MiniBubblesLeft"]
+position = Vector2(427, 362)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_2nb3p")
+metadata/_edit_lock_ = true
+
+[node name="MiniBubble3" type="Sprite2D" parent="MiniBubblesLeft"]
+position = Vector2(507, 362)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_2nb3p")
+metadata/_edit_lock_ = true
+
+[node name="MiniBubblesRight" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 407.0
+offset_top = 80.0
+offset_right = 983.0
+offset_bottom = 562.0
+
+[node name="MiniBubble" type="Sprite2D" parent="MiniBubblesRight"]
+position = Vector2(347, 362)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_2nb3p")
+metadata/_edit_lock_ = true
+
+[node name="MiniBubble2" type="Sprite2D" parent="MiniBubblesRight"]
+position = Vector2(427, 362)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_2nb3p")
+metadata/_edit_lock_ = true
+
+[node name="MiniBubble3" type="Sprite2D" parent="MiniBubblesRight"]
+position = Vector2(507, 362)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_2nb3p")
+metadata/_edit_lock_ = true
+
+[node name="DescriptionBubble" type="Sprite2D" parent="."]
+position = Vector2(558, 272)
+scale = Vector2(0.5, 0.45)
+texture = ExtResource("6_velld")
+
+[node name="DescriptionText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 184.0
+offset_right = 776.0
+offset_bottom = 314.0
+theme_override_fonts/font = ExtResource("3_velld")
+theme_override_font_sizes/font_size = 48
+text = "Long ago, the four nations..."
+
+[node name="HintText" type="Label" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 576.0
+offset_right = 1150.0
+offset_bottom = 632.0
+theme_override_fonts/font = ExtResource("3_velld")
+theme_override_font_sizes/font_size = 48
+text = "Press Enter/space to continue"
+horizontal_alignment = 1
