@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://npl5ddge5pno"
-path="res://.godot/imported/Timer_Hand.png-a5a5a1e4343fc840ba9ffaf904e5afb5.ctex"
+uid="uid://mdsjmaib0g1b"
+path="res://.godot/imported/Stick_Figure_Back.png-be238ca1a49447966cfa29f3fb22dfda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Timer_Hand.png"
-dest_files=["res://.godot/imported/Timer_Hand.png-a5a5a1e4343fc840ba9ffaf904e5afb5.ctex"]
+source_file="res://assets/art/Stick_Figure_Back.png"
+dest_files=["res://.godot/imported/Stick_Figure_Back.png-be238ca1a49447966cfa29f3fb22dfda.ctex"]
 
 [params]
 
