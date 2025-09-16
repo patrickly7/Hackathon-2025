@@ -5,6 +5,7 @@ const NUM_TASKS = 5
 const ALLOWED_COLORS = ["BLACK", "WHITE", "RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "PURPLE"]
 const SPRITE_NAMES = ["Card_Black", "Card_White", "Card_Red", "Card_Orange", "Card_Yellow", "Card_Green", "Card_Blue", "Card_Purple"]
 const CARD_POSITION = Vector2(580, 510)
+const OFF_SCREEN_POSITION = Vector2(580, 885)
 const RES_FORMAT = "res://assets/art/%s.png"
 
 var tasks = []
@@ -39,9 +40,6 @@ func init_game():
 			cardImage = SPRITE_NAMES[exceptionIndex]
 			
 		cards.append(RES_FORMAT % cardImage)
-	
-	print(tasks)
-	print(cards)
 
 	var texture = load(cards[currentTask])
 	$Card.texture = texture
@@ -61,12 +59,18 @@ func choose_card_except(position: int):
 	
 func set_next_card():
 	if currentTask + 1 == NUM_TASKS:
+		confirm_label_text(currentTask)
+		print(incorrectGuesses)
 		_on_game_timer_game_timer_end()
 	else:
-		# Change task label color
+		confirm_label_text(currentTask)
 		currentTask = currentTask + 1
+		
+		$Card.position = OFF_SCREEN_POSITION
 		var texture = load(cards[currentTask])
 		$Card.texture = texture
+		var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_ELASTIC)
+		tween.tween_property($Card, "position", CARD_POSITION, 0.5)
 
 func create_label(text: String):
 	var label = Label.new()
@@ -76,22 +80,26 @@ func create_label(text: String):
 	labels.append(label)
 	
 	return label
+	
+func confirm_label_text(task: int):
+	var label = labels[currentTask] as Label
+	label.text = "CONFIRMED!"
 
 
 func _on_exceptions_box_pressed():
 	if answers[currentTask] == false:
-		print("Correct!")
+		print("Correct!") # play correct sound
 		set_next_card()
 		
 	else:
-		print("Wrong!")
+		print("Wrong!") # play rong sound
 		incorrectGuesses = incorrectGuesses + 1
 
 
 func _on_accepted_box_pressed():
 	if answers[currentTask] == true:
-		print("Correct!")
+		print("Correct!") # play correct sound
 		set_next_card()
 	else:
-		print("Wrong!")
+		print("Wrong!") # play rong sound
 		incorrectGuesses = incorrectGuesses + 1

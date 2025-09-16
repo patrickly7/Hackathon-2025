@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ddc62irbmj2l8" path="res://assets/art/Background_Confirm_Receive.png" id="1_4q0d1"]
 [ext_resource type="Script" uid="uid://3qge8t1k5e2f" path="res://scripts/confirm_receive.gd" id="1_ifspx"]
 [ext_resource type="Texture2D" uid="uid://hrt2kkkircu0" path="res://assets/art/Exceptions_Box.png" id="2_lw6ba"]
-[ext_resource type="PackedScene" path="res://scenes/game_timer.tscn" id="2_t1atm"]
+[ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="2_t1atm"]
 [ext_resource type="Texture2D" uid="uid://uhld7odui7ul" path="res://assets/art/Accepted_Box.png" id="3_t1atm"]
 [ext_resource type="Texture2D" uid="uid://citi1rxcqtdgq" path="res://assets/art/Card_White.png" id="5_5khqj"]
 [ext_resource type="Texture2D" uid="uid://dx85pqgnifgg5" path="res://assets/art/Exceptions_Box_Hover.png" id="5_w7a5h"]
@@ -62,7 +62,7 @@ text = "Accepted
 "
 
 [node name="Card" type="Sprite2D" parent="."]
-position = Vector2(581, 510)
+position = Vector2(580, 510)
 scale = Vector2(0.453489, 0.453489)
 texture = ExtResource("5_5khqj")
 
