@@ -50,9 +50,9 @@ func coin_flip():
 func choose_card():
 	return range(8).pick_random()
 
-func choose_card_except(position: int):
-	var exceptionIndex = position
-	while (exceptionIndex == position):
+func choose_card_except(cardIndex: int):
+	var exceptionIndex = cardIndex
+	while (exceptionIndex == cardIndex):
 		exceptionIndex = choose_card()
 	
 	return exceptionIndex
@@ -82,7 +82,7 @@ func create_label(text: String):
 	return label
 	
 func confirm_label_text(task: int):
-	var label = labels[currentTask] as Label
+	var label = labels[task] as Label
 	label.text = "CONFIRMED!"
 
 

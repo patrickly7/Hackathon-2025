@@ -31,11 +31,11 @@ texture_hover = ExtResource("5_w7a5h")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="ExceptionsLabel" type="Label" parent="."]
-offset_left = 172.0
-offset_top = 587.0
-offset_right = 359.0
-offset_bottom = 684.0
+[node name="ExceptionsLabel" type="Label" parent="ExceptionsBox"]
+offset_left = 155.0
+offset_top = 247.0
+offset_right = 342.0
+offset_bottom = 344.0
 theme_override_fonts/font = ExtResource("6_5khqj")
 theme_override_font_sizes/font_size = 45
 text = "Exceptions"
@@ -51,11 +51,11 @@ texture_hover = ExtResource("8_c0agr")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AcceptedLabel" type="Label" parent="."]
-offset_left = 809.0
-offset_top = 583.0
-offset_right = 996.0
-offset_bottom = 680.0
+[node name="AcceptedLabel" type="Label" parent="AcceptedBox"]
+offset_left = 36.0
+offset_top = 250.0
+offset_right = 223.0
+offset_bottom = 347.0
 theme_override_fonts/font = ExtResource("6_5khqj")
 theme_override_font_sizes/font_size = 45
 text = "Accepted
