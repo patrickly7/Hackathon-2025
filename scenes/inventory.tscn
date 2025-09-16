@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://qpmegosr3tca"]
+[gd_scene load_steps=31 format=3 uid="uid://qpmegosr3tca"]
 
 [ext_resource type="Script" uid="uid://cmokhxe51i514" path="res://scripts/inventory.gd" id="1_hj2ta"]
 [ext_resource type="Texture2D" uid="uid://wrnhcpfl17qj" path="res://assets/art/Background_Inventory.png" id="2_53g1v"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://do1my1od637y7" path="res://assets/art/Enter_Button_Hover.png" id="13_w24ly"]
 [ext_resource type="Texture2D" uid="uid://bis480f7w4fx7" path="res://assets/art/Cabinet.png" id="20_ohgsq"]
 [ext_resource type="Texture2D" uid="uid://dyj70f7sev34t" path="res://assets/art/Drawer_Purple_Closed.png" id="21_j8d85"]
+[ext_resource type="AudioStream" uid="uid://cc3l076x7t2q5" path="res://assets/music/Inventory.mp3" id="22_j8d85"]
 
 [sub_resource type="Theme" id="Theme_td2ew"]
 default_font = ExtResource("4_p7iul")
@@ -335,6 +336,9 @@ texture = ExtResource("20_ohgsq")
 [node name="DrawerPurpleClosed" type="Sprite2D" parent="."]
 position = Vector2(279, 306)
 texture = ExtResource("21_j8d85")
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_j8d85")
 
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
 [connection signal="value_changed" from="CardQuantityInput" to="." method="_on_card_quantity_input_value_changed"]

@@ -9,6 +9,7 @@ var mistakes = 0
 func _ready():
 	rng.randomize()
 	openNextShelf()
+	$BGMusic.play()
 	$GameTimer.startTimer(GAME_TIME)
 
 func _input(event):
