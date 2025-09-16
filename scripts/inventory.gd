@@ -90,5 +90,5 @@ func _on_game_timer_game_timer_end(secondsLeft: int) -> void:
 	Global.INVENTORY_TIME_TAKEN = GAME_TIME - secondsLeft
 	Global.INVENTORY_MISTAKES = mistakes
 	calculateMedal()
-	Global.NEXT_GAME_SCENE = "res://scenes/final_results_screen.tscn"
+	Global.NEXT_GAME_SCENE = "res://scenes/picking.tscn"
 	get_tree().change_scene_to_file("res://scenes/result_screen.tscn")

@@ -42,7 +42,7 @@ func getCurrentGameResults():
 			pass
 
 func showTimeTakenText():
-	$TimeTakenValue.text = str(timeTaken)
+	$TimeTakenValue.text = str(timeTaken) + " secs"
 	$TimeTakenValue.show()
 	
 func showMistakesText():
@@ -58,5 +58,13 @@ func showMedal():
 		$BadJobText.show()
 
 func _on_continue_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/game_tracker.tscn")
+	if (Global.IS_PRACTICE):
+		get_tree().change_scene_to_file(Global.PRACTICE_GAME)
+		return
+	
+	if (Global.NEXT_GAME_SCENE != ""):
+		get_tree().change_scene_to_file("res://scenes/game_tracker.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/final_results_screen.tscn")	
+		
 	Global.prepareNextGame()

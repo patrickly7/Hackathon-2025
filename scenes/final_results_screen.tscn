@@ -11,6 +11,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uel5l")
 
+[node name="Background" type="Panel" parent="."]
+offset_right = 1151.0
+offset_bottom = 650.0
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 504.0

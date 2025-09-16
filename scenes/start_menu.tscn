@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://hk2x4t4ppa1t"]
+[gd_scene load_steps=3 format=3 uid="uid://hk2x4t4ppa1t"]
 
 [ext_resource type="Script" uid="uid://d3gjhlfg65wkq" path="res://scripts/start_menu.gd" id="1_ouf4f"]
+[ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="2_thu50"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,14 +12,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ouf4f")
 
+[node name="Background" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 651.0
+
 [node name="GameTitle" type="Label" parent="."]
 layout_mode = 0
-offset_left = 378.0
-offset_top = 139.0
-offset_right = 775.0
-offset_bottom = 238.0
-theme_override_font_sizes/font_size = 72
+offset_left = 2.0
+offset_top = 82.0
+offset_right = 1150.0
+offset_bottom = 229.0
+theme_override_fonts/font = ExtResource("2_thu50")
+theme_override_font_sizes/font_size = 144
 text = "WMS Game"
+horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 1
@@ -50,5 +58,14 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
 
+[node name="PracticeButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1069.0
+offset_top = 607.0
+offset_right = 1139.0
+offset_bottom = 638.0
+text = "practice"
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PracticeButton" to="." method="_on_practice_button_pressed"]
