@@ -13,6 +13,7 @@ var currentBox: Area2D
 func _ready():	
 	startingPos = $PlayerBody.position
 	$GameTimer.startTimer(GAME_TIME)
+	$BGMusic.play()
 	
 	$TopBoxSpawner.startSpawning(1)
 	$BottomBoxSpawner.startSpawning()
