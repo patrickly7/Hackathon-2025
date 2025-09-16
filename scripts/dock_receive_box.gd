@@ -13,4 +13,5 @@ func _process(delta):
 	position.x += BOX_SPEED * delta
 	
 	if position.x >= RIGHT_BOUNDARY:
+		Global.DOCK_RECEIVE_MISTAKES += 1
 		queue_free()
