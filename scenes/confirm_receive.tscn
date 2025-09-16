@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d26n8ihjlc5mo"]
+[gd_scene load_steps=11 format=3 uid="uid://d26n8ihjlc5mo"]
 
 [ext_resource type="Texture2D" uid="uid://ddc62irbmj2l8" path="res://assets/art/Background_Confirm_Receive.png" id="1_4q0d1"]
 [ext_resource type="Script" uid="uid://3qge8t1k5e2f" path="res://scripts/confirm_receive.gd" id="1_ifspx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dx85pqgnifgg5" path="res://assets/art/Exceptions_Box_Hover.png" id="5_w7a5h"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="6_5khqj"]
 [ext_resource type="Texture2D" uid="uid://dmke6diuvvwgr" path="res://assets/art/Accepted_Box_Hover.png" id="8_c0agr"]
+[ext_resource type="AudioStream" uid="uid://dkssj4sdkkw5k" path="res://assets/music/Confirm_Receive.mp3" id="10_c0agr"]
 
 [node name="ConfirmReceive" type="Node2D"]
 script = ExtResource("1_ifspx")
@@ -73,6 +74,9 @@ offset_left = 194.0
 offset_top = 36.0
 offset_right = 471.0
 offset_bottom = 312.0
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_c0agr")
 
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
 [connection signal="pressed" from="ExceptionsBox" to="." method="_on_exceptions_box_pressed"]

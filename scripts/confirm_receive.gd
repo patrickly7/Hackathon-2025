@@ -19,6 +19,7 @@ var babaIsWin = false
 func _ready():
 	init_game()
 	$GameTimer.startTimer(GAME_TIME)
+	$BGMusic.play()
 
 
 func init_game():
