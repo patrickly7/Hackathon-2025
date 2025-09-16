@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdkdtc6esq6y"]
+[gd_scene load_steps=11 format=3 uid="uid://cdkdtc6esq6y"]
 
 [ext_resource type="Script" uid="uid://daaoys0h7ft5x" path="res://scripts/dock_receive.gd" id="1_4x3rc"]
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="2_5omce"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://b4pqr2v0ubl5s" path="res://scenes/box_spawner.tscn" id="4_b8pko"]
 [ext_resource type="AudioStream" uid="uid://bl6chb2vmp402" path="res://assets/music/Dock_Receive.mp3" id="5_gio7h"]
 [ext_resource type="Texture2D" uid="uid://14c8w6frpd57" path="res://assets/art/Conveyor_Belt.png" id="7_qiq1w"]
+[ext_resource type="AudioStream" uid="uid://dlb1qdy6l88e8" path="res://assets/music/sfx/Miku_Ready_Start.mp3" id="8_q5nwu"]
+[ext_resource type="AudioStream" uid="uid://ccw7y5iw04u7j" path="res://assets/music/sfx/Miku_Finish.mp3" id="9_fooxw"]
+[ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="10_2jdkc"]
 
 [node name="DockReceive" type="Node2D"]
 script = ExtResource("1_4x3rc")
@@ -50,6 +53,47 @@ position = Vector2(-74, 450)
 
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_gio7h")
+
+[node name="StartSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_q5nwu")
+
+[node name="FinishSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_fooxw")
+
+[node name="ReadyText" type="Label" parent="."]
+offset_left = -1.0
+offset_top = 259.0
+offset_right = 1152.0
+offset_bottom = 389.0
+theme_override_fonts/font = ExtResource("10_2jdkc")
+theme_override_font_sizes/font_size = 96
+text = "ready..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartText" type="Label" parent="."]
+visible = false
+offset_left = -1.0
+offset_top = 259.0
+offset_right = 1152.0
+offset_bottom = 389.0
+theme_override_fonts/font = ExtResource("10_2jdkc")
+theme_override_font_sizes/font_size = 96
+text = "START!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinishText" type="Label" parent="."]
+visible = false
+offset_left = -1.0
+offset_top = 259.0
+offset_right = 1152.0
+offset_bottom = 389.0
+theme_override_fonts/font = ExtResource("10_2jdkc")
+theme_override_font_sizes/font_size = 96
+text = "FINISH!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
 [connection signal="area_entered" from="PlayerBody" to="." method="_on_player_body_area_entered"]

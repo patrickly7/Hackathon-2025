@@ -14,6 +14,12 @@ const BOXES_TO_BOOP = 15
 var currentBoxesBooped = 0
 
 func _ready():	
+	$StartSFX.play()
+	await get_tree().create_timer(1).timeout
+	
+	$ReadyText.hide()
+	$StartText.show()
+	
 	# Reset Mistakes from any previous run
 	Global.DOCK_RECEIVE_MISTAKES = 0
 	
@@ -23,6 +29,9 @@ func _ready():
 	
 	$TopBoxSpawner.startSpawning(1)
 	$BottomBoxSpawner.startSpawning()
+	
+	await get_tree().create_timer(0.25).timeout
+	$StartText.hide()
 	
 func _input(event):
 	if event.is_action_pressed("move_up") && $PlayerBody.position.y != startingPos.y - MOVEMENT:
@@ -38,6 +47,11 @@ func _input(event):
 			$GameTimer.stopTimer()
 
 func _on_game_timer_game_timer_end(secondsLeft: int):
+	$FinishText.show()
+	$FinishSFX.play()
+	await get_tree().create_timer(1).timeout
+	$FinishText.hide()
+	
 	Global.DOCK_RECEIVE_TIME_TAKEN = GAME_TIME - secondsLeft
 	# Note: Mistakes are set by the box destruction
 	
