@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://clelshseuqewk"]
+[gd_scene load_steps=15 format=3 uid="uid://cgsdin784fyvh"]
 
 [ext_resource type="Script" uid="uid://de38jmx2a1k7w" path="res://scripts/picking.gd" id="1_hrbhj"]
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="1_vttta"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dgwve33dp1fvv" path="res://assets/art/Card_Purple.png" id="8_v1iid"]
 [ext_resource type="Texture2D" uid="uid://bka340h4p12t6" path="res://assets/art/Card_Black.png" id="9_t101e"]
 [ext_resource type="Texture2D" uid="uid://citi1rxcqtdgq" path="res://assets/art/Card_White.png" id="10_rdfp6"]
+[ext_resource type="AudioStream" uid="uid://6n4bblcq0lhb" path="res://assets/music/Picking.mp3" id="11_4s025"]
 [ext_resource type="AudioStream" uid="uid://dlb1qdy6l88e8" path="res://assets/music/sfx/Miku_Ready_Start.mp3" id="11_omqxp"]
 [ext_resource type="AudioStream" uid="uid://ccw7y5iw04u7j" path="res://assets/music/sfx/Miku_Finish.mp3" id="12_v1iid"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="13_t101e"]
@@ -141,6 +142,9 @@ theme_override_font_sizes/font_size = 96
 text = "FINISH!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_4s025")
 
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
 [connection signal="pressed" from="RedCabinet" to="." method="_on_red_cabinet_pressed"]
