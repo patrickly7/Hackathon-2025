@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://1b12yf8ik3hy"
-path="res://.godot/imported/3_Ticks.mp3-068624482cbeb34d970763441b291af3.mp3str"
+path="res://.godot/imported/3_Ticks.mp3-f7799856879c14d6afa96579806849f1.mp3str"
 
 [deps]
 
-source_file="res://assets/music/3_Ticks.mp3"
-dest_files=["res://.godot/imported/3_Ticks.mp3-068624482cbeb34d970763441b291af3.mp3str"]
+source_file="res://assets/music/sfx/3_Ticks.mp3"
+dest_files=["res://.godot/imported/3_Ticks.mp3-f7799856879c14d6afa96579806849f1.mp3str"]
 
 [params]
 
