@@ -38,6 +38,7 @@ func openNextShelf():
 	match shelf:
 		1:
 			quantity = rng.randi_range(1,5)
+			$Drawer1Closed.hide()
 			$Drawer1.show()
 			for i in quantity:
 				$Drawer1.get_child(i).show()
@@ -45,35 +46,46 @@ func openNextShelf():
 		2:
 			quantity = rng.randi_range(1,5)
 			$Drawer1.hide()
+			$Drawer1Closed.show()
+			$Drawer2Closed.hide()
 			$Drawer2.show()
 			for i in quantity:
 				$Drawer2.get_child(i).show()
 		3:
 			quantity = rng.randi_range(1,5)
 			$Drawer2.hide()
+			$Drawer2Closed.show()
+			$Drawer3Closed.hide()
 			$Drawer3.show()
 			for i in quantity:
 				$Drawer3.get_child(i).show()
 		4:
 			quantity = rng.randi_range(1,5)
 			$Drawer3.hide()
+			$Drawer3Closed.show()
+			$Drawer4Closed.hide()
 			$Drawer4.show()
 			for i in quantity:
 				$Drawer4.get_child(i).show()
 		5:
 			quantity = rng.randi_range(1,5)
 			$Drawer4.hide()
+			$Drawer4Closed.show()
+			$Drawer5Closed.hide()
 			$Drawer5.show()
 			for i in quantity:
 				$Drawer5.get_child(i).show()
 		6:
 			quantity = rng.randi_range(1,5)
 			$Drawer5.hide()
+			$Drawer5Closed.show()
+			$Drawer6Closed.hide()
 			$Drawer6.show()
 			for i in quantity:
 				$Drawer6.get_child(i).show()
 		7:
 			$Drawer6.hide()
+			$Drawer6Closed.show()
 			$GameTimer.stopTimer()
 			
 			

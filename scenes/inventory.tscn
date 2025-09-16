@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://wrnhcpfl17qj" path="res://assets/art/Background_Inventory.png" id="2_53g1v"]
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="2_ty45s"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="4_p7iul"]
-[ext_resource type="Texture2D" uid="uid://dk8ywswe3meg5" path="res://assets/art/Graybox.png" id="4_yyk2a"]
 [ext_resource type="Texture2D" uid="uid://cq0m2bj8bwcaf" path="res://assets/art/Inventory_Down_Arrow.png" id="5_nq6oc"]
 [ext_resource type="Texture2D" uid="uid://dbb8cek1jr8u7" path="res://assets/art/Card_Blue.png" id="5_sr8g6"]
 [ext_resource type="Texture2D" uid="uid://jxme4sha4yx3" path="res://assets/art/Inventory_Up_Arrow.png" id="5_td2ew"]
@@ -19,9 +18,18 @@
 [ext_resource type="Texture2D" uid="uid://bihyblpyfa2se" path="res://assets/art/Enter_Button.png" id="11_k86sa"]
 [ext_resource type="Texture2D" uid="uid://b20ndpbnfsjdu" path="res://assets/art/Enter_Button_Pressed.png" id="12_tla8l"]
 [ext_resource type="Texture2D" uid="uid://do1my1od637y7" path="res://assets/art/Enter_Button_Hover.png" id="13_w24ly"]
+[ext_resource type="Texture2D" uid="uid://dto5hk2jtf6i" path="res://assets/art/Drawer_Opened_Empty.png" id="16_j8d85"]
 [ext_resource type="Texture2D" uid="uid://bis480f7w4fx7" path="res://assets/art/Cabinet.png" id="20_ohgsq"]
 [ext_resource type="Texture2D" uid="uid://dyj70f7sev34t" path="res://assets/art/Drawer_Purple_Closed.png" id="21_j8d85"]
 [ext_resource type="AudioStream" uid="uid://cc3l076x7t2q5" path="res://assets/music/Inventory.mp3" id="22_j8d85"]
+[ext_resource type="Texture2D" uid="uid://d0nwdh3g3gklo" path="res://assets/art/Drawer_Red_Closed.png" id="22_5mlvw"]
+[ext_resource type="Texture2D" uid="uid://bv4i4odikm1ue" path="res://assets/art/Card_Yellow.png" id="23_1bg26"]
+[ext_resource type="Texture2D" uid="uid://bka340h4p12t6" path="res://assets/art/Card_Black.png" id="24_it0hx"]
+[ext_resource type="Texture2D" uid="uid://dntxn5m18h2go" path="res://assets/art/Drawer_Blue_Closed.png" id="25_l0dva"]
+[ext_resource type="Texture2D" uid="uid://citi1rxcqtdgq" path="res://assets/art/Card_White.png" id="26_ohh50"]
+[ext_resource type="Texture2D" uid="uid://d0w84nvkvffwk" path="res://assets/art/Drawer_Orange_Closed.png" id="27_ax4un"]
+[ext_resource type="Texture2D" uid="uid://c4uh0ysi733hm" path="res://assets/art/Drawer_Yellow_Closed.png" id="28_it0hx"]
+[ext_resource type="Texture2D" uid="uid://c65o8w3jexn23" path="res://assets/art/Drawer_Green_Closed.png" id="29_l0dva"]
 
 [sub_resource type="Theme" id="Theme_td2ew"]
 default_font = ExtResource("4_p7iul")
@@ -61,6 +69,7 @@ text = "Inventory"
 [node name="GameTimer" parent="." instance=ExtResource("2_ty45s")]
 
 [node name="CardQuantityInput" type="SpinBox" parent="."]
+z_index = 3
 offset_left = 464.0
 offset_top = 493.0
 offset_right = 719.0
@@ -103,239 +112,351 @@ text = "Enter"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Cabinet" type="Sprite2D" parent="."]
+position = Vector2(279, 306)
+texture = ExtResource("20_ohgsq")
+
+[node name="Drawer1Closed" type="Sprite2D" parent="."]
+position = Vector2(278, 150)
+texture = ExtResource("21_j8d85")
+
 [node name="Drawer1" type="Sprite2D" parent="."]
 visible = false
+z_index = 1
 position = Vector2(297, 402)
 scale = Vector2(0.298715, 0.294879)
-texture = ExtResource("4_yyk2a")
 
 [node name="Card1" type="Sprite2D" parent="Drawer1"]
 visible = false
-position = Vector2(-93.7347, -240.777)
+z_index = 1
+position = Vector2(-23.4337, -766.416)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("5_sr8g6")
 
 [node name="Card2" type="Sprite2D" parent="Drawer1"]
 visible = false
-position = Vector2(217.598, -284.863)
+z_index = 1
+position = Vector2(-287.9, -783.372)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("6_p7iul")
 
 [node name="Card3" type="Sprite2D" parent="Drawer1"]
 visible = false
-position = Vector2(177.426, -111.91)
+z_index = 1
+position = Vector2(-167.384, -654.506)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("7_td2ew")
 
 [node name="Card4" type="Sprite2D" parent="Drawer1"]
 visible = false
-position = Vector2(130.559, 61.042)
+z_index = 1
+position = Vector2(-425.154, -640.941)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("8_ylenm")
 
 [node name="Card5" type="Sprite2D" parent="Drawer1"]
 visible = false
-position = Vector2(-150.645, -94.9543)
+z_index = 1
+position = Vector2(-267.814, -556.16)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("9_0df5h")
+
+[node name="DrawerOpenedEmpty" type="Sprite2D" parent="Drawer1"]
+position = Vector2(-261.119, -752.851)
+scale = Vector2(3.34767, 3.39122)
+texture = ExtResource("16_j8d85")
+
+[node name="Drawer1Opened" type="Sprite2D" parent="Drawer1"]
+z_index = 2
+position = Vector2(-515.542, -620.594)
+scale = Vector2(3.34767, 3.39122)
+texture = ExtResource("21_j8d85")
+
+[node name="Drawer2Closed" type="Sprite2D" parent="."]
+position = Vector2(279, 462)
+texture = ExtResource("22_5mlvw")
 
 [node name="Drawer2" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(296, 204)
 scale = Vector2(0.305094, 0.297459)
-texture = ExtResource("4_yyk2a")
 
 [node name="Card1" type="Sprite2D" parent="Drawer2"]
 visible = false
-position = Vector2(-93.7347, -240.777)
+z_index = 1
+position = Vector2(-311.379, 433.673)
 scale = Vector2(0.368624, 0.341037)
-texture = ExtResource("5_sr8g6")
+texture = ExtResource("23_1bg26")
 
 [node name="Card2" type="Sprite2D" parent="Drawer2"]
 visible = false
-position = Vector2(217.598, -284.863)
+z_index = 1
+position = Vector2(-45.8875, 433.673)
 scale = Vector2(0.368624, 0.341037)
-texture = ExtResource("6_p7iul")
+texture = ExtResource("24_it0hx")
 
 [node name="Card3" type="Sprite2D" parent="Drawer2"]
 visible = false
-position = Vector2(177.426, -111.91)
+z_index = 1
+position = Vector2(-124.552, 521.08)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("7_td2ew")
 
 [node name="Card4" type="Sprite2D" parent="Drawer2"]
 visible = false
-position = Vector2(130.559, 61.042)
+z_index = 1
+position = Vector2(-373.655, 500.909)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("8_ylenm")
 
 [node name="Card5" type="Sprite2D" parent="Drawer2"]
 visible = false
-position = Vector2(-150.645, -94.9543)
+z_index = 1
+position = Vector2(-429.376, 598.402)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("9_0df5h")
+
+[node name="DrawerOpenedEmpty" type="Sprite2D" parent="Drawer2"]
+position = Vector2(-245.826, 437.035)
+scale = Vector2(3.27768, 3.36181)
+texture = ExtResource("16_j8d85")
+
+[node name="DrawerRedClosed" type="Sprite2D" parent="Drawer2"]
+z_index = 2
+position = Vector2(-508.04, 1095.95)
+scale = Vector2(3.27768, 3.36181)
+texture = ExtResource("22_5mlvw")
+
+[node name="Cabinet2" type="Sprite2D" parent="."]
+position = Vector2(609, 307)
+texture = ExtResource("20_ohgsq")
+
+[node name="Drawer3Closed" type="Sprite2D" parent="."]
+position = Vector2(609, 150)
+texture = ExtResource("25_l0dva")
 
 [node name="Drawer3" type="Sprite2D" parent="."]
 visible = false
 z_index = 1
 position = Vector2(626, 203)
 scale = Vector2(0.300187, 0.288041)
-texture = ExtResource("4_yyk2a")
 
 [node name="Card1" type="Sprite2D" parent="Drawer3"]
 visible = false
-position = Vector2(-93.7347, -240.777)
+z_index = 1
+position = Vector2(-289.819, -145.813)
 scale = Vector2(0.368624, 0.341037)
-texture = ExtResource("5_sr8g6")
+texture = ExtResource("24_it0hx")
 
 [node name="Card2" type="Sprite2D" parent="Drawer3"]
 visible = false
-position = Vector2(217.598, -284.863)
+z_index = 1
+position = Vector2(-73.2876, -52.0759)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("6_p7iul")
 
 [node name="Card3" type="Sprite2D" parent="Drawer3"]
 visible = false
-position = Vector2(177.426, -111.91)
+z_index = 1
+position = Vector2(-396.42, -48.6042)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("7_td2ew")
 
 [node name="Card4" type="Sprite2D" parent="Drawer3"]
 visible = false
-position = Vector2(130.559, 61.042)
+z_index = 1
+position = Vector2(-209.869, 55.5477)
 scale = Vector2(0.368624, 0.341037)
-texture = ExtResource("8_ylenm")
+texture = ExtResource("26_ohh50")
 
 [node name="Card5" type="Sprite2D" parent="Drawer3"]
 visible = false
-position = Vector2(-150.645, -94.9543)
+z_index = 1
+position = Vector2(-539.664, 45.1325)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("9_0df5h")
+
+[node name="DrawerOpenedEmpty" type="Sprite2D" parent="Drawer3"]
+position = Vector2(-259.838, -69.4345)
+scale = Vector2(3.33126, 3.47173)
+texture = ExtResource("16_j8d85")
+
+[node name="DrawerBlueClosed" type="Sprite2D" parent="Drawer3"]
+z_index = 2
+position = Vector2(-509.682, 13.8869)
+scale = Vector2(3.33126, 3.47173)
+texture = ExtResource("25_l0dva")
+
+[node name="Drawer4Closed" type="Sprite2D" parent="."]
+position = Vector2(609, 307)
+texture = ExtResource("27_ax4un")
 
 [node name="Drawer4" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(626, 390)
 scale = Vector2(0.299976, 0.295065)
-texture = ExtResource("4_yyk2a")
 
 [node name="Card1" type="Sprite2D" parent="Drawer4"]
 visible = false
-position = Vector2(-93.7347, -240.777)
+z_index = 1
+position = Vector2(-256.687, -145.731)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("5_sr8g6")
 
 [node name="Card2" type="Sprite2D" parent="Drawer4"]
 visible = false
-position = Vector2(217.598, -284.863)
+z_index = 1
+position = Vector2(-326.693, -57.6144)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("6_p7iul")
 
 [node name="Card3" type="Sprite2D" parent="Drawer4"]
 visible = false
-position = Vector2(177.426, -111.91)
+z_index = 1
+position = Vector2(10.0009, -193.178)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("7_td2ew")
 
 [node name="Card4" type="Sprite2D" parent="Drawer4"]
 visible = false
-position = Vector2(130.559, 61.042)
+z_index = 1
+position = Vector2(-86.6736, -142.342)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("8_ylenm")
 
 [node name="Card5" type="Sprite2D" parent="Drawer4"]
 visible = false
-position = Vector2(-150.645, -94.9543)
+z_index = 1
+position = Vector2(-413.366, 3.38911)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("9_0df5h")
+
+[node name="DrawerOpenedEmpty" type="Sprite2D" parent="Drawer4"]
+position = Vector2(-250.02, -179.621)
+scale = Vector2(3.3336, 3.38908)
+texture = ExtResource("16_j8d85")
+
+[node name="DrawerOrangeClosed" type="Sprite2D" parent="Drawer4"]
+z_index = 2
+position = Vector2(-510.041, -61.0034)
+scale = Vector2(3.3336, 3.38908)
+texture = ExtResource("27_ax4un")
+
+[node name="Cabinet3" type="Sprite2D" parent="."]
+position = Vector2(949, 304)
+texture = ExtResource("20_ohgsq")
+
+[node name="Drawer5Closed" type="Sprite2D" parent="."]
+position = Vector2(950, 147)
+texture = ExtResource("28_it0hx")
 
 [node name="Drawer5" type="Sprite2D" parent="."]
 visible = false
 z_index = 1
 position = Vector2(961, 204)
 scale = Vector2(0.305034, 0.277631)
-texture = ExtResource("4_yyk2a")
 
 [node name="Card1" type="Sprite2D" parent="Drawer5"]
 visible = false
-position = Vector2(-93.7347, -240.777)
+z_index = 1
+position = Vector2(-409.79, -10.8057)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("5_sr8g6")
 
 [node name="Card2" type="Sprite2D" parent="Drawer5"]
 visible = false
-position = Vector2(217.598, -284.863)
+z_index = 1
+position = Vector2(-72.123, -50.4267)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("6_p7iul")
 
 [node name="Card3" type="Sprite2D" parent="Drawer5"]
 visible = false
-position = Vector2(177.426, -111.91)
+z_index = 1
+position = Vector2(-147.525, 10.8057)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("7_td2ew")
 
 [node name="Card4" type="Sprite2D" parent="Drawer5"]
 visible = false
-position = Vector2(130.559, 61.042)
+z_index = 1
+position = Vector2(-229.483, 72.038)
 scale = Vector2(0.368624, 0.341037)
-texture = ExtResource("8_ylenm")
+texture = ExtResource("24_it0hx")
 
 [node name="Card5" type="Sprite2D" parent="Drawer5"]
 visible = false
-position = Vector2(-150.645, -94.9543)
+z_index = 1
+position = Vector2(-495.027, 54.0286)
 scale = Vector2(0.368624, 0.341037)
-texture = ExtResource("9_0df5h")
+texture = ExtResource("23_1bg26")
+
+[node name="DrawerOpenedEmpty" type="Sprite2D" parent="Drawer5"]
+position = Vector2(-222.926, -100.853)
+scale = Vector2(3.27832, 3.6019)
+texture = ExtResource("16_j8d85")
+
+[node name="DrawerYellowClosed" type="Sprite2D" parent="Drawer5"]
+z_index = 2
+position = Vector2(-485.192, 43.2229)
+scale = Vector2(3.27832, 3.6019)
+texture = ExtResource("28_it0hx")
+
+[node name="Drawer6Closed" type="Sprite2D" parent="."]
+position = Vector2(949, 303)
+scale = Vector2(1, 1)
+texture = ExtResource("29_l0dva")
 
 [node name="Drawer6" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(964, 377)
 scale = Vector2(0.297808, 0.285414)
-texture = ExtResource("4_yyk2a")
 
 [node name="Card1" type="Sprite2D" parent="Drawer6"]
 visible = false
-position = Vector2(-93.7347, -240.777)
+z_index = 1
+position = Vector2(-312.282, -161.169)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("5_sr8g6")
 
 [node name="Card2" type="Sprite2D" parent="Drawer6"]
 visible = false
-position = Vector2(217.598, -284.863)
+z_index = 1
+position = Vector2(-20.1474, -203.214)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("6_p7iul")
 
 [node name="Card3" type="Sprite2D" parent="Drawer6"]
 visible = false
-position = Vector2(177.426, -111.91)
+z_index = 1
+position = Vector2(-114.168, -94.5995)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("7_td2ew")
 
 [node name="Card4" type="Sprite2D" parent="Drawer6"]
 visible = false
-position = Vector2(130.559, 61.042)
+z_index = 1
+position = Vector2(-379.439, -77.081)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("8_ylenm")
 
 [node name="Card5" type="Sprite2D" parent="Drawer6"]
 visible = false
-position = Vector2(-150.645, -94.9543)
+z_index = 1
+position = Vector2(-221.619, 28.0295)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("9_0df5h")
 
-[node name="Cabinet" type="Sprite2D" parent="."]
-position = Vector2(279, 306)
-texture = ExtResource("20_ohgsq")
+[node name="DrawerOpenedEmpty" type="Sprite2D" parent="Drawer6"]
+position = Vector2(-245.124, -157.666)
+scale = Vector2(3.35787, 3.50368)
+texture = ExtResource("16_j8d85")
 
-[node name="Cabinet2" type="Sprite2D" parent="."]
-position = Vector2(609, 307)
-texture = ExtResource("20_ohgsq")
-
-[node name="Cabinet3" type="Sprite2D" parent="."]
-position = Vector2(949, 304)
-texture = ExtResource("20_ohgsq")
-
-[node name="DrawerPurpleClosed" type="Sprite2D" parent="."]
-position = Vector2(279, 306)
-texture = ExtResource("21_j8d85")
+[node name="DrawerGreenClosed" type="Sprite2D" parent="Drawer6"]
+z_index = 2
+position = Vector2(-500.322, -42.0442)
+scale = Vector2(3.35787, 3.50368)
+texture = ExtResource("29_l0dva")
 
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("22_j8d85")
