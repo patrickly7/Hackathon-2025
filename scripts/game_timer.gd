@@ -35,6 +35,9 @@ func _on_timer_timeout():
 	print("Time Remaining: %s" % str(timer))
 	rotateTimerHand()
 	
+	if (timer == 3):
+		$Final3SecondsSFX.play()
+	
 	if (timer <= 0):
 		$Timer.stop()
 		game_timer_end.emit(timer)
