@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1tk6mi6bm6da"]
+[gd_scene load_steps=7 format=3 uid="uid://d1tk6mi6bm6da"]
 
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="1_2x1cg"]
 [ext_resource type="Script" uid="uid://dgpler4x3ap5t" path="res://scripts/shipping.gd" id="1_bgbwq"]
+[ext_resource type="Texture2D" uid="uid://dbb8cek1jr8u7" path="res://assets/art/Card_Blue.png" id="3_3jmdp"]
+[ext_resource type="Texture2D" uid="uid://5iu52a761pr4" path="res://assets/art/Card_Red.png" id="4_jsjnl"]
+[ext_resource type="Texture2D" uid="uid://bv4i4odikm1ue" path="res://assets/art/Card_Yellow.png" id="5_kn76w"]
+[ext_resource type="Texture2D" uid="uid://citi1rxcqtdgq" path="res://assets/art/Card_White.png" id="6_mk7gs"]
 
 [node name="Shipping" type="Node2D"]
 script = ExtResource("1_bgbwq")
@@ -12,11 +16,92 @@ offset_bottom = 650.0
 
 [node name="GameTimer" parent="." instance=ExtResource("1_2x1cg")]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 540.0
-offset_top = 276.0
-offset_right = 607.0
-offset_bottom = 299.0
-text = "Shipping"
+[node name="SmallPackageButton" type="TextureButton" parent="."]
+offset_left = 130.0
+offset_top = 226.0
+offset_right = 301.0
+offset_bottom = 369.0
+texture_normal = ExtResource("3_3jmdp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LargePackageButton" type="TextureButton" parent="."]
+offset_left = 316.0
+offset_top = 104.0
+offset_right = 491.0
+offset_bottom = 377.0
+texture_normal = ExtResource("4_jsjnl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MediumPackageButton" type="TextureButton" parent="."]
+offset_left = 242.0
+offset_top = 309.0
+offset_right = 415.0
+offset_bottom = 500.0
+texture_normal = ExtResource("5_kn76w")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TruckArrangement" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 720.0
+offset_top = 115.0
+offset_right = 720.0
+offset_bottom = 115.0
+
+[node name="TruckSpot1" type="TextureButton" parent="TruckArrangement"]
+layout_mode = 0
+offset_left = -31.0
+offset_top = 248.0
+offset_right = 142.0
+offset_bottom = 439.0
+texture_normal = ExtResource("6_mk7gs")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TruckSpot2" type="TextureButton" parent="TruckArrangement"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 292.0
+offset_right = 309.0
+offset_bottom = 435.0
+texture_normal = ExtResource("6_mk7gs")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TruckSpot3" type="TextureButton" parent="TruckArrangement"]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -25.0
+offset_right = 143.0
+offset_bottom = 248.0
+texture_normal = ExtResource("6_mk7gs")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TruckSpot4" type="TextureButton" parent="TruckArrangement"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 141.0
+offset_right = 314.0
+offset_bottom = 284.0
+texture_normal = ExtResource("6_mk7gs")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TruckSpot5" type="TextureButton" parent="TruckArrangement"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = -21.0
+offset_right = 315.0
+offset_bottom = 139.0
+texture_normal = ExtResource("6_mk7gs")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
+[connection signal="pressed" from="SmallPackageButton" to="." method="_on_small_package_button_pressed"]
+[connection signal="pressed" from="LargePackageButton" to="." method="_on_large_package_button_pressed"]
+[connection signal="pressed" from="MediumPackageButton" to="." method="_on_medium_package_button_pressed"]

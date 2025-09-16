@@ -78,7 +78,16 @@ offset_right = 1054.0
 offset_bottom = 637.0
 text = "packing"
 
+[node name="shippingbutton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 604.0
+offset_right = 923.0
+offset_bottom = 635.0
+text = "shipping"
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="PracticeButton" to="." method="_on_practice_button_pressed"]
 [connection signal="pressed" from="packingbutton" to="." method="_on_packingbutton_pressed"]
+[connection signal="pressed" from="shippingbutton" to="." method="_on_shippingbutton_pressed"]
