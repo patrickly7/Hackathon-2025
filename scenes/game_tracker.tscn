@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckwf7fhlqg36c"]
+[gd_scene load_steps=9 format=3 uid="uid://ckwf7fhlqg36c"]
 
 [ext_resource type="Script" uid="uid://px2iqj748ysi" path="res://scripts/game_tracker.gd" id="1_5pqqo"]
 [ext_resource type="Texture2D" uid="uid://c3ssbvae82jk2" path="res://assets/art/GameTrackerBackground.png" id="2_h0i2o"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cwwschqjxu33v" path="res://assets/art/GameTracker_Station_Bubble.png" id="4_3vjfg"]
 [ext_resource type="Texture2D" uid="uid://b6k61tluj0y52" path="res://assets/art/GameTracker_Mini-Bubble.png" id="5_2nb3p"]
 [ext_resource type="Texture2D" uid="uid://d1iyr5h1mhct1" path="res://assets/art/Speech_Bubble.png" id="6_velld"]
+[ext_resource type="AudioStream" uid="uid://txvtl2fpddh2" path="res://assets/music/Game_Tracker.mp3" id="7_3vjfg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0b0py"]
 texture = ExtResource("2_h0i2o")
@@ -129,3 +130,7 @@ theme_override_fonts/font = ExtResource("3_velld")
 theme_override_font_sizes/font_size = 48
 text = "Press Enter/space to continue"
 horizontal_alignment = 1
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_3vjfg")
+parameters/looping = true

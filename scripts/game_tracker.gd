@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	$BGMusic.play()
 	$StationTitle.text = Global.CURRENT_GAME
 	$DescriptionText.text = Global.DESCRIPTION_DICT[Global.CURRENT_GAME]
 	
