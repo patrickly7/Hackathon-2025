@@ -5,6 +5,8 @@ const NUM_TASKS = 5
 const ALLOWED_COLORS = ["BLACK", "WHITE", "RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "PURPLE"]
 
 var currentTask = 0
+var tasks = []
+var mistakes = 0
 
 func _ready():
 	$GameTimer.startTimer(GAME_TIME)
@@ -12,6 +14,7 @@ func _ready():
 	# Prepare List of Cards to Pick
 	for i in range(NUM_TASKS):
 		var cardColor = ALLOWED_COLORS.pick_random()
+		tasks.append(cardColor)
 		
 		var label = Label.new()
 		label.text = cardColor
@@ -20,38 +23,78 @@ func _ready():
 		
 		$CardTasks.add_child(label)
 
+func moveToNextTask():
+	currentTask += 1
+	if (currentTask == NUM_TASKS):
+		$GameTimer.stopTimer()
+
 func _on_game_timer_game_timer_end(secondsLeft):
+	Global.PICKING_TIME_TAKEN = GAME_TIME - secondsLeft
+	Global.PICKING_MISTAKES = mistakes
+	
+	if (secondsLeft > 0 && mistakes == 0):
+		Global.PICKING_MEDAL = "Gold"
+	elif (secondsLeft > 0 && mistakes <= 3):
+		Global.PICKING_MEDAL = "Silver"
+	else:
+		Global.PICKING_MEDAL = "Bronze"
+	
 	Global.NEXT_GAME_SCENE = "res://scenes/packing.tscn"
 	get_tree().change_scene_to_file("res://scenes/result_screen.tscn")
 
 func _on_red_cabinet_pressed():
-	print("red")
-	pass # Replace with function body.
+	if (tasks[currentTask] == "RED"):
+		print("RED")
+		moveToNextTask()
+	else:
+		mistakes += 1
 
 func _on_blue_cabinet_pressed():
-	print("blue")
-	pass # Replace with function body.
+	if (tasks[currentTask] == "BLUE"):
+		print("BLUE")
+		moveToNextTask()
+	else:
+		mistakes += 1
+		
 
 func _on_green_cabinet_pressed():
-	print("green")
-	pass # Replace with function body.
+	if (tasks[currentTask] == "GREEN"):
+		print("GREEN")
+		moveToNextTask()
+	else:
+		mistakes += 1
 
 func _on_yellow_cabinet_pressed():
-	print("yellow")
-	pass # Replace with function body.
+	if (tasks[currentTask] == "YELLOW"):
+		print("YELLOW")
+		moveToNextTask()
+	else:
+		mistakes += 1
 
 func _on_orange_cabinet_pressed():
-	print("orange")
-	pass # Replace with function body.
+	if (tasks[currentTask] == "ORANGE"):
+		print("ORANGE")
+		moveToNextTask()
+	else:
+		mistakes += 1
 
 func _on_purple_cabinet_pressed():
-	print("purple")
-	pass # Replace with function body.
+	if (tasks[currentTask] == "PURPLE"):
+		print("PURPLE")
+		moveToNextTask()
+	else:
+		mistakes += 1
 
 func _on_black_cabinet_pressed():
-	print("black")
-	pass # Replace with function body.
+	if (tasks[currentTask] == "BLACK"):
+		print("BLACK")
+		moveToNextTask()
+	else:
+		mistakes += 1
 
 func _on_white_cabinet_pressed():
-	print("white")
-	pass # Replace with function body.
+	if (tasks[currentTask] == "WHITE"):
+		print("WHITE")
+		moveToNextTask()
+	else:
+		mistakes += 1
