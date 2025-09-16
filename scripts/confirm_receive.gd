@@ -14,17 +14,16 @@ var answers = []
 var labels = []
 var currentTask = 0
 var incorrectGuesses = 0
+var babaIsWin = false
 
 func _ready():
 	init_game()
 	$GameTimer.startTimer(GAME_TIME)
-	
-func _on_game_timer_game_timer_end():
-	Global.NEXT_GAME_SCENE = "res://scenes/inventory.tscn"
-	get_tree().change_scene_to_file("res://scenes/result_screen.tscn")
 
 
 func init_game():
+	Global.CURRENT_GAME = "Confirm Receive"
+	
 	for i in range(NUM_TASKS):
 		var cardIndex = choose_card()
 		var card = ALLOWED_COLORS[cardIndex]
@@ -60,8 +59,8 @@ func choose_card_except(cardIndex: int):
 func set_next_card():
 	if currentTask + 1 == NUM_TASKS:
 		confirm_label_text(currentTask)
-		print(incorrectGuesses)
-		_on_game_timer_game_timer_end()
+		babaIsWin = true
+		$GameTimer.stopTimer()
 	else:
 		confirm_label_text(currentTask)
 		currentTask = currentTask + 1
@@ -84,6 +83,13 @@ func create_label(text: String):
 func confirm_label_text(task: int):
 	var label = labels[task] as Label
 	label.text = "CONFIRMED!"
+	
+func calculate_medal():
+	if babaIsWin and incorrectGuesses == 0:
+		return "Gold"
+	if babaIsWin and incorrectGuesses > 0:
+		return "Silver"
+	return ""
 
 
 func _on_exceptions_box_pressed():
@@ -103,3 +109,11 @@ func _on_accepted_box_pressed():
 	else:
 		print("Wrong!") # play rong sound
 		incorrectGuesses = incorrectGuesses + 1
+
+
+func _on_game_timer_game_timer_end(secondsLeft: int):
+	Global.CONFIRM_RECEIVE_TIME_TAKEN = secondsLeft
+	Global.CONFIRM_RECEIVE_MISTAKES = incorrectGuesses
+	Global.CONFIRM_RECEIVE_MEDAL = calculate_medal()
+	Global.NEXT_GAME_SCENE = "res://scenes/inventory.tscn"
+	get_tree().change_scene_to_file("res://scenes/result_screen.tscn")

@@ -32,7 +32,6 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="ExceptionsLabel" type="Label" parent="ExceptionsBox"]
-layout_mode = 0
 offset_left = 155.0
 offset_top = 247.0
 offset_right = 342.0
@@ -53,7 +52,6 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="AcceptedLabel" type="Label" parent="AcceptedBox"]
-layout_mode = 0
 offset_left = 36.0
 offset_top = 250.0
 offset_right = 223.0
