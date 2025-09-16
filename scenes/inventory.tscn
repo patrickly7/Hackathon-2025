@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://qpmegosr3tca"]
+[gd_scene load_steps=28 format=3 uid="uid://qpmegosr3tca"]
 
 [ext_resource type="Script" uid="uid://cmokhxe51i514" path="res://scripts/inventory.gd" id="1_hj2ta"]
 [ext_resource type="Texture2D" uid="uid://wrnhcpfl17qj" path="res://assets/art/Background_Inventory.png" id="2_53g1v"]
@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://dgwve33dp1fvv" path="res://assets/art/Card_Purple.png" id="8_ylenm"]
 [ext_resource type="Texture2D" uid="uid://5iu52a761pr4" path="res://assets/art/Card_Red.png" id="9_0df5h"]
 [ext_resource type="Texture2D" uid="uid://c8wju5lvsg5i2" path="res://assets/art/Inventory_Up_Arrow_Hover.png" id="9_w24ly"]
+[ext_resource type="Texture2D" uid="uid://bihyblpyfa2se" path="res://assets/art/Enter_Button.png" id="11_k86sa"]
+[ext_resource type="Texture2D" uid="uid://b20ndpbnfsjdu" path="res://assets/art/Enter_Button_Pressed.png" id="12_tla8l"]
+[ext_resource type="Texture2D" uid="uid://do1my1od637y7" path="res://assets/art/Enter_Button_Hover.png" id="13_w24ly"]
 
 [sub_resource type="Theme" id="Theme_td2ew"]
 default_font = ExtResource("4_p7iul")
@@ -79,14 +82,20 @@ alignment = 1
 [node name="EnterButton" type="TextureButton" parent="."]
 offset_left = 455.0
 offset_top = 593.0
-offset_right = 690.0
-offset_bottom = 648.0
+offset_right = 681.0
+offset_bottom = 645.0
+texture_normal = ExtResource("11_k86sa")
+texture_pressed = ExtResource("12_tla8l")
+texture_hover = ExtResource("13_w24ly")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="EnterLabel" type="Label" parent="EnterButton"]
 layout_mode = 0
 offset_right = 229.0
 offset_bottom = 53.0
 theme = SubResource("Theme_p7iul")
+theme_override_colors/font_color = Color(0.388235, 0.607843, 1, 1)
 text = "Enter"
 horizontal_alignment = 1
 vertical_alignment = 1
