@@ -62,6 +62,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Drawer1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(297, 402)
 scale = Vector2(0.298715, 0.294879)
 texture = ExtResource("4_yyk2a")
@@ -278,5 +279,6 @@ position = Vector2(-150.645, -94.9543)
 scale = Vector2(0.368624, 0.341037)
 texture = ExtResource("9_0df5h")
 
+[connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
 [connection signal="value_changed" from="CardQuantityInput" to="." method="_on_card_quantity_input_value_changed"]
 [connection signal="pressed" from="EnterButton" to="." method="_on_enter_button_pressed"]

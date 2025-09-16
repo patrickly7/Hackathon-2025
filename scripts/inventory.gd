@@ -25,13 +25,6 @@ func checkCardQuantityInput():
 	else:
 		mistakes +=1
 
-func _on_game_timer_game_timer_end():
-	Global.INVENTORY_TIME_TAKEN = GAME_TIME - $GameTimer.timer
-	Global.INVENTORY_MISTAKES = mistakes
-	calculateMedal()
-	Global.NEXT_GAME_SCENE = "res://scenes/final_results_screen.tscn"
-	get_tree().change_scene_to_file("res://scenes/result_screen.tscn")
-
 func calculateMedal():
 	if mistakes<2 and shelf >=6:
 		Global.INVENTORY_MEDAL = "Gold"
@@ -80,7 +73,7 @@ func openNextShelf():
 				$Drawer6.get_child(i).show()
 		7:
 			$Drawer6.hide()
-			$GameTimer.game_timer_end.emit()
+			$GameTimer.stopTimer()
 			
 			
 	
@@ -91,3 +84,11 @@ func _on_card_quantity_input_value_changed(value: float) -> void:
 		$CardQuantityInput.value = $CardQuantityInput.min_value+1
 	elif value == $CardQuantityInput.min_value:
 		$CardQuantityInput.value = $CardQuantityInput.max_value-1
+
+
+func _on_game_timer_game_timer_end(secondsLeft: int) -> void:
+	Global.INVENTORY_TIME_TAKEN = GAME_TIME - secondsLeft
+	Global.INVENTORY_MISTAKES = mistakes
+	calculateMedal()
+	Global.NEXT_GAME_SCENE = "res://scenes/final_results_screen.tscn"
+	get_tree().change_scene_to_file("res://scenes/result_screen.tscn")

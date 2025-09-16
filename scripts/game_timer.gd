@@ -16,7 +16,7 @@ func startTimer(seconds: int):
 	$Timer.start()
 	rotateTimerHand()
 
-func stopTimer(seconds: int):
+func stopTimer():
 	$Timer.stop()
 	print("Timer Stopped at %s" % str(timer))
 	game_timer_end.emit(timer)
