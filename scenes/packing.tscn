@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cep8vn1ea248k"]
+
+[ext_resource type="Script" uid="uid://mi8hwpw46uhb" path="res://scripts/packing.gd" id="1_4gyy1"]
+[ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="2_0gomr"]
+
+[node name="Packing" type="Node2D"]
+script = ExtResource("1_4gyy1")
+
+[node name="Background" type="Panel" parent="."]
+offset_right = 1153.0
+offset_bottom = 652.0
+
+[node name="GameTimer" parent="." instance=ExtResource("2_0gomr")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 603.0
+offset_top = 251.0
+offset_right = 663.0
+offset_bottom = 274.0
+text = "Packing"
+
+[connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
