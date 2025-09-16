@@ -112,7 +112,7 @@ func _on_accepted_box_pressed():
 
 
 func _on_game_timer_game_timer_end(secondsLeft: int):
-	Global.CONFIRM_RECEIVE_TIME_TAKEN = secondsLeft
+	Global.CONFIRM_RECEIVE_TIME_TAKEN = GAME_TIME - secondsLeft
 	Global.CONFIRM_RECEIVE_MISTAKES = incorrectGuesses
 	Global.CONFIRM_RECEIVE_MEDAL = calculate_medal()
 	Global.NEXT_GAME_SCENE = "res://scenes/inventory.tscn"
