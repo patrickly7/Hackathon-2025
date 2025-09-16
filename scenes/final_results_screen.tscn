@@ -53,10 +53,10 @@ metadata/_edit_lock_ = true
 [node name="PlayAgainButton" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 148.0
-offset_top = 522.0
-offset_right = 336.0
-offset_bottom = 589.0
+offset_left = 183.0
+offset_top = 521.0
+offset_right = 371.0
+offset_bottom = 588.0
 theme_override_fonts/font = ExtResource("3_l2pof")
 theme_override_font_sizes/font_size = 36
 text = "Play Again"
@@ -64,10 +64,10 @@ text = "Play Again"
 [node name="HomeButton" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 374.0
-offset_top = 523.0
-offset_right = 564.0
-offset_bottom = 589.0
+offset_left = 428.0
+offset_top = 521.0
+offset_right = 618.0
+offset_bottom = 587.0
 theme_override_fonts/font = ExtResource("3_l2pof")
 theme_override_font_sizes/font_size = 36
 text = "Home"
@@ -75,13 +75,14 @@ text = "Home"
 [node name="TotalTimeText" type="Label" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 89.0
-offset_top = 434.0
-offset_right = 627.0
-offset_bottom = 500.0
+offset_left = 6.0
+offset_top = 438.0
+offset_right = 783.0
+offset_bottom = 504.0
 theme_override_fonts/font = ExtResource("3_l2pof")
 theme_override_font_sizes/font_size = 64
 text = "Total Time: 52 seconds"
+horizontal_alignment = 1
 
 [node name="DockReceiveMedal" type="Sprite2D" parent="."]
 visible = false
