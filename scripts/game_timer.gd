@@ -4,6 +4,8 @@ var totalTime = 0
 var currentRotation = 0
 var degreesToAdd = 0
 
+var lockRotation = false
+
 var timer = 0
 signal game_timer_end(secondsLeft: int)
 
@@ -22,6 +24,9 @@ func stopTimer():
 	game_timer_end.emit(timer)
 
 func rotateTimerHand():
+	if (lockRotation):
+		return
+	
 	if (currentRotation == 360):
 		currentRotation = 0
 	
@@ -33,11 +38,13 @@ func rotateTimerHand():
 func _on_timer_timeout():
 	timer -= 1
 	print("Time Remaining: %s" % str(timer))
-	rotateTimerHand()
 	
 	if (timer == 3):
 		$Final3SecondsSFX.play()
 	
 	if (timer <= 0):
 		$Timer.stop()
+		lockRotation = true
 		game_timer_end.emit(timer)
+	
+	rotateTimerHand()

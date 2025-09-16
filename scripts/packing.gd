@@ -82,6 +82,11 @@ func updateKeys():
 		$GameTimer.stopTimer()
 
 func _on_game_timer_game_timer_end(secondsLeft):
+	$FinishText.show()
+	$FinishSFX.play()
+	await get_tree().create_timer(1).timeout
+	$FinishText.hide()
+	
 	Global.PACKING_TIME_TAKEN = GAME_TIME - secondsLeft
 	Global.PACKING_MISTAKES = mistakes
 	
