@@ -20,6 +20,7 @@ func _ready():
 	
 	currentTruckArrangement = truckArrangements.pick_random()
 	$GameTimer.startTimer(GAME_TIME)
+	$BGMusic.play()
 	setActiveTruckSpot()
 	
 	await get_tree().create_timer(0.25).timeout

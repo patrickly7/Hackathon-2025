@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1tk6mi6bm6da"]
+[gd_scene load_steps=11 format=3 uid="uid://ceacpxjb7yobl"]
 
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="1_2x1cg"]
 [ext_resource type="Script" uid="uid://dgpler4x3ap5t" path="res://scripts/shipping.gd" id="1_bgbwq"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="7_jsjnl"]
 [ext_resource type="AudioStream" uid="uid://ccw7y5iw04u7j" path="res://assets/music/sfx/Miku_Finish.mp3" id="7_kn76w"]
 [ext_resource type="AudioStream" uid="uid://dlb1qdy6l88e8" path="res://assets/music/sfx/Miku_Ready_Start.mp3" id="7_mk7gs"]
+[ext_resource type="AudioStream" uid="uid://bhtmtqq5jhho2" path="res://assets/music/Shipping.mp3" id="10_ggsqc"]
 
 [node name="Shipping" type="Node2D"]
 script = ExtResource("1_bgbwq")
@@ -144,6 +145,9 @@ theme_override_font_sizes/font_size = 96
 text = "FINISH!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_ggsqc")
 
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
 [connection signal="pressed" from="SmallPackageButton" to="." method="_on_small_package_button_pressed"]
