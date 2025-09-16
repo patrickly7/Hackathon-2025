@@ -31,7 +31,7 @@ func calculateMedal():
 		Global.INVENTORY_MEDAL = "Gold"
 	elif mistakes<5 and shelf >=4:
 		Global.INVENTORY_MEDAL = "Silver"
-	elif mistakes<6 and shelf >=3:
+	else:
 		Global.INVENTORY_MEDAL = "Bronze"
 
 func openNextShelf():

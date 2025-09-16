@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://qpmegosr3tca"]
+[gd_scene load_steps=39 format=3 uid="uid://qpmegosr3tca"]
 
 [ext_resource type="Script" uid="uid://cmokhxe51i514" path="res://scripts/inventory.gd" id="1_hj2ta"]
 [ext_resource type="Texture2D" uid="uid://wrnhcpfl17qj" path="res://assets/art/Background_Inventory.png" id="2_53g1v"]
@@ -21,8 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://dto5hk2jtf6i" path="res://assets/art/Drawer_Opened_Empty.png" id="16_j8d85"]
 [ext_resource type="Texture2D" uid="uid://bis480f7w4fx7" path="res://assets/art/Cabinet.png" id="20_ohgsq"]
 [ext_resource type="Texture2D" uid="uid://dyj70f7sev34t" path="res://assets/art/Drawer_Purple_Closed.png" id="21_j8d85"]
-[ext_resource type="AudioStream" uid="uid://cc3l076x7t2q5" path="res://assets/music/Inventory.mp3" id="22_j8d85"]
 [ext_resource type="Texture2D" uid="uid://d0nwdh3g3gklo" path="res://assets/art/Drawer_Red_Closed.png" id="22_5mlvw"]
+[ext_resource type="AudioStream" uid="uid://cc3l076x7t2q5" path="res://assets/music/Inventory.mp3" id="22_j8d85"]
 [ext_resource type="Texture2D" uid="uid://bv4i4odikm1ue" path="res://assets/art/Card_Yellow.png" id="23_1bg26"]
 [ext_resource type="Texture2D" uid="uid://bka340h4p12t6" path="res://assets/art/Card_Black.png" id="24_it0hx"]
 [ext_resource type="Texture2D" uid="uid://dntxn5m18h2go" path="res://assets/art/Drawer_Blue_Closed.png" id="25_l0dva"]
@@ -404,7 +404,6 @@ texture = ExtResource("28_it0hx")
 
 [node name="Drawer6Closed" type="Sprite2D" parent="."]
 position = Vector2(949, 303)
-scale = Vector2(1, 1)
 texture = ExtResource("29_l0dva")
 
 [node name="Drawer6" type="Sprite2D" parent="."]
