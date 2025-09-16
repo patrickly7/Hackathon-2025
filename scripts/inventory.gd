@@ -7,10 +7,19 @@ var quantity = 0
 var mistakes = 0
 
 func _ready():
+	$StartSFX.play()
+	await get_tree().create_timer(1).timeout
+	
+	$ReadyText.hide()
+	$StartText.show()
+	
 	rng.randomize()
 	openNextShelf()
 	$BGMusic.play()
 	$GameTimer.startTimer(GAME_TIME)
+	
+	await get_tree().create_timer(0.25).timeout
+	$StartText.hide()
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"): # "ui_accept" is the default action for Enter
@@ -100,6 +109,11 @@ func _on_card_quantity_input_value_changed(value: float) -> void:
 
 
 func _on_game_timer_game_timer_end(secondsLeft: int) -> void:
+	$FinishText.show()
+	$FinishSFX.play()
+	await get_tree().create_timer(1).timeout
+	$FinishText.hide()
+	
 	Global.INVENTORY_TIME_TAKEN = GAME_TIME - secondsLeft
 	Global.INVENTORY_MISTAKES = mistakes
 	calculateMedal()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://qpmegosr3tca"]
+[gd_scene load_steps=41 format=3 uid="uid://qpmegosr3tca"]
 
 [ext_resource type="Script" uid="uid://cmokhxe51i514" path="res://scripts/inventory.gd" id="1_hj2ta"]
 [ext_resource type="Texture2D" uid="uid://wrnhcpfl17qj" path="res://assets/art/Background_Inventory.png" id="2_53g1v"]
@@ -30,6 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://d0w84nvkvffwk" path="res://assets/art/Drawer_Orange_Closed.png" id="27_ax4un"]
 [ext_resource type="Texture2D" uid="uid://c4uh0ysi733hm" path="res://assets/art/Drawer_Yellow_Closed.png" id="28_it0hx"]
 [ext_resource type="Texture2D" uid="uid://c65o8w3jexn23" path="res://assets/art/Drawer_Green_Closed.png" id="29_l0dva"]
+[ext_resource type="AudioStream" uid="uid://dlb1qdy6l88e8" path="res://assets/music/sfx/Miku_Ready_Start.mp3" id="31_ax4un"]
+[ext_resource type="AudioStream" uid="uid://ccw7y5iw04u7j" path="res://assets/music/sfx/Miku_Finish.mp3" id="32_dt67b"]
 
 [sub_resource type="Theme" id="Theme_td2ew"]
 default_font = ExtResource("4_p7iul")
@@ -459,6 +461,47 @@ texture = ExtResource("29_l0dva")
 
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("22_j8d85")
+
+[node name="StartSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_ax4un")
+
+[node name="FinishSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("32_dt67b")
+
+[node name="ReadyText" type="Label" parent="."]
+offset_left = -1.0
+offset_top = 259.0
+offset_right = 1152.0
+offset_bottom = 389.0
+theme_override_fonts/font = ExtResource("4_p7iul")
+theme_override_font_sizes/font_size = 96
+text = "ready..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartText" type="Label" parent="."]
+visible = false
+offset_left = -1.0
+offset_top = 259.0
+offset_right = 1152.0
+offset_bottom = 389.0
+theme_override_fonts/font = ExtResource("4_p7iul")
+theme_override_font_sizes/font_size = 96
+text = "START!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinishText" type="Label" parent="."]
+visible = false
+offset_left = -1.0
+offset_top = 259.0
+offset_right = 1152.0
+offset_bottom = 389.0
+theme_override_fonts/font = ExtResource("4_p7iul")
+theme_override_font_sizes/font_size = 96
+text = "FINISH!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
 [connection signal="value_changed" from="CardQuantityInput" to="." method="_on_card_quantity_input_value_changed"]

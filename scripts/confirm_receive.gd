@@ -17,10 +17,18 @@ var incorrectGuesses = 0
 var babaIsWin = false
 
 func _ready():
+	$StartSFX.play()
+	await get_tree().create_timer(1).timeout
+	
+	$ReadyText.hide()
+	$StartText.show()
+	
 	init_game()
 	$GameTimer.startTimer(GAME_TIME)
 	$BGMusic.play()
 
+	await get_tree().create_timer(0.25).timeout
+	$StartText.hide()
 
 func init_game():
 	Global.CURRENT_GAME = "Confirm Receive"
@@ -113,6 +121,11 @@ func _on_accepted_box_pressed():
 
 
 func _on_game_timer_game_timer_end(secondsLeft: int):
+	$FinishText.show()
+	$FinishSFX.play()
+	await get_tree().create_timer(1).timeout
+	$FinishText.hide()
+	
 	Global.CONFIRM_RECEIVE_TIME_TAKEN = GAME_TIME - secondsLeft
 	Global.CONFIRM_RECEIVE_MISTAKES = incorrectGuesses
 	Global.CONFIRM_RECEIVE_MEDAL = calculate_medal()

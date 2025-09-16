@@ -12,11 +12,25 @@ var currentTruckArrangement = []
 var mistakes = 0
 
 func _ready():
+	$StartSFX.play()
+	await get_tree().create_timer(1).timeout
+	
+	$ReadyText.hide()
+	$StartText.show()
+	
 	currentTruckArrangement = truckArrangements.pick_random()
 	$GameTimer.startTimer(GAME_TIME)
 	setActiveTruckSpot()
 	
+	await get_tree().create_timer(0.25).timeout
+	$StartText.hide()
+	
 func _on_game_timer_game_timer_end(secondsLeft):
+	$FinishText.show()
+	$FinishSFX.play()
+	await get_tree().create_timer(1).timeout
+	$FinishText.hide()
+	
 	Global.SHIPPING_TIME_TAKEN = GAME_TIME - secondsLeft
 	Global.SHIPPING_MISTAKES = mistakes
 	

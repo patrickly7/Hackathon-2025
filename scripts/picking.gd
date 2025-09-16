@@ -9,6 +9,12 @@ var tasks = []
 var mistakes = 0
 
 func _ready():
+	$StartSFX.play()
+	await get_tree().create_timer(1).timeout
+	
+	$ReadyText.hide()
+	$StartText.show()
+	
 	$GameTimer.startTimer(GAME_TIME)
 	$BGMusic.play()
 	
@@ -23,6 +29,9 @@ func _ready():
 		label.add_theme_font_size_override("font_size", 45)
 		
 		$CardTasks.add_child(label)
+		
+	await get_tree().create_timer(0.25).timeout
+	$StartText.hide()
 
 func moveToNextTask():
 	currentTask += 1
@@ -30,6 +39,11 @@ func moveToNextTask():
 		$GameTimer.stopTimer()
 
 func _on_game_timer_game_timer_end(secondsLeft):
+	$FinishText.show()
+	$FinishSFX.play()
+	await get_tree().create_timer(1).timeout
+	$FinishText.hide()
+	
 	Global.PICKING_TIME_TAKEN = GAME_TIME - secondsLeft
 	Global.PICKING_MISTAKES = mistakes
 	
