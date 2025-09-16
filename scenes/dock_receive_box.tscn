@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bd1xhx4xg0pbm"]
 
-[ext_resource type="Texture2D" uid="uid://dk8ywswe3meg5" path="res://assets/art/Graybox.png" id="1_or8ry"]
 [ext_resource type="Script" uid="uid://23plkc3uhwc6" path="res://scripts/dock_receive_box.gd" id="1_yyuov"]
+[ext_resource type="Texture2D" uid="uid://biudod7fm08ua" path="res://assets/art/Package.png" id="2_yyuov"]
 
 [node name="DockReceiveBox" type="Area2D"]
 scale = Vector2(1.1, 1.1)
@@ -9,7 +9,7 @@ script = ExtResource("1_yyuov")
 
 [node name="Box" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_or8ry")
+texture = ExtResource("2_yyuov")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.1, 0.1)
