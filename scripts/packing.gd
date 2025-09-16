@@ -19,6 +19,7 @@ func _ready():
 	$StartText.show()
 	
 	$GameTimer.startTimer(GAME_TIME)
+	$BGMusic.play()
 	
 	for i in range(BOXES_TO_PACK):
 		# Get a set of three keys to press for each box
