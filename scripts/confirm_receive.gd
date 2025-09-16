@@ -95,20 +95,20 @@ func calculate_medal():
 
 func _on_exceptions_box_pressed():
 	if answers[currentTask] == false:
-		print("Correct!") # play correct sound
+		$Correct.play()
 		set_next_card()
 		
 	else:
-		print("Wrong!") # play rong sound
+		$Rong.play()
 		incorrectGuesses = incorrectGuesses + 1
 
 
 func _on_accepted_box_pressed():
 	if answers[currentTask] == true:
-		print("Correct!") # play correct sound
+		$Correct.play()
 		set_next_card()
 	else:
-		print("Wrong!") # play rong sound
+		$Rong.play()
 		incorrectGuesses = incorrectGuesses + 1
 
 
