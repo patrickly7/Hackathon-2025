@@ -12,6 +12,12 @@ var currentKeySetIndex = 0
 var mistakes = 0
 
 func _ready():
+	$StartSFX.play()
+	await get_tree().create_timer(1).timeout
+	
+	$ReadyText.hide()
+	$StartText.show()
+	
 	$GameTimer.startTimer(GAME_TIME)
 	
 	for i in range(BOXES_TO_PACK):
@@ -26,6 +32,9 @@ func _ready():
 		
 	print(keySets)
 	setUpKeySetVisuals()
+	
+	await get_tree().create_timer(0.25).timeout
+	$StartText.hide()
 
 func _input(event):
 	if (event.is_action_pressed("move_left")):
