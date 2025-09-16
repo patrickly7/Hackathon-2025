@@ -10,6 +10,7 @@ var mistakes = 0
 
 func _ready():
 	$GameTimer.startTimer(GAME_TIME)
+	$BGMusic.play()
 	
 	# Prepare List of Cards to Pick
 	for i in range(NUM_TASKS):

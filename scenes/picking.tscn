@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://clelshseuqewk"]
+[gd_scene load_steps=12 format=3 uid="uid://cgsdin784fyvh"]
 
 [ext_resource type="Script" uid="uid://de38jmx2a1k7w" path="res://scripts/picking.gd" id="1_hrbhj"]
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="1_vttta"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dgwve33dp1fvv" path="res://assets/art/Card_Purple.png" id="8_v1iid"]
 [ext_resource type="Texture2D" uid="uid://bka340h4p12t6" path="res://assets/art/Card_Black.png" id="9_t101e"]
 [ext_resource type="Texture2D" uid="uid://citi1rxcqtdgq" path="res://assets/art/Card_White.png" id="10_rdfp6"]
+[ext_resource type="AudioStream" uid="uid://6n4bblcq0lhb" path="res://assets/music/Picking.mp3" id="11_4s025"]
 
 [node name="Picking" type="Node2D"]
 script = ExtResource("1_hrbhj")
@@ -97,6 +98,9 @@ offset_left = 194.0
 offset_top = 36.0
 offset_right = 471.0
 offset_bottom = 312.0
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_4s025")
 
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
 [connection signal="pressed" from="RedCabinet" to="." method="_on_red_cabinet_pressed"]
