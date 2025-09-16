@@ -1,5 +1,8 @@
 extends Node
 
+var IS_PRACTICE = false
+var PRACTICE_GAME = ""
+
 var NEXT_GAME_SCENE = "res://scenes/dock_receive.tscn"
 var CURRENT_GAME = "Dock Receive"
 

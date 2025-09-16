@@ -58,6 +58,10 @@ func showMedal():
 		$BadJobText.show()
 
 func _on_continue_button_pressed():
+	if (Global.IS_PRACTICE):
+		get_tree().change_scene_to_file(Global.PRACTICE_GAME)
+		return
+	
 	if (Global.NEXT_GAME_SCENE != ""):
 		get_tree().change_scene_to_file("res://scenes/game_tracker.tscn")
 	else:

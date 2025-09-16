@@ -15,7 +15,6 @@
 script = ExtResource("1_hrbhj")
 
 [node name="Background" type="Panel" parent="."]
-visible = false
 offset_right = 1151.0
 offset_bottom = 649.0
 
@@ -92,6 +91,12 @@ offset_bottom = 556.0
 texture_normal = ExtResource("10_rdfp6")
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="CardTasks" type="VBoxContainer" parent="."]
+offset_left = 194.0
+offset_top = 36.0
+offset_right = 471.0
+offset_bottom = 312.0
 
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
 [connection signal="pressed" from="RedCabinet" to="." method="_on_red_cabinet_pressed"]
