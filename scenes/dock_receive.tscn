@@ -28,7 +28,7 @@ scale = Vector2(1.11268, 0.580432)
 texture = ExtResource("7_qiq1w")
 
 [node name="TopBoxSpawner" parent="." instance=ExtResource("4_b8pko")]
-position = Vector2(-73.9999, 223)
+position = Vector2(-74, 210)
 
 [node name="PlayerBody" type="Area2D" parent="."]
 position = Vector2(550, 400)
