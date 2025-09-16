@@ -41,25 +41,25 @@ text = "DOCK RECEIVE"
 horizontal_alignment = 1
 
 [node name="LastGameBubble" type="Sprite2D" parent="."]
-position = Vector2(10, 449)
+position = Vector2(18, 449)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_3vjfg")
 
 [node name="CurrentGameBubble" type="Sprite2D" parent="."]
-position = Vector2(560, 449)
+position = Vector2(568, 449)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_3vjfg")
 
 [node name="NextGameBubble" type="Sprite2D" parent="."]
-position = Vector2(1110, 449)
+position = Vector2(1118, 449)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_3vjfg")
 
 [node name="MiniBubblesLeft" type="Control" parent="."]
 anchors_preset = 0
-offset_left = -143.0
+offset_left = -135.0
 offset_top = 79.0
-offset_right = 411.0
+offset_right = 419.0
 offset_bottom = 642.0
 
 [node name="MiniBubble" type="Sprite2D" parent="MiniBubblesLeft"]
@@ -82,9 +82,9 @@ metadata/_edit_lock_ = true
 
 [node name="MiniBubblesRight" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 407.0
+offset_left = 415.0
 offset_top = 80.0
-offset_right = 983.0
+offset_right = 991.0
 offset_bottom = 562.0
 
 [node name="MiniBubble" type="Sprite2D" parent="MiniBubblesRight"]
@@ -106,15 +106,15 @@ texture = ExtResource("5_2nb3p")
 metadata/_edit_lock_ = true
 
 [node name="DescriptionBubble" type="Sprite2D" parent="."]
-position = Vector2(558, 272)
+position = Vector2(566, 272)
 scale = Vector2(0.5, 0.45)
 texture = ExtResource("6_velld")
 
 [node name="DescriptionText" type="Label" parent="."]
 layout_mode = 0
-offset_left = 141.0
+offset_left = 152.0
 offset_top = 184.0
-offset_right = 776.0
+offset_right = 787.0
 offset_bottom = 314.0
 theme_override_fonts/font = ExtResource("3_velld")
 theme_override_font_sizes/font_size = 48
