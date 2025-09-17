@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxxpi4v2yy1de"]
+[gd_scene load_steps=8 format=3 uid="uid://dxxpi4v2yy1de"]
 
 [ext_resource type="Script" uid="uid://cjtu2ovujngms" path="res://scripts/final_results_screen.gd" id="1_uel5l"]
 [ext_resource type="FontFile" uid="uid://dy3mkbdhno5r2" path="res://assets/fonts/Pixel Game Extrude.otf" id="2_sprhc"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="3_l2pof"]
 [ext_resource type="Texture2D" uid="uid://bisdgal18ddge" path="res://assets/art/shohei.jpg" id="4_l2pof"]
+[ext_resource type="AudioStream" uid="uid://ce8yho37cuihy" path="res://assets/music/sfx/Good_Job_Final.mp3" id="5_qjy8y"]
+[ext_resource type="AudioStream" uid="uid://byqwbrb6lm7x2" path="res://assets/music/sfx/Okay_Job_Final.mp3" id="6_ilo8s"]
+[ext_resource type="AudioStream" uid="uid://b7wxco0djbesh" path="res://assets/music/sfx/Bad_Job_Final.mp3" id="7_x74oy"]
 
 [node name="FinalResultsScreen" type="Control"]
 layout_mode = 3
@@ -224,6 +227,15 @@ theme_override_font_sizes/font_size = 96
 text = "Bad job!"
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="GoodJobSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_qjy8y")
+
+[node name="OkayJobSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ilo8s")
+
+[node name="BadJobSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_x74oy")
 
 [connection signal="pressed" from="PlayAgainButton" to="." method="_on_play_again_button_pressed"]
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]

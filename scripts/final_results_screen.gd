@@ -67,10 +67,13 @@ func _ready():
 	$FinalMedal.show()
 	if (finalMedal == "Gold"):
 		$GoodJobText.show()
+		$GoodJobSFX.play()
 	elif (finalMedal == "Silver"):
 		$OkayJobText.show()
+		$OkayJobSFX.play()
 	else:
 		$BadJobText.show()
+		$BadJobSFX.play()
 	
 	$TotalTimeText.text = "Total Time: " + str(totalTimeTaken) + " secs"
 	$TotalTimeText.show()

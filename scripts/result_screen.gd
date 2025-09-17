@@ -52,10 +52,13 @@ func showMistakesText():
 func showMedal():
 	if medal == "Gold":
 		$GoodJobText.show()
+		$GoodJobSFX.play()
 	elif medal == "Silver":
 		$OkayJobText.show()
+		$OkayJobSFX.play()
 	else:
 		$BadJobText.show()
+		$BadJobSFX.play()
 
 func _on_continue_button_pressed():
 	if (Global.IS_PRACTICE):
