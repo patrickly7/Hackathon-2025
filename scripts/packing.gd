@@ -46,6 +46,7 @@ func _input(event):
 			changeToPressed()
 			updateKeys()
 		else:
+			$Rong.play()
 			mistakes += 1
 			
 	elif (event.is_action_pressed("move_right")):
@@ -53,18 +54,21 @@ func _input(event):
 			changeToPressed()
 			updateKeys()
 		else:
+			$Rong.play()
 			mistakes += 1
 	elif (event.is_action_pressed("move_down")):
 		if (keySets[currentKeySetIndex][currentKeyIndex] == "Down"):
 			changeToPressed()
 			updateKeys()
 		else:
+			$Rong.play()
 			mistakes += 1
 	elif (event.is_action_pressed("move_up")):
 		if (keySets[currentKeySetIndex][currentKeyIndex] == "Up"):
 			changeToPressed()
 			updateKeys()
 		else:
+			$Rong.play()
 			mistakes += 1
 		
 func setUpKeySetVisuals():

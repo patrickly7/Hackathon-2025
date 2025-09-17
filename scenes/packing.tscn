@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://watxeyj4r1bb"]
+[gd_scene load_steps=17 format=3 uid="uid://watxeyj4r1bb"]
 
 [ext_resource type="Script" uid="uid://mi8hwpw46uhb" path="res://scripts/packing.gd" id="1_4gyy1"]
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="2_0gomr"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://tq4g351q5cja" path="res://assets/art/Arrow_Key_Left.png" id="8_86k3w"]
 [ext_resource type="AudioStream" uid="uid://vhh68flu3ib5" path="res://assets/music/sfx/Box_Fold.mp3" id="13_3jfcn"]
 [ext_resource type="AudioStream" uid="uid://df1vv324rike5" path="res://assets/music/sfx/Box_Tape.mp3" id="14_6qx1k"]
+[ext_resource type="AudioStream" uid="uid://cm3evwukd83gb" path="res://assets/music/sfx/Rong.mp3" id="15_6qx1k"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_khy8k"]
 texture = ExtResource("2_46etp")
@@ -116,5 +117,8 @@ volume_db = 5.0
 [node name="BoxTapeSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_6qx1k")
 volume_db = 5.0
+
+[node name="Rong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_6qx1k")
 
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
