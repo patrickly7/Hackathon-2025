@@ -109,7 +109,6 @@ offset_bottom = 638.0
 text = "picking"
 
 [node name="packingbutton" type="Button" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 931.0
 offset_top = 606.0

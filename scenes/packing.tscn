@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://watxeyj4r1bb"]
+[gd_scene load_steps=16 format=3 uid="uid://watxeyj4r1bb"]
 
 [ext_resource type="Script" uid="uid://mi8hwpw46uhb" path="res://scripts/packing.gd" id="1_4gyy1"]
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="2_0gomr"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cgmns52qb3x4x" path="res://assets/art/Package_Filled.png" id="6_86k3w"]
 [ext_resource type="AudioStream" uid="uid://dm7rbs6lr8fho" path="res://assets/music/Packing.mp3" id="7_kp4uy"]
 [ext_resource type="Texture2D" uid="uid://tq4g351q5cja" path="res://assets/art/Arrow_Key_Left.png" id="8_86k3w"]
+[ext_resource type="AudioStream" uid="uid://vhh68flu3ib5" path="res://assets/music/sfx/Box_Fold.mp3" id="13_3jfcn"]
+[ext_resource type="AudioStream" uid="uid://df1vv324rike5" path="res://assets/music/sfx/Box_Tape.mp3" id="14_6qx1k"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_khy8k"]
 texture = ExtResource("2_46etp")
@@ -106,5 +108,13 @@ vertical_alignment = 1
 
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_kp4uy")
+
+[node name="BoxFoldSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_3jfcn")
+volume_db = 5.0
+
+[node name="BoxTapeSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_6qx1k")
+volume_db = 5.0
 
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]

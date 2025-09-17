@@ -43,26 +43,26 @@ func _ready():
 func _input(event):
 	if (event.is_action_pressed("move_left")):
 		if (keySets[currentKeySetIndex][currentKeyIndex] == "Left"):
-			# TODO - Change Sprite of Current Key to Pressed
+			changeToPressed()
 			updateKeys()
 		else:
 			mistakes += 1
 			
 	elif (event.is_action_pressed("move_right")):
 		if (keySets[currentKeySetIndex][currentKeyIndex] == "Right"):
-			# TODO - Change Sprite of Current Key to Pressed
+			changeToPressed()
 			updateKeys()
 		else:
 			mistakes += 1
 	elif (event.is_action_pressed("move_down")):
 		if (keySets[currentKeySetIndex][currentKeyIndex] == "Down"):
-			# TODO - Change Sprite of Current Key to Pressed
+			changeToPressed()
 			updateKeys()
 		else:
 			mistakes += 1
 	elif (event.is_action_pressed("move_up")):
 		if (keySets[currentKeySetIndex][currentKeyIndex] == "Up"):
-			# TODO - Change Sprite of Current Key to Pressed
+			changeToPressed()
 			updateKeys()
 		else:
 			mistakes += 1
@@ -71,6 +71,17 @@ func setUpKeySetVisuals():
 	$LeftIcon.texture = load(get_Icon_Texture(keySets[currentKeySetIndex][0]))
 	$MiddleIcon.texture = load(get_Icon_Texture(keySets[currentKeySetIndex][1]))
 	$RightIcon.texture = load(get_Icon_Texture(keySets[currentKeySetIndex][2]))
+
+func changeToPressed():
+	if (currentKeyIndex == 0):
+		$BoxFoldSFX.play()
+		$LeftIcon.texture = load(getPressedIconTexture(keySets[currentKeySetIndex][0]))
+	elif (currentKeyIndex == 1):
+		$BoxTapeSFX.play()
+		$MiddleIcon.texture = load(getPressedIconTexture(keySets[currentKeySetIndex][1]))
+	else:
+		$BoxFoldSFX.play()
+		$RightIcon.texture = load(getPressedIconTexture(keySets[currentKeySetIndex][2]))
 
 func get_Icon_Texture(Icon):
 	match Icon:
@@ -82,7 +93,17 @@ func get_Icon_Texture(Icon):
 			return "res://assets/art/Arrow_Key_Left.png"
 		"Right":
 			return "res://assets/art/Arrow_Key_Right.png"
-	
+			
+func getPressedIconTexture(icon):
+	match icon:
+		"Up":
+			return "res://assets/art/Arrow_Key_Up_Pressed.png"
+		"Down":
+			return "res://assets/art/Arrow_Key_Down_Pressed.png"
+		"Left":
+			return "res://assets/art/Arrow_Key_Left_Pressed.png"
+		"Right":
+			return "res://assets/art/Arrow_Key_Right_Pressed.png"
 
 func updateKeys():
 	currentKeyIndex += 1
