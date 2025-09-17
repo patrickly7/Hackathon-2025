@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://cjtu2ovujngms" path="res://scripts/final_results_screen.gd" id="1_uel5l"]
 [ext_resource type="FontFile" uid="uid://dy3mkbdhno5r2" path="res://assets/fonts/Pixel Game Extrude.otf" id="2_sprhc"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="3_l2pof"]
-[ext_resource type="Texture2D" uid="uid://bisdgal18ddge" path="res://assets/art/shohei.jpg" id="4_l2pof"]
 [ext_resource type="Texture2D" uid="uid://dlw2rkjsokml0" path="res://assets/art/Button.png" id="4_ymtg7"]
 [ext_resource type="AudioStream" uid="uid://ce8yho37cuihy" path="res://assets/music/sfx/Good_Job_Final.mp3" id="5_qjy8y"]
 [ext_resource type="Texture2D" uid="uid://b4hqe8i833dlk" path="res://assets/art/Button_Pressed.png" id="5_u5qtb"]
 [ext_resource type="AudioStream" uid="uid://byqwbrb6lm7x2" path="res://assets/music/sfx/Okay_Job_Final.mp3" id="6_ilo8s"]
 [ext_resource type="Texture2D" uid="uid://e5ls2lm1sqyc" path="res://assets/art/Button_Hover.png" id="6_www78"]
 [ext_resource type="AudioStream" uid="uid://b7wxco0djbesh" path="res://assets/music/sfx/Bad_Job_Final.mp3" id="7_x74oy"]
+[ext_resource type="Texture2D" uid="uid://dcs4hmxdsa8sj" path="res://assets/art/Bad_Medal.png" id="7_ymtg7"]
 
 [node name="FinalResultsScreen" type="Control"]
 layout_mode = 3
@@ -109,7 +109,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TotalTimeText" type="Label" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 6.0
 offset_top = 438.0
@@ -122,45 +121,45 @@ horizontal_alignment = 1
 
 [node name="DockReceiveMedal" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(117, 235)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_l2pof")
+position = Vector2(130, 249)
+scale = Vector2(0.397661, 0.344262)
+texture = ExtResource("7_ymtg7")
 
 [node name="ConfirmReceiveMedal" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(219, 304)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_l2pof")
+position = Vector2(248.5, 328)
+scale = Vector2(0.352826, 0.319672)
+texture = ExtResource("7_ymtg7")
 
 [node name="InventoryMedal" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(322, 234)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_l2pof")
+position = Vector2(332, 244)
+scale = Vector2(0.378168, 0.325137)
+texture = ExtResource("7_ymtg7")
 
 [node name="PickingMedal" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(433, 304)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_l2pof")
+position = Vector2(447, 321.5)
+scale = Vector2(0.409357, 0.342896)
+texture = ExtResource("7_ymtg7")
 
 [node name="PackingMedal" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(529, 233)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_l2pof")
+position = Vector2(543, 253)
+scale = Vector2(0.385965, 0.368852)
+texture = ExtResource("7_ymtg7")
 
 [node name="ShippingMedal" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(646, 305)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_l2pof")
+position = Vector2(636, 310)
+scale = Vector2(0.417154, 0.377049)
+texture = ExtResource("7_ymtg7")
 
 [node name="FinalMedal" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(926, 319)
-scale = Vector2(1.3, 1.3)
-texture = ExtResource("4_l2pof")
+position = Vector2(929, 302)
+scale = Vector2(0.865936, 0.786066)
+texture = ExtResource("7_ymtg7")
 
 [node name="GoodJobText" type="Control" parent="."]
 visible = false

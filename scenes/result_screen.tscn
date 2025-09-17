@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://c7ckxuatbprfk" path="res://scripts/result_screen.gd" id="1_y7kih"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="2_raeeo"]
 [ext_resource type="Texture2D" uid="uid://dlw2rkjsokml0" path="res://assets/art/Button.png" id="3_bsfim"]
-[ext_resource type="Texture2D" uid="uid://bisdgal18ddge" path="res://assets/art/shohei.jpg" id="3_im14c"]
 [ext_resource type="Texture2D" uid="uid://b4hqe8i833dlk" path="res://assets/art/Button_Pressed.png" id="4_46yes"]
 [ext_resource type="FontFile" uid="uid://dy3mkbdhno5r2" path="res://assets/fonts/Pixel Game Extrude.otf" id="4_l46iw"]
 [ext_resource type="Texture2D" uid="uid://e5ls2lm1sqyc" path="res://assets/art/Button_Hover.png" id="5_vrrhk"]
 [ext_resource type="AudioStream" uid="uid://dr2kgxiuim7k0" path="res://assets/music/sfx/Good_Job.mp3" id="5_wrniu"]
+[ext_resource type="Texture2D" uid="uid://dcs4hmxdsa8sj" path="res://assets/art/Bad_Medal.png" id="6_bsfim"]
 [ext_resource type="AudioStream" uid="uid://bgqx8fxkaopy8" path="res://assets/music/sfx/Okay_Job.mp3" id="6_nj5ho"]
 [ext_resource type="AudioStream" uid="uid://6w26jbqy5ib0" path="res://assets/music/sfx/Bad_Job.mp3" id="7_et5d2"]
 
@@ -107,9 +107,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ResultMedal" type="Sprite2D" parent="."]
-position = Vector2(931, 298)
-scale = Vector2(1.4, 1.4)
-texture = ExtResource("3_im14c")
+position = Vector2(920, 283)
+scale = Vector2(0.780702, 0.622951)
+texture = ExtResource("6_bsfim")
 
 [node name="GoodJobText" type="Control" parent="."]
 visible = false

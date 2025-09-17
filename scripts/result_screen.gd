@@ -53,12 +53,15 @@ func showMedal():
 	if medal == "Gold":
 		$GoodJobText.show()
 		$GoodJobSFX.play()
+		$ResultMedal.texture = load("res://assets/art/Good_Medal.png")
 	elif medal == "Silver":
 		$OkayJobText.show()
 		$OkayJobSFX.play()
+		$ResultMedal.texture = load("res://assets/art/Okay_Medal.png")
 	else:
 		$BadJobText.show()
 		$BadJobSFX.play()
+		$ResultMedal.texture = load("res://assets/art/Bad_Medal.png")
 
 func _on_continue_button_pressed():
 	if (Global.IS_PRACTICE):

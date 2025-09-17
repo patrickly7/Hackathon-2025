@@ -45,21 +45,27 @@ func _ready():
 		finalMedal = "Bronze"
 	
 	await get_tree().create_timer(0.5).timeout
+	$DockReceiveMedal.texture =load(showMedal(Global.DOCK_RECEIVE_MEDAL))
 	$DockReceiveMedal.show()
 	
 	await get_tree().create_timer(0.5).timeout
+	$ConfirmReceiveMedal.texture =load(showMedal(Global.CONFIRM_RECEIVE_MEDAL))
 	$ConfirmReceiveMedal.show()
 	
 	await get_tree().create_timer(0.5).timeout
+	$InventoryMedal.texture =load(showMedal(Global.INVENTORY_MEDAL))
 	$InventoryMedal.show()
 	
 	await get_tree().create_timer(0.5).timeout
+	$PickingMedal.texture =load(showMedal(Global.PICKING_MEDAL))
 	$PickingMedal.show()
 	
 	await get_tree().create_timer(0.5).timeout
+	$PackingMedal.texture =load(showMedal(Global.PACKING_MEDAL))
 	$PackingMedal.show()
 	
 	await get_tree().create_timer(0.5).timeout
+	$ShippingMedal.texture =load(showMedal(Global.SHIPPING_MEDAL))
 	$ShippingMedal.show()
 	
 	await get_tree().create_timer(1).timeout
@@ -79,6 +85,14 @@ func _ready():
 	$TotalTimeText.show()
 	$PlayAgainButton.show()
 	$HomeButton.show()
+	
+func showMedal(medal):
+	if medal == "Gold":
+		return "res://assets/art/Good_Medal.png"
+	elif medal == "Silver":
+		return "res://assets/art/Okay_Medal.png"
+	else:
+		return "res://assets/art/Bad_Medal.png"
 
 func _on_play_again_button_pressed():
 	resetGame()
