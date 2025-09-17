@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cgsdin784fyvh"]
+[gd_scene load_steps=28 format=3 uid="uid://cgsdin784fyvh"]
 
 [ext_resource type="Script" uid="uid://de38jmx2a1k7w" path="res://scripts/picking.gd" id="1_hrbhj"]
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="1_vttta"]
@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://diwktu8iekvya" path="res://assets/art/Drawer_Black_Full_Opened.png" id="18_jnnur"]
 [ext_resource type="Texture2D" uid="uid://cy35cmrl5h1du" path="res://assets/art/Drawer_White_Closed.png" id="19_34okb"]
 [ext_resource type="Texture2D" uid="uid://y85ip72148m6" path="res://assets/art/Drawer_White_Full_Opened.png" id="20_tsv04"]
+[ext_resource type="AudioStream" uid="uid://cm3evwukd83gb" path="res://assets/music/sfx/Rong.mp3" id="25_5oow1"]
+[ext_resource type="AudioStream" uid="uid://cpw5sdywrdg13" path="res://assets/music/sfx/Correct.mp3" id="26_xi75l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x6mnd"]
 texture = ExtResource("2_7qi1v")
@@ -236,6 +238,7 @@ vertical_alignment = 1
 
 [node name="FinishText" type="Label" parent="."]
 visible = false
+z_index = 2
 offset_left = -1.0
 offset_top = 259.0
 offset_right = 1152.0
@@ -248,6 +251,14 @@ vertical_alignment = 1
 
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_4s025")
+
+[node name="Rong" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(11, 24)
+stream = ExtResource("25_5oow1")
+
+[node name="Correct" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(14, 38)
+stream = ExtResource("26_xi75l")
 
 [connection signal="mouse_entered" from="Background" to="." method="_on_background_mouse_entered"]
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]

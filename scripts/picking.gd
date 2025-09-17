@@ -60,58 +60,74 @@ func _on_game_timer_game_timer_end(secondsLeft):
 func _on_red_cabinet_pressed():
 	if (tasks[currentTask] == "RED"):
 		print("RED")
+		$Correct.play()
 		moveToNextTask()
 	else:
+		$Rong.play()
 		mistakes += 1
 
 func _on_blue_cabinet_pressed():
 	if (tasks[currentTask] == "BLUE"):
 		print("BLUE")
+		$Correct.play()
 		moveToNextTask()
 	else:
+		$Rong.play()
 		mistakes += 1
 		
 
 func _on_green_cabinet_pressed():
 	if (tasks[currentTask] == "GREEN"):
 		print("GREEN")
+		$Correct.play()
 		moveToNextTask()
 	else:
+		$Rong.play()
 		mistakes += 1
 
 func _on_yellow_cabinet_pressed():
 	if (tasks[currentTask] == "YELLOW"):
 		print("YELLOW")
+		$Correct.play()
 		moveToNextTask()
 	else:
+		$Rong.play()
 		mistakes += 1
 
 func _on_orange_cabinet_pressed():
 	if (tasks[currentTask] == "ORANGE"):
 		print("ORANGE")
+		$Correct.play()
 		moveToNextTask()
 	else:
+		$Rong.play()
 		mistakes += 1
 
 func _on_purple_cabinet_pressed():
 	if (tasks[currentTask] == "PURPLE"):
 		print("PURPLE")
+		$Correct.play()
 		moveToNextTask()
 	else:
+		$Rong.play()
 		mistakes += 1
 
 func _on_black_cabinet_pressed():
 	if (tasks[currentTask] == "BLACK"):
 		print("BLACK")
+		$Correct.play()
 		moveToNextTask()
 	else:
+		$Rong.play()
 		mistakes += 1
 
 func _on_white_cabinet_pressed():
 	if (tasks[currentTask] == "WHITE"):
 		print("WHITE")
+		$Correct.play()
 		moveToNextTask()
 	else:
+		$Rong.play()
 		mistakes += 1
 
 
