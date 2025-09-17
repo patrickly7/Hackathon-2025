@@ -41,6 +41,7 @@ func _input(event):
 		$PlayerBody.position.y += MOVEMENT
 		$PlayerBody/Player.texture = FRONT_SPRITE
 	elif event.is_action_pressed("action") && isTouchingBox && currentBox != null:
+		$BoopSFX.play()
 		currentBox.queue_free()
 		currentBoxesBooped += 1
 		if (currentBoxesBooped == BOXES_TO_BOOP):
