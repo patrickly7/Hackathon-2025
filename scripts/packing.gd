@@ -1,6 +1,6 @@
 extends Node2D
 
-const GAME_TIME = 30
+const GAME_TIME = 10
 const BOXES_TO_PACK = 5
 
 const KEYS = ["Left", "Right", "Up", "Down"]
