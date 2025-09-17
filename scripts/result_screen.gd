@@ -8,9 +8,16 @@ func _ready():
 	$StationTitle.text = Global.CURRENT_GAME
 	getCurrentGameResults()
 	
+	$DrumRollSFX.play()
+	
+	await get_tree().create_timer(0.6).timeout
 	showTimeTakenText()
+	await get_tree().create_timer(0.6).timeout
 	showMistakesText()
+	await get_tree().create_timer(0.6).timeout
 	showMedal()
+	
+	$ContinueButton.show()
 
 func getCurrentGameResults():
 	match Global.CURRENT_GAME:
@@ -42,10 +49,12 @@ func getCurrentGameResults():
 			pass
 
 func showTimeTakenText():
+	$TimeTakenText.show()
 	$TimeTakenValue.text = str(timeTaken) + " secs"
 	$TimeTakenValue.show()
 	
 func showMistakesText():
+	$MistakesText.show()
 	$MistakesValue.text = str(mistakes)
 	$MistakesValue.show()
 	
@@ -62,6 +71,8 @@ func showMedal():
 		$BadJobText.show()
 		$BadJobSFX.play()
 		$ResultMedal.texture = load("res://assets/art/Bad_Medal.png")
+		
+	$ResultMedal.show()
 
 func _on_continue_button_pressed():
 	if (Global.IS_PRACTICE):

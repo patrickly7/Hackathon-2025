@@ -32,7 +32,7 @@ offset_right = 1150.0
 offset_bottom = 229.0
 theme_override_fonts/font = ExtResource("2_thu50")
 theme_override_font_sizes/font_size = 144
-text = "WMS Game"
+text = "WMS: AGILE EDITIOn"
 horizontal_alignment = 1
 
 [node name="StartButton" type="TextureButton" parent="."]
@@ -74,10 +74,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -66.0
+offset_left = -70.0
 offset_top = 50.0
-offset_right = 66.0
-offset_bottom = 114.0
+offset_right = 71.0
+offset_bottom = 117.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("6_5byqq")

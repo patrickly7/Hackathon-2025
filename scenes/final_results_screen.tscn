@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxxpi4v2yy1de"]
+[gd_scene load_steps=12 format=3 uid="uid://dxxpi4v2yy1de"]
 
 [ext_resource type="Script" uid="uid://cjtu2ovujngms" path="res://scripts/final_results_screen.gd" id="1_uel5l"]
 [ext_resource type="FontFile" uid="uid://dy3mkbdhno5r2" path="res://assets/fonts/Pixel Game Extrude.otf" id="2_sprhc"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://e5ls2lm1sqyc" path="res://assets/art/Button_Hover.png" id="6_www78"]
 [ext_resource type="AudioStream" uid="uid://b7wxco0djbesh" path="res://assets/music/sfx/Bad_Job_Final.mp3" id="7_x74oy"]
 [ext_resource type="Texture2D" uid="uid://dcs4hmxdsa8sj" path="res://assets/art/Bad_Medal.png" id="7_ymtg7"]
+[ext_resource type="AudioStream" uid="uid://x70ite0s0lec" path="res://assets/music/sfx/Drumroll.mp3" id="11_u5qtb"]
 
 [node name="FinalResultsScreen" type="Control"]
 layout_mode = 3
@@ -109,6 +110,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TotalTimeText" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 6.0
 offset_top = 438.0
@@ -268,6 +270,9 @@ stream = ExtResource("6_ilo8s")
 
 [node name="BadJobSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_x74oy")
+
+[node name="DrumRollSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_u5qtb")
 
 [connection signal="pressed" from="PlayAgainButton" to="." method="_on_play_again_button_pressed"]
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]

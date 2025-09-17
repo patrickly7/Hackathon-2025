@@ -43,28 +43,30 @@ func _ready():
 		finalMedal = "Silver"
 	else:
 		finalMedal = "Bronze"
+		
+	$DrumRollSFX.play()
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.25).timeout
 	$DockReceiveMedal.texture =load(showMedal(Global.DOCK_RECEIVE_MEDAL))
 	$DockReceiveMedal.show()
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.25).timeout
 	$ConfirmReceiveMedal.texture =load(showMedal(Global.CONFIRM_RECEIVE_MEDAL))
 	$ConfirmReceiveMedal.show()
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.25).timeout
 	$InventoryMedal.texture =load(showMedal(Global.INVENTORY_MEDAL))
 	$InventoryMedal.show()
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.25).timeout
 	$PickingMedal.texture =load(showMedal(Global.PICKING_MEDAL))
 	$PickingMedal.show()
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.25).timeout
 	$PackingMedal.texture =load(showMedal(Global.PACKING_MEDAL))
 	$PackingMedal.show()
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.25).timeout
 	$ShippingMedal.texture =load(showMedal(Global.SHIPPING_MEDAL))
 	$ShippingMedal.show()
 	

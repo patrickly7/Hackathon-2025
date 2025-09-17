@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvfcnhb5qqj12"]
+[gd_scene load_steps=12 format=3 uid="uid://bvfcnhb5qqj12"]
 
 [ext_resource type="Script" uid="uid://c7ckxuatbprfk" path="res://scripts/result_screen.gd" id="1_y7kih"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="2_raeeo"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dcs4hmxdsa8sj" path="res://assets/art/Bad_Medal.png" id="6_bsfim"]
 [ext_resource type="AudioStream" uid="uid://bgqx8fxkaopy8" path="res://assets/music/sfx/Okay_Job.mp3" id="6_nj5ho"]
 [ext_resource type="AudioStream" uid="uid://6w26jbqy5ib0" path="res://assets/music/sfx/Bad_Job.mp3" id="7_et5d2"]
+[ext_resource type="AudioStream" uid="uid://x70ite0s0lec" path="res://assets/music/sfx/Drumroll.mp3" id="11_46yes"]
 
 [node name="ResultScreen" type="Control"]
 layout_mode = 3
@@ -37,6 +38,7 @@ text = "STATION Tile"
 vertical_alignment = 1
 
 [node name="TimeTakenText" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 56.0
 offset_top = 173.0
@@ -60,6 +62,7 @@ text = "1 million secs"
 vertical_alignment = 1
 
 [node name="MistakesText" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 106.0
 offset_top = 227.0
@@ -83,6 +86,7 @@ text = "100"
 vertical_alignment = 1
 
 [node name="ContinueButton" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 242.0
 offset_top = 414.0
@@ -95,6 +99,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="ContinueLabel" type="Label" parent="ContinueButton"]
+layout_mode = 0
 offset_left = 29.0
 offset_top = 20.0
 offset_right = 318.0
@@ -107,6 +112,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ResultMedal" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(920, 283)
 scale = Vector2(0.780702, 0.622951)
 texture = ExtResource("6_bsfim")
@@ -215,5 +221,8 @@ stream = ExtResource("6_nj5ho")
 
 [node name="BadJobSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_et5d2")
+
+[node name="DrumRollSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_46yes")
 
 [connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]

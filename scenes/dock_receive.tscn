@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="2_5omce"]
 [ext_resource type="Texture2D" uid="uid://bhinkoppb0muj" path="res://assets/art/Background_Dock_Receive.png" id="2_223au"]
 [ext_resource type="Texture2D" uid="uid://omrxjqthkxim" path="res://assets/art/Stick_Figure_Front.png" id="3_b8pko"]
-[ext_resource type="PackedScene" path="res://scenes/box_spawner.tscn" id="4_b8pko"]
+[ext_resource type="PackedScene" uid="uid://b4pqr2v0ubl5s" path="res://scenes/box_spawner.tscn" id="4_b8pko"]
 [ext_resource type="AudioStream" uid="uid://bl6chb2vmp402" path="res://assets/music/Dock_Receive.mp3" id="5_gio7h"]
 [ext_resource type="Texture2D" uid="uid://14c8w6frpd57" path="res://assets/art/Conveyor_Belt.png" id="7_qiq1w"]
 [ext_resource type="AudioStream" uid="uid://dlb1qdy6l88e8" path="res://assets/music/sfx/Miku_Ready_Start.mp3" id="8_q5nwu"]
