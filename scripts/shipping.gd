@@ -59,18 +59,24 @@ func updateTruckSpot():
 
 func _on_small_package_button_pressed():
 	if (currentTruckArrangement[currentSpotIndex] == "Small"):
+		$Correct.play()
 		updateTruckSpot()
 	else:
+		$Rong.play()
 		mistakes += 1
 
 func _on_large_package_button_pressed():
 	if (currentTruckArrangement[currentSpotIndex] == "Large"):
+		$Correct.play()
 		updateTruckSpot()
 	else:
+		$Rong.play()
 		mistakes += 1
 
 func _on_medium_package_button_pressed():
 	if (currentTruckArrangement[currentSpotIndex] == "Medium"):
+		$Correct.play()
 		updateTruckSpot()
 	else:
+		$Rong.play()
 		mistakes += 1

@@ -56,9 +56,9 @@ func _on_game_timer_game_timer_end(secondsLeft: int):
 	Global.DOCK_RECEIVE_TIME_TAKEN = GAME_TIME - secondsLeft
 	# Note: Mistakes are set by the box destruction
 	
-	if (secondsLeft > 0 && Global.DOCK_RECEIVE_MISTAKES == 0):
+	if (secondsLeft > 0 && Global.DOCK_RECEIVE_MISTAKES <= 5):
 		Global.DOCK_RECEIVE_MEDAL = "Gold"
-	elif (secondsLeft > 0 && Global.DOCK_RECEIVE_MISTAKES <= 5):
+	elif (secondsLeft > 0 && Global.DOCK_RECEIVE_MISTAKES <= 10):
 		Global.DOCK_RECEIVE_MEDAL = "Silver"
 	else:
 		Global.DOCK_RECEIVE_MEDAL = "Bronze"
