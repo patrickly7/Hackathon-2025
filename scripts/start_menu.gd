@@ -17,9 +17,9 @@ func _on_practice_button_pressed():
 
 func _on_packingbutton_pressed():
 	Global.IS_PRACTICE = true
-	Global.PRACTICE_GAME = "res://scenes/inventory.tscn"
+	Global.PRACTICE_GAME = "res://scenes/packing.tscn"
 	
-	Global.CURRENT_GAME = "Inventory"
+	Global.CURRENT_GAME = "Packing"
 	
 	get_tree().change_scene_to_file(Global.PRACTICE_GAME)
 

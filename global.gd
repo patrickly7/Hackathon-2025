@@ -37,12 +37,12 @@ var SHIPPING_MISTAKES = 0
 var SHIPPING_MEDAL = "Gold"
 
 var DESCRIPTION_DICT = {
-	"Dock Receive": "Scan packages as they whoosh past!\nMove with arrows, scan with spacebar!",
-	"Confirm Receive": "Verify correct cards!\nMatches go in ACCEPTED!\nMismatches go in EXCEPTIONS!",
-	"Inventory": "Count cards in each cabinet!\nUse buttons to change count!\nPress ENTER to guess!",
-	"Picking": "Pick cards from cabinets!\nHover over cabinets to open!\nClick to pick!",
-	"Packing": "Pack cards into boxes!\nFollow the prompts with arrow keys!",
-	"Shipping": "Load boxes for shipping!\nClick the box that matches the current space!",
+	"Dock Receive": "Scan packages as they whoosh past!\nMove UP/DOWN with ARROW KEYS!\nScan with ENTER/SPACE!",
+	"Confirm Receive": "Verify correct cards!\nCLICK to put matching colors in Accepted and others in Exceptions!",
+	"Inventory": "Count cards in each cabinet!\nCLICK buttons to change count!\nPress ENTER/SPACE to guess!",
+	"Picking": "Pick cards from cabinets!\nCLICK to pick the correct\ncolored cabinet!",
+	"Packing": "Pack cards into boxes!\nFollow the prompts with ARROW KEYS!",
+	"Shipping": "Load boxes for shipping!\nCLICK the box that matches the\nhighlighted space!",
 }
 
 func prepareNextGame():

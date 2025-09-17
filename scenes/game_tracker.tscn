@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckwf7fhlqg36c"]
+[gd_scene load_steps=14 format=3 uid="uid://ckwf7fhlqg36c"]
 
 [ext_resource type="Script" uid="uid://px2iqj748ysi" path="res://scripts/game_tracker.gd" id="1_5pqqo"]
 [ext_resource type="Texture2D" uid="uid://c3ssbvae82jk2" path="res://assets/art/GameTrackerBackground.png" id="2_h0i2o"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://drs13jx0nut5f" path="res://assets/art/Dock_Receive_Icon.png" id="6_0b0py"]
 [ext_resource type="Texture2D" uid="uid://d1iyr5h1mhct1" path="res://assets/art/Speech_Bubble.png" id="6_velld"]
 [ext_resource type="AudioStream" uid="uid://txvtl2fpddh2" path="res://assets/music/Game_Tracker.mp3" id="7_3vjfg"]
+[ext_resource type="Texture2D" uid="uid://dgo63duolrq24" path="res://assets/art/Arrow_Key_Group.png" id="10_cqpt7"]
+[ext_resource type="Texture2D" uid="uid://ddesgewc0v81f" path="res://assets/art/Mouse_Cursor.png" id="11_qx3mk"]
+[ext_resource type="Texture2D" uid="uid://cldltiy8t0put" path="res://assets/art/Keyboard_Key.png" id="12_dgwks"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0b0py"]
 texture = ExtResource("2_h0i2o")
@@ -131,13 +134,14 @@ texture = ExtResource("6_velld")
 [node name="DescriptionText" type="Label" parent="."]
 layout_mode = 0
 offset_left = 152.0
-offset_top = 176.0
-offset_right = 787.0
-offset_bottom = 323.0
+offset_top = 180.0
+offset_right = 779.0
+offset_bottom = 316.0
 theme_override_colors/font_color = Color(0.388235, 0.607843, 1, 1)
 theme_override_fonts/font = ExtResource("3_velld")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 40
 text = "Long ago, the four nations..."
+autowrap_mode = 3
 
 [node name="HintText" type="Label" parent="."]
 layout_mode = 0
@@ -154,3 +158,42 @@ horizontal_alignment = 1
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_3vjfg")
 parameters/looping = true
+
+[node name="ArrowKeysGraphic" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(899, 251)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_cqpt7")
+
+[node name="MouseCursorGraphic" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(899, 251)
+texture = ExtResource("11_qx3mk")
+
+[node name="ArrowKeysAndEnterGraphics" type="Node2D" parent="."]
+visible = false
+position = Vector2(899, 251)
+
+[node name="ArrowKeys" type="Sprite2D" parent="ArrowKeysAndEnterGraphics"]
+position = Vector2(-14, -25)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_cqpt7")
+
+[node name="Enter" type="Sprite2D" parent="ArrowKeysAndEnterGraphics"]
+position = Vector2(30, 39)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_dgwks")
+
+[node name="MouseCursorAndEnterGraphics" type="Node2D" parent="."]
+visible = false
+position = Vector2(899, 251)
+
+[node name="MouseCursor" type="Sprite2D" parent="MouseCursorAndEnterGraphics"]
+position = Vector2(3, -34)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("11_qx3mk")
+
+[node name="Enter" type="Sprite2D" parent="MouseCursorAndEnterGraphics"]
+position = Vector2(7, 33)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("12_dgwks")

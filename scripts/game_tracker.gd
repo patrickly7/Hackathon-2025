@@ -14,33 +14,45 @@ func _ready():
 		$NextGameBubbleSprite.hide()
 		$MiniBubblesRight.hide()
 		
-	setGameBubbleSprites()
+	setGameBubbleSpritesAndControlGraphics()
 
 func _input(event):
 	if event.is_action_pressed("action"):
 		get_tree().change_scene_to_file(Global.NEXT_GAME_SCENE)
 
-func setGameBubbleSprites():
+func setGameBubbleSpritesAndControlGraphics():
 	match Global.CURRENT_GAME:
 		"Dock Receive":
 			$CurrentGameBubbleSprite.texture = load("res://assets/art/Dock_Receive_Icon.png")
 			$NextGameBubbleSprite.texture = load("res://assets/art/Confirm_Receive_Icon.png")
+			
+			$ArrowKeysAndEnterGraphics.show()
 		"Confirm Receive":
 			$LastGameBubbleSprite.texture = load("res://assets/art/Dock_Receive_Icon.png")
 			$CurrentGameBubbleSprite.texture = load("res://assets/art/Confirm_Receive_Icon.png")
 			$NextGameBubbleSprite.texture = load("res://assets/art/Inventory_Icon.png")
+			
+			$MouseCursorGraphic.show()
 		"Inventory":
 			$LastGameBubbleSprite.texture = load("res://assets/art/Confirm_Receive_Icon.png")
 			$CurrentGameBubbleSprite.texture = load("res://assets/art/Inventory_Icon.png")
 			$NextGameBubbleSprite.texture = load("res://assets/art/Picking_Icon.png")
+			
+			$MouseCursorAndEnterGraphics.show()
 		"Picking":
 			$LastGameBubbleSprite.texture = load("res://assets/art/Inventory_Icon.png")
 			$CurrentGameBubbleSprite.texture = load("res://assets/art/Picking_Icon.png")
 			$NextGameBubbleSprite.texture = load("res://assets/art/Packing_Icon.png")
+			
+			$MouseCursorGraphic.show()
 		"Packing":
 			$LastGameBubbleSprite.texture = load("res://assets/art/Picking_Icon.png")
 			$CurrentGameBubbleSprite.texture = load("res://assets/art/Packing_Icon.png")
 			$NextGameBubbleSprite.texture = load("res://assets/art/Shipping_Icon.png")
+			
+			$ArrowKeysGraphic.show()
 		"Shipping":
 			$LastGameBubbleSprite.texture = load("res://assets/art/Packing_Icon.png")
 			$CurrentGameBubbleSprite.texture = load("res://assets/art/Shipping_Icon.png")
+			
+			$MouseCursorGraphic.show()
