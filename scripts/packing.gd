@@ -1,6 +1,6 @@
 extends Node2D
 
-const GAME_TIME = 10
+const GAME_TIME = 30
 const BOXES_TO_PACK = 5
 
 const KEYS = ["Left", "Right", "Up", "Down"]
@@ -71,13 +71,22 @@ func setUpKeySetVisuals():
 
 func updateKeys():
 	currentKeyIndex += 1
-	if (currentKeyIndex == 3):
-		print("Finished Key Set %s" % str(currentKeySetIndex))
-		currentKeyIndex = 0
-		currentKeySetIndex += 1
+	match currentKeyIndex:
+		1:
+			$PackageOpen.hide()
+			$PackageFilled.show()
+		2:
+			$PackageFilled.hide()
+			$Box.show()
+		3:
+			$PackageOpen.show()
+			$Box.hide()
+			print("Finished Key Set %s" % str(currentKeySetIndex))
+			currentKeyIndex = 0
+			currentKeySetIndex += 1
 		
-		if (currentKeySetIndex != BOXES_TO_PACK):
-			setUpKeySetVisuals()
+			if (currentKeySetIndex != BOXES_TO_PACK):
+				setUpKeySetVisuals()
 		
 	if (currentKeySetIndex == BOXES_TO_PACK):
 		$GameTimer.stopTimer()
