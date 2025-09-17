@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cjtu2ovujngms" path="res://scripts/final_results_screen.gd" id="1_uel5l"]
 [ext_resource type="FontFile" uid="uid://dy3mkbdhno5r2" path="res://assets/fonts/Pixel Game Extrude.otf" id="2_sprhc"]
+[ext_resource type="Texture2D" uid="uid://c3ssbvae82jk2" path="res://assets/art/GameTrackerBackground.png" id="2_u5qtb"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="3_l2pof"]
 [ext_resource type="Texture2D" uid="uid://dlw2rkjsokml0" path="res://assets/art/Button.png" id="4_ymtg7"]
 [ext_resource type="AudioStream" uid="uid://ce8yho37cuihy" path="res://assets/music/sfx/Good_Job_Final.mp3" id="5_qjy8y"]
@@ -11,6 +12,9 @@
 [ext_resource type="AudioStream" uid="uid://b7wxco0djbesh" path="res://assets/music/sfx/Bad_Job_Final.mp3" id="7_x74oy"]
 [ext_resource type="Texture2D" uid="uid://dcs4hmxdsa8sj" path="res://assets/art/Bad_Medal.png" id="7_ymtg7"]
 [ext_resource type="AudioStream" uid="uid://x70ite0s0lec" path="res://assets/music/sfx/Drumroll.mp3" id="11_u5qtb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_www78"]
+texture = ExtResource("2_u5qtb")
 
 [node name="FinalResultsScreen" type="Control"]
 layout_mode = 3
@@ -25,14 +29,15 @@ script = ExtResource("1_uel5l")
 layout_mode = 0
 offset_right = 1151.0
 offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_www78")
 
 [node name="FinalResultsTitle" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 40.0
-offset_top = 3.0
-offset_right = 527.0
-offset_bottom = 124.0
+offset_left = 229.0
+offset_top = 7.0
+offset_right = 716.0
+offset_bottom = 128.0
 
 [node name="BackText" type="Label" parent="FinalResultsTitle"]
 layout_mode = 0
@@ -51,6 +56,7 @@ offset_left = 8.0
 offset_top = 13.0
 offset_right = 1101.0
 offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.356863, 0.431373, 0.882353, 1)
 theme_override_fonts/font = ExtResource("3_l2pof")
 theme_override_font_sizes/font_size = 96
 text = "FInal results"
@@ -116,6 +122,7 @@ offset_left = 6.0
 offset_top = 438.0
 offset_right = 783.0
 offset_bottom = 504.0
+theme_override_colors/font_color = Color(0.388235, 0.607843, 1, 1)
 theme_override_fonts/font = ExtResource("3_l2pof")
 theme_override_font_sizes/font_size = 64
 text = "Total Time: 52 seconds"

@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://hk2x4t4ppa1t"]
+[gd_scene load_steps=23 format=3 uid="uid://hk2x4t4ppa1t"]
 
 [ext_resource type="Script" uid="uid://d3gjhlfg65wkq" path="res://scripts/start_menu.gd" id="1_ouf4f"]
+[ext_resource type="Texture2D" uid="uid://c3ssbvae82jk2" path="res://assets/art/GameTrackerBackground.png" id="2_e58y3"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="2_thu50"]
 [ext_resource type="Texture2D" uid="uid://bihyblpyfa2se" path="res://assets/art/Enter_Button.png" id="3_4v6gu"]
 [ext_resource type="AudioStream" uid="uid://byi0hxvc6l0mt" path="res://assets/music/Main_Menu.mp3" id="3_m7x51"]
@@ -9,6 +10,20 @@
 [ext_resource type="Texture2D" uid="uid://dlw2rkjsokml0" path="res://assets/art/Button.png" id="6_5byqq"]
 [ext_resource type="Texture2D" uid="uid://b4hqe8i833dlk" path="res://assets/art/Button_Pressed.png" id="7_e58y3"]
 [ext_resource type="Texture2D" uid="uid://e5ls2lm1sqyc" path="res://assets/art/Button_Hover.png" id="8_apowk"]
+[ext_resource type="Texture2D" uid="uid://14c8w6frpd57" path="res://assets/art/Conveyor_Belt.png" id="11_mroui"]
+[ext_resource type="Texture2D" uid="uid://uhld7odui7ul" path="res://assets/art/Accepted_Box.png" id="12_0lulb"]
+[ext_resource type="Texture2D" uid="uid://dgo63duolrq24" path="res://assets/art/Arrow_Key_Group.png" id="13_2o8dr"]
+[ext_resource type="Texture2D" uid="uid://b6aap0u1di85" path="res://assets/art/Cursor.png" id="14_3rgym"]
+[ext_resource type="Texture2D" uid="uid://bis480f7w4fx7" path="res://assets/art/Cabinet.png" id="15_u1ism"]
+[ext_resource type="Texture2D" uid="uid://dufsh63teyfth" path="res://assets/art/Drawer_Purple_Full_Opened.png" id="16_jjmg0"]
+[ext_resource type="Texture2D" uid="uid://ca4me35hfn18x" path="res://assets/art/Drawer_Red_Full_Opened.png" id="17_1d3uo"]
+[ext_resource type="Texture2D" uid="uid://biudod7fm08ua" path="res://assets/art/Package.png" id="18_hp5u2"]
+[ext_resource type="Texture2D" uid="uid://d1j8p2crdiq5k" path="res://assets/art/Timer_Base.png" id="19_fy578"]
+[ext_resource type="Texture2D" uid="uid://npl5ddge5pno" path="res://assets/art/Timer_Hand.png" id="20_ccphb"]
+[ext_resource type="Texture2D" uid="uid://cldltiy8t0put" path="res://assets/art/Keyboard_Key.png" id="21_q1sms"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_apowk"]
+texture = ExtResource("2_e58y3")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -23,13 +38,16 @@ script = ExtResource("1_ouf4f")
 layout_mode = 0
 offset_right = 1154.0
 offset_bottom = 651.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_apowk")
+metadata/_edit_lock_ = true
 
 [node name="GameTitle" type="Label" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 82.0
-offset_right = 1150.0
-offset_bottom = 229.0
+offset_left = -1.0
+offset_top = 16.0
+offset_right = 1147.0
+offset_bottom = 163.0
+theme_override_colors/font_color = Color(0.356863, 0.431373, 0.882353, 1)
 theme_override_fonts/font = ExtResource("2_thu50")
 theme_override_font_sizes/font_size = 144
 text = "WMS: AGILE EDITIOn"
@@ -43,8 +61,8 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -72.0
-offset_top = -25.0
-offset_right = 71.0
+offset_top = -47.0
+offset_right = 118.0
 offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -58,8 +76,8 @@ stretch_mode = 0
 layout_mode = 0
 offset_left = 12.0
 offset_top = 12.0
-offset_right = 131.0
-offset_bottom = 61.0
+offset_right = 178.0
+offset_bottom = 80.0
 theme_override_colors/font_color = Color(0.388235, 0.607843, 1, 1)
 theme_override_fonts/font = ExtResource("2_thu50")
 theme_override_font_sizes/font_size = 36
@@ -86,12 +104,12 @@ texture_hover = ExtResource("8_apowk")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="QuietLabel" type="Label" parent="QuitButton"]
+[node name="QuitLabel" type="Label" parent="QuitButton"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 8.0
-offset_right = 126.0
-offset_bottom = 57.0
+offset_left = 16.0
+offset_top = 15.0
+offset_right = 173.0
+offset_bottom = 80.0
 theme_override_colors/font_color = Color(0.388235, 0.607843, 1, 1)
 theme_override_fonts/font = ExtResource("2_thu50")
 theme_override_font_sizes/font_size = 36
@@ -129,6 +147,61 @@ text = "shipping"
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_m7x51")
 parameters/looping = true
+
+[node name="ConveyorBelt" type="Sprite2D" parent="."]
+position = Vector2(576, 466)
+scale = Vector2(1.12919, 1)
+texture = ExtResource("11_mroui")
+
+[node name="AcceptedBox" type="Sprite2D" parent="."]
+position = Vector2(283, 293)
+scale = Vector2(0.326704, 0.308373)
+texture = ExtResource("12_0lulb")
+
+[node name="ArrowKeyGroup" type="Sprite2D" parent="."]
+position = Vector2(1023, 468)
+scale = Vector2(0.885417, 0.895833)
+texture = ExtResource("13_2o8dr")
+
+[node name="Cursor" type="Sprite2D" parent="."]
+position = Vector2(102, 261)
+texture = ExtResource("14_3rgym")
+
+[node name="Cabinet" type="Sprite2D" parent="."]
+position = Vector2(894, 267)
+scale = Vector2(0.611111, 0.540404)
+texture = ExtResource("15_u1ism")
+
+[node name="DrawerPurpleFullOpened" type="Sprite2D" parent="Cabinet"]
+z_index = 1
+position = Vector2(-63.8181, -12.9532)
+scale = Vector2(0.398635, 0.4975)
+texture = ExtResource("16_jjmg0")
+
+[node name="DrawerRedFullOpened" type="Sprite2D" parent="Cabinet"]
+position = Vector2(-60.5454, 144.337)
+scale = Vector2(0.392536, 0.502483)
+texture = ExtResource("17_1d3uo")
+
+[node name="Package" type="Sprite2D" parent="."]
+position = Vector2(346, 501)
+scale = Vector2(0.27264, 0.282067)
+texture = ExtResource("18_hp5u2")
+
+[node name="TimerBase" type="Sprite2D" parent="."]
+position = Vector2(97.0001, 95.0001)
+scale = Vector2(0.199597, 0.183468)
+texture = ExtResource("19_fy578")
+
+[node name="TimerHand" type="Sprite2D" parent="."]
+position = Vector2(99, 59)
+scale = Vector2(0.245049, 0.148305)
+texture = ExtResource("20_ccphb")
+
+[node name="KeyboardKey" type="Sprite2D" parent="."]
+position = Vector2(1064, 162)
+scale = Vector2(0.0855985, 0.0671008)
+texture = ExtResource("21_q1sms")
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

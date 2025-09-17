@@ -1,6 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bvfcnhb5qqj12"]
 
 [ext_resource type="Script" uid="uid://c7ckxuatbprfk" path="res://scripts/result_screen.gd" id="1_y7kih"]
+[ext_resource type="Texture2D" uid="uid://c3ssbvae82jk2" path="res://assets/art/GameTrackerBackground.png" id="2_46yes"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="2_raeeo"]
 [ext_resource type="Texture2D" uid="uid://dlw2rkjsokml0" path="res://assets/art/Button.png" id="3_bsfim"]
 [ext_resource type="Texture2D" uid="uid://b4hqe8i833dlk" path="res://assets/art/Button_Pressed.png" id="4_46yes"]
@@ -11,6 +12,9 @@
 [ext_resource type="AudioStream" uid="uid://bgqx8fxkaopy8" path="res://assets/music/sfx/Okay_Job.mp3" id="6_nj5ho"]
 [ext_resource type="AudioStream" uid="uid://6w26jbqy5ib0" path="res://assets/music/sfx/Bad_Job.mp3" id="7_et5d2"]
 [ext_resource type="AudioStream" uid="uid://x70ite0s0lec" path="res://assets/music/sfx/Drumroll.mp3" id="11_46yes"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vrrhk"]
+texture = ExtResource("2_46yes")
 
 [node name="ResultScreen" type="Control"]
 layout_mode = 3
@@ -25,13 +29,15 @@ script = ExtResource("1_y7kih")
 layout_mode = 0
 offset_right = 1151.0
 offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_vrrhk")
 
 [node name="StationTitle" type="Label" parent="."]
 layout_mode = 0
-offset_left = 56.0
-offset_top = 56.0
-offset_right = 1149.0
-offset_bottom = 186.0
+offset_left = 221.0
+offset_top = 16.0
+offset_right = 1314.0
+offset_bottom = 146.0
+theme_override_colors/font_color = Color(0.356863, 0.431373, 0.882353, 1)
 theme_override_fonts/font = ExtResource("2_raeeo")
 theme_override_font_sizes/font_size = 96
 text = "STATION Tile"
@@ -44,6 +50,7 @@ offset_left = 56.0
 offset_top = 173.0
 offset_right = 1148.0
 offset_bottom = 303.0
+theme_override_colors/font_color = Color(0.388235, 0.607843, 1, 1)
 theme_override_fonts/font = ExtResource("2_raeeo")
 theme_override_font_sizes/font_size = 72
 text = "Time Taken: "
@@ -68,6 +75,7 @@ offset_left = 106.0
 offset_top = 227.0
 offset_right = 1196.0
 offset_bottom = 357.0
+theme_override_colors/font_color = Color(0.388235, 0.607843, 1, 1)
 theme_override_fonts/font = ExtResource("2_raeeo")
 theme_override_font_sizes/font_size = 72
 text = "Mistakes:"
