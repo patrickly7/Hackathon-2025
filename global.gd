@@ -37,12 +37,12 @@ var SHIPPING_MISTAKES = 0
 var SHIPPING_MEDAL = "Gold"
 
 var DESCRIPTION_DICT = {
-	"Dock Receive": "Long ago, the dock nations...",
-	"Confirm Receive": "Long ago, the confirm nations...",
-	"Inventory": "Long ago, the inventory nations...",
-	"Picking": "Long ago, the picking nations...",
-	"Packing": "Long ago, the packing nations...",
-	"Shipping": "Long ago, the shipping nations...",
+	"Dock Receive": "Scan packages as they whoosh past!\nMove with arrows, scan with spacebar!",
+	"Confirm Receive": "Verify correct cards!\nMatches go in ACCEPTED!\nMismatches go in EXCEPTIONS!",
+	"Inventory": "Count cards in each cabinet!\nUse buttons to change count!\nPress ENTER to guess!",
+	"Picking": "Pick cards from cabinets!\nHover over cabinets to open!\nClick to pick!",
+	"Packing": "Pack cards into boxes!\nFollow the prompts with arrow keys!",
+	"Shipping": "Load boxes for shipping!\nClick the box that matches the current space!",
 }
 
 func prepareNextGame():

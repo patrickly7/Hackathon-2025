@@ -113,9 +113,9 @@ texture = ExtResource("6_velld")
 [node name="DescriptionText" type="Label" parent="."]
 layout_mode = 0
 offset_left = 152.0
-offset_top = 184.0
+offset_top = 176.0
 offset_right = 787.0
-offset_bottom = 314.0
+offset_bottom = 323.0
 theme_override_fonts/font = ExtResource("3_velld")
 theme_override_font_sizes/font_size = 48
 text = "Long ago, the four nations..."
