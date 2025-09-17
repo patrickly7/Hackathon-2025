@@ -9,9 +9,9 @@
 [ext_resource type="AudioStream" uid="uid://ccw7y5iw04u7j" path="res://assets/music/sfx/Miku_Finish.mp3" id="5_flqre"]
 [ext_resource type="Texture2D" uid="uid://cd4jniqotng3l" path="res://assets/art/Package_Open.png" id="5_khy8k"]
 [ext_resource type="Texture2D" uid="uid://biudod7fm08ua" path="res://assets/art/Package.png" id="5_ldn6l"]
-[ext_resource type="Texture2D" uid="uid://b6k61tluj0y52" path="res://assets/art/GameTracker_Mini-Bubble.png" id="6_8dvam"]
 [ext_resource type="Texture2D" uid="uid://cgmns52qb3x4x" path="res://assets/art/Package_Filled.png" id="6_86k3w"]
 [ext_resource type="AudioStream" uid="uid://dm7rbs6lr8fho" path="res://assets/music/Packing.mp3" id="7_kp4uy"]
+[ext_resource type="Texture2D" uid="uid://tq4g351q5cja" path="res://assets/art/Arrow_Key_Left.png" id="8_86k3w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_khy8k"]
 texture = ExtResource("2_46etp")
@@ -48,44 +48,20 @@ position = Vector2(564, 333)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_ldn6l")
 
-[node name="GameTrackerMini-bubble3" type="Sprite2D" parent="."]
-position = Vector2(416, 535)
-rotation = 3.14159
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("6_8dvam")
+[node name="LeftIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(411, 537)
+texture = ExtResource("8_86k3w")
 
-[node name="LeftLabel" type="Label" parent="."]
-offset_left = 398.0
-offset_top = 521.0
-offset_right = 438.0
-offset_bottom = 544.0
-text = "Left"
+[node name="MiddleIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(553, 536)
+texture = ExtResource("8_86k3w")
 
-[node name="GameTrackerMini-bubble" type="Sprite2D" parent="."]
-position = Vector2(551, 530)
-rotation = 3.14159
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("6_8dvam")
-
-[node name="MiddleLabel" type="Label" parent="."]
-offset_left = 527.0
-offset_top = 521.0
-offset_right = 580.0
-offset_bottom = 544.0
-text = "Middle"
-
-[node name="GameTrackerMini-bubble2" type="Sprite2D" parent="."]
-position = Vector2(692, 532)
-rotation = 3.14159
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("6_8dvam")
-
-[node name="RightLabel" type="Label" parent="."]
-offset_left = 675.0
-offset_top = 519.0
-offset_right = 716.0
-offset_bottom = 542.0
-text = "Right"
+[node name="RightIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(695, 535)
+texture = ExtResource("8_86k3w")
 
 [node name="StartSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_ju4qu")

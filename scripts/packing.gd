@@ -33,6 +33,9 @@ func _ready():
 		
 	print(keySets)
 	setUpKeySetVisuals()
+	$LeftIcon.show()
+	$MiddleIcon.show()
+	$RightIcon.show()
 	
 	await get_tree().create_timer(0.25).timeout
 	$StartText.hide()
@@ -65,9 +68,21 @@ func _input(event):
 			mistakes += 1
 		
 func setUpKeySetVisuals():
-	$LeftLabel.text = keySets[currentKeySetIndex][0]
-	$MiddleLabel.text = keySets[currentKeySetIndex][1]
-	$RightLabel.text = keySets[currentKeySetIndex][2]
+	$LeftIcon.texture = load(get_Icon_Texture(keySets[currentKeySetIndex][0]))
+	$MiddleIcon.texture = load(get_Icon_Texture(keySets[currentKeySetIndex][1]))
+	$RightIcon.texture = load(get_Icon_Texture(keySets[currentKeySetIndex][2]))
+
+func get_Icon_Texture(Icon):
+	match Icon:
+		"Up":
+			return "res://assets/art/Arrow_Key_Up.png"
+		"Down":
+			return "res://assets/art/Arrow_Key_Down.png"
+		"Left":
+			return "res://assets/art/Arrow_Key_Left.png"
+		"Right":
+			return "res://assets/art/Arrow_Key_Right.png"
+	
 
 func updateKeys():
 	currentKeyIndex += 1

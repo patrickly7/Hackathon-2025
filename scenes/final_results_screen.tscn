@@ -1,11 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxxpi4v2yy1de"]
+[gd_scene load_steps=11 format=3 uid="uid://dxxpi4v2yy1de"]
 
 [ext_resource type="Script" uid="uid://cjtu2ovujngms" path="res://scripts/final_results_screen.gd" id="1_uel5l"]
 [ext_resource type="FontFile" uid="uid://dy3mkbdhno5r2" path="res://assets/fonts/Pixel Game Extrude.otf" id="2_sprhc"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="3_l2pof"]
 [ext_resource type="Texture2D" uid="uid://bisdgal18ddge" path="res://assets/art/shohei.jpg" id="4_l2pof"]
+[ext_resource type="Texture2D" uid="uid://dlw2rkjsokml0" path="res://assets/art/Button.png" id="4_ymtg7"]
 [ext_resource type="AudioStream" uid="uid://ce8yho37cuihy" path="res://assets/music/sfx/Good_Job_Final.mp3" id="5_qjy8y"]
+[ext_resource type="Texture2D" uid="uid://b4hqe8i833dlk" path="res://assets/art/Button_Pressed.png" id="5_u5qtb"]
 [ext_resource type="AudioStream" uid="uid://byqwbrb6lm7x2" path="res://assets/music/sfx/Okay_Job_Final.mp3" id="6_ilo8s"]
+[ext_resource type="Texture2D" uid="uid://e5ls2lm1sqyc" path="res://assets/art/Button_Hover.png" id="6_www78"]
 [ext_resource type="AudioStream" uid="uid://b7wxco0djbesh" path="res://assets/music/sfx/Bad_Job_Final.mp3" id="7_x74oy"]
 
 [node name="FinalResultsScreen" type="Control"]
@@ -53,27 +56,57 @@ text = "FInal results"
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="PlayAgainButton" type="Button" parent="."]
+[node name="PlayAgainButton" type="TextureButton" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 183.0
 offset_top = 521.0
 offset_right = 371.0
 offset_bottom = 588.0
-theme_override_fonts/font = ExtResource("3_l2pof")
-theme_override_font_sizes/font_size = 36
-text = "Play Again"
+texture_normal = ExtResource("4_ymtg7")
+texture_pressed = ExtResource("5_u5qtb")
+texture_hover = ExtResource("6_www78")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="HomeButton" type="Button" parent="."]
+[node name="PlayAgainLabel" type="Label" parent="PlayAgainButton"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 11.0
+offset_right = 173.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.388235, 0.607843, 1, 1)
+theme_override_fonts/font = ExtResource("3_l2pof")
+theme_override_font_sizes/font_size = 32
+text = "Play Again"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HomeButton" type="TextureButton" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 428.0
 offset_top = 521.0
 offset_right = 618.0
 offset_bottom = 587.0
+texture_normal = ExtResource("4_ymtg7")
+texture_pressed = ExtResource("5_u5qtb")
+texture_hover = ExtResource("6_www78")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HomeLabel" type="Label" parent="HomeButton"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 11.0
+offset_right = 174.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.388235, 0.607843, 1, 1)
 theme_override_fonts/font = ExtResource("3_l2pof")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 32
 text = "Home"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TotalTimeText" type="Label" parent="."]
 visible = false

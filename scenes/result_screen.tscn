@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvfcnhb5qqj12"]
+[gd_scene load_steps=11 format=3 uid="uid://bvfcnhb5qqj12"]
 
 [ext_resource type="Script" uid="uid://c7ckxuatbprfk" path="res://scripts/result_screen.gd" id="1_y7kih"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="2_raeeo"]
+[ext_resource type="Texture2D" uid="uid://dlw2rkjsokml0" path="res://assets/art/Button.png" id="3_bsfim"]
 [ext_resource type="Texture2D" uid="uid://bisdgal18ddge" path="res://assets/art/shohei.jpg" id="3_im14c"]
+[ext_resource type="Texture2D" uid="uid://b4hqe8i833dlk" path="res://assets/art/Button_Pressed.png" id="4_46yes"]
 [ext_resource type="FontFile" uid="uid://dy3mkbdhno5r2" path="res://assets/fonts/Pixel Game Extrude.otf" id="4_l46iw"]
+[ext_resource type="Texture2D" uid="uid://e5ls2lm1sqyc" path="res://assets/art/Button_Hover.png" id="5_vrrhk"]
 [ext_resource type="AudioStream" uid="uid://dr2kgxiuim7k0" path="res://assets/music/sfx/Good_Job.mp3" id="5_wrniu"]
 [ext_resource type="AudioStream" uid="uid://bgqx8fxkaopy8" path="res://assets/music/sfx/Okay_Job.mp3" id="6_nj5ho"]
 [ext_resource type="AudioStream" uid="uid://6w26jbqy5ib0" path="res://assets/music/sfx/Bad_Job.mp3" id="7_et5d2"]
@@ -79,15 +82,29 @@ theme_override_font_sizes/font_size = 72
 text = "100"
 vertical_alignment = 1
 
-[node name="ContinueButton" type="Button" parent="."]
+[node name="ContinueButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 242.0
 offset_top = 414.0
 offset_right = 589.0
 offset_bottom = 544.0
+texture_normal = ExtResource("3_bsfim")
+texture_pressed = ExtResource("4_46yes")
+texture_hover = ExtResource("5_vrrhk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ContinueLabel" type="Label" parent="ContinueButton"]
+offset_left = 29.0
+offset_top = 20.0
+offset_right = 318.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0.388235, 0.607843, 1, 1)
 theme_override_fonts/font = ExtResource("2_raeeo")
 theme_override_font_sizes/font_size = 72
 text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ResultMedal" type="Sprite2D" parent="."]
 position = Vector2(931, 298)
