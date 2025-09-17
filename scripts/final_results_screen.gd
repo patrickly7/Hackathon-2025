@@ -47,41 +47,45 @@ func _ready():
 	$DrumRollSFX.play()
 	
 	await get_tree().create_timer(0.25).timeout
-	$DockReceiveMedal.texture =load(showMedal(Global.DOCK_RECEIVE_MEDAL))
+	$DockReceiveMedal.texture = load(showMedal(Global.DOCK_RECEIVE_MEDAL))
 	$DockReceiveMedal.show()
 	
 	await get_tree().create_timer(0.25).timeout
-	$ConfirmReceiveMedal.texture =load(showMedal(Global.CONFIRM_RECEIVE_MEDAL))
+	$ConfirmReceiveMedal.texture = load(showMedal(Global.CONFIRM_RECEIVE_MEDAL))
 	$ConfirmReceiveMedal.show()
 	
 	await get_tree().create_timer(0.25).timeout
-	$InventoryMedal.texture =load(showMedal(Global.INVENTORY_MEDAL))
+	$InventoryMedal.texture = load(showMedal(Global.INVENTORY_MEDAL))
 	$InventoryMedal.show()
 	
 	await get_tree().create_timer(0.25).timeout
-	$PickingMedal.texture =load(showMedal(Global.PICKING_MEDAL))
+	$PickingMedal.texture = load(showMedal(Global.PICKING_MEDAL))
 	$PickingMedal.show()
 	
 	await get_tree().create_timer(0.25).timeout
-	$PackingMedal.texture =load(showMedal(Global.PACKING_MEDAL))
+	$PackingMedal.texture = load(showMedal(Global.PACKING_MEDAL))
 	$PackingMedal.show()
 	
 	await get_tree().create_timer(0.25).timeout
-	$ShippingMedal.texture =load(showMedal(Global.SHIPPING_MEDAL))
+	$ShippingMedal.texture = load(showMedal(Global.SHIPPING_MEDAL))
 	$ShippingMedal.show()
 	
 	await get_tree().create_timer(1).timeout
 	
-	$FinalMedal.show()
 	if (finalMedal == "Gold"):
 		$GoodJobText.show()
 		$GoodJobSFX.play()
+		$FinalMedal.texture = load(showMedal("Gold"))
 	elif (finalMedal == "Silver"):
 		$OkayJobText.show()
 		$OkayJobSFX.play()
+		$FinalMedal.texture = load(showMedal("Silver"))
 	else:
 		$BadJobText.show()
 		$BadJobSFX.play()
+		$FinalMedal.texture = load(showMedal("Bronze"))
+		
+	$FinalMedal.show()
 	
 	$TotalTimeText.text = "Total Time: " + str(totalTimeTaken) + " secs"
 	$TotalTimeText.show()
