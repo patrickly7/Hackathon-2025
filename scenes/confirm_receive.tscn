@@ -69,6 +69,7 @@ text = "Accepted
 "
 
 [node name="Card" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(580, 510)
 scale = Vector2(0.453489, 0.453489)
 texture = ExtResource("9_qr1f2")

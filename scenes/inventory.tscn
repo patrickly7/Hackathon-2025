@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://qpmegosr3tca"]
+[gd_scene load_steps=43 format=3 uid="uid://qpmegosr3tca"]
 
 [ext_resource type="Script" uid="uid://cmokhxe51i514" path="res://scripts/inventory.gd" id="1_hj2ta"]
 [ext_resource type="Texture2D" uid="uid://wrnhcpfl17qj" path="res://assets/art/Background_Inventory.png" id="2_53g1v"]
@@ -32,6 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://c65o8w3jexn23" path="res://assets/art/Drawer_Green_Closed.png" id="29_l0dva"]
 [ext_resource type="AudioStream" uid="uid://dlb1qdy6l88e8" path="res://assets/music/sfx/Miku_Ready_Start.mp3" id="31_ax4un"]
 [ext_resource type="AudioStream" uid="uid://ccw7y5iw04u7j" path="res://assets/music/sfx/Miku_Finish.mp3" id="32_dt67b"]
+[ext_resource type="AudioStream" uid="uid://cm3evwukd83gb" path="res://assets/music/sfx/Rong.mp3" id="34_1ilke"]
+[ext_resource type="AudioStream" uid="uid://cpw5sdywrdg13" path="res://assets/music/sfx/Correct.mp3" id="35_nrd71"]
 
 [sub_resource type="Theme" id="Theme_td2ew"]
 default_font = ExtResource("4_p7iul")
@@ -503,6 +505,12 @@ theme_override_font_sizes/font_size = 96
 text = "FINISH!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Rong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("34_1ilke")
+
+[node name="Correct" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("35_nrd71")
 
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
 [connection signal="value_changed" from="CardQuantityInput" to="." method="_on_card_quantity_input_value_changed"]

@@ -30,13 +30,15 @@ func _on_enter_button_pressed() -> void:
 
 func checkCardQuantityInput():
 	if $CardQuantityInput.value == quantity:
+		$Correct.play()
 		shelf+=1
 		openNextShelf()
 	else:
+		$Rong.play()
 		mistakes +=1
 
 func calculateMedal():
-	if mistakes<2 and shelf >=6:
+	if mistakes<2 and shelf >6:
 		Global.INVENTORY_MEDAL = "Gold"
 	elif mistakes<5 and shelf >=4:
 		Global.INVENTORY_MEDAL = "Silver"
@@ -96,17 +98,12 @@ func openNextShelf():
 			$Drawer6.hide()
 			$Drawer6Closed.show()
 			$GameTimer.stopTimer()
-			
-			
-	
 
-
-func _on_card_quantity_input_value_changed(value: float) -> void:
+func _on_card_quantity_input_value_changed(value: float) -> void:	
 	if value == $CardQuantityInput.max_value:
 		$CardQuantityInput.value = $CardQuantityInput.min_value+1
 	elif value == $CardQuantityInput.min_value:
 		$CardQuantityInput.value = $CardQuantityInput.max_value-1
-
 
 func _on_game_timer_game_timer_end(secondsLeft: int) -> void:
 	$FinishText.show()

@@ -24,6 +24,7 @@ func _ready():
 	$StartText.show()
 	
 	init_game()
+	$Card.show()
 	$GameTimer.startTimer(GAME_TIME)
 	$BGMusic.play()
 

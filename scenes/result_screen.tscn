@@ -113,16 +113,16 @@ vertical_alignment = 1
 
 [node name="ResultMedal" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(920, 283)
+position = Vector2(915, 303)
 scale = Vector2(0.780702, 0.622951)
 texture = ExtResource("6_bsfim")
 
 [node name="GoodJobText" type="Control" parent="."]
 visible = false
 anchors_preset = 0
-offset_left = 761.0
+offset_left = 746.0
 offset_top = 468.0
-offset_right = 1106.0
+offset_right = 1091.0
 offset_bottom = 598.0
 
 [node name="BackText" type="Label" parent="GoodJobText"]
@@ -152,9 +152,9 @@ metadata/_edit_lock_ = true
 [node name="OkayJobText" type="Control" parent="."]
 visible = false
 anchors_preset = 0
-offset_left = 756.0
+offset_left = 744.0
 offset_top = 468.0
-offset_right = 1101.0
+offset_right = 1089.0
 offset_bottom = 598.0
 
 [node name="BackText" type="Label" parent="OkayJobText"]
@@ -184,9 +184,9 @@ metadata/_edit_lock_ = true
 [node name="BadJobText" type="Control" parent="."]
 visible = false
 anchors_preset = 0
-offset_left = 782.0
+offset_left = 767.0
 offset_top = 468.0
-offset_right = 1127.0
+offset_right = 1112.0
 offset_bottom = 598.0
 
 [node name="BackText" type="Label" parent="BadJobText"]
