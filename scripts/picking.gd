@@ -32,8 +32,12 @@ func _ready():
 		
 	await get_tree().create_timer(0.25).timeout
 	$StartText.hide()
+func confirm_label_text(task: int):
+	var label = $CardTasks.get_child(task) as Label
+	label.text = "Picked!"
 
 func moveToNextTask():
+	confirm_label_text(currentTask)
 	currentTask += 1
 	if (currentTask == NUM_TASKS):
 		$GameTimer.stopTimer()
