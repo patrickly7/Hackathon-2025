@@ -113,3 +113,83 @@ func _on_white_cabinet_pressed():
 		moveToNextTask()
 	else:
 		mistakes += 1
+
+
+func _on_red_cabinet_mouse_entered() -> void:
+	$RedCabinet/DrawerRedClosed.hide()
+	$RedCabinet/DrawerRedFullOpened.show()
+
+
+func _on_red_cabinet_mouse_exited() -> void:
+	$RedCabinet/DrawerRedClosed.show()
+	$RedCabinet/DrawerRedFullOpened.hide()
+
+
+func _on_blue_cabinet_mouse_entered() -> void:
+	$BlueCabinet/DrawerBlueClosed.hide()
+	$BlueCabinet/DrawerBlueFullOpened.show()
+
+
+func _on_blue_cabinet_mouse_exited() -> void:
+	$BlueCabinet/DrawerBlueClosed.show()
+	$BlueCabinet/DrawerBlueFullOpened.hide()
+
+
+func _on_green_cabinet_mouse_entered() -> void:
+	$GreenCabinet/DrawerGreenClosed.hide()
+	$GreenCabinet/DrawerGreenFullOpened.show()
+
+
+func _on_green_cabinet_mouse_exited() -> void:
+	$GreenCabinet/DrawerGreenClosed.show()
+	$GreenCabinet/DrawerGreenFullOpened.hide()
+
+
+func _on_yellow_cabinet_mouse_entered() -> void:
+	$YellowCabinet/DrawerYellowClosed.hide()
+	$YellowCabinet/DrawerYellowFullOpened.show()
+
+
+func _on_yellow_cabinet_mouse_exited() -> void:
+	$YellowCabinet/DrawerYellowClosed.show()
+	$YellowCabinet/DrawerYellowFullOpened.hide()
+
+
+func _on_purple_cabinet_mouse_entered() -> void:
+	$PurpleCabinet/DrawerPurpleClosed.hide()
+	$PurpleCabinet/DrawerPurpleFullOpened.show()
+
+
+func _on_purple_cabinet_mouse_exited() -> void:
+	$PurpleCabinet/DrawerPurpleClosed.show()
+	$PurpleCabinet/DrawerPurpleFullOpened.hide()
+
+
+func _on_black_cabinet_mouse_entered() -> void:
+	$BlackCabinet/DrawerBlackClosed.hide()
+	$BlackCabinet/DrawerBlackFullOpened.show()
+
+
+func _on_black_cabinet_mouse_exited() -> void:
+	$BlackCabinet/DrawerBlackClosed.show()
+	$BlackCabinet/DrawerBlackFullOpened.hide()
+
+
+func _on_white_cabinet_mouse_entered() -> void:
+	$WhiteCabinet/DrawerWhiteClosed.hide()
+	$WhiteCabinet/DrawerWhiteFullOpened.show()
+
+
+func _on_white_cabinet_mouse_exited() -> void:
+	$WhiteCabinet/DrawerWhiteClosed.show()
+	$WhiteCabinet/DrawerWhiteFullOpened.hide()
+
+
+func _on_orange_cabinet_mouse_entered() -> void:
+	$OrangeCabinet/DrawerOrangeClosed.hide()
+	$OrangeCabinet/DrawerOrangeFullOpened.show()
+
+
+func _on_orange_cabinet_mouse_exited() -> void:
+	$OrangeCabinet/DrawerOrangeClosed.show()
+	$OrangeCabinet/DrawerOrangeFullOpened.hide()

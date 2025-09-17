@@ -175,7 +175,8 @@ scale = Vector2(3.34767, 3.39122)
 texture = ExtResource("21_j8d85")
 
 [node name="Drawer2Closed" type="Sprite2D" parent="."]
-position = Vector2(279, 462)
+position = Vector2(279.25, 384.5)
+scale = Vector2(0.405201, 0.426554)
 texture = ExtResource("22_5mlvw")
 
 [node name="Drawer2" type="Sprite2D" parent="."]
@@ -225,8 +226,8 @@ texture = ExtResource("16_j8d85")
 
 [node name="DrawerRedClosed" type="Sprite2D" parent="Drawer2"]
 z_index = 2
-position = Vector2(-508.04, 1095.95)
-scale = Vector2(3.27768, 3.36181)
+position = Vector2(-491.652, 803.472)
+scale = Vector2(1.33362, 1.37939)
 texture = ExtResource("22_5mlvw")
 
 [node name="Cabinet2" type="Sprite2D" parent="."]

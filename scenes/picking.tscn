@@ -1,19 +1,32 @@
-[gd_scene load_steps=15 format=3 uid="uid://cgsdin784fyvh"]
+[gd_scene load_steps=26 format=3 uid="uid://cgsdin784fyvh"]
 
 [ext_resource type="Script" uid="uid://de38jmx2a1k7w" path="res://scripts/picking.gd" id="1_hrbhj"]
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="1_vttta"]
-[ext_resource type="Texture2D" uid="uid://5iu52a761pr4" path="res://assets/art/Card_Red.png" id="3_nhsyr"]
-[ext_resource type="Texture2D" uid="uid://dbb8cek1jr8u7" path="res://assets/art/Card_Blue.png" id="4_gv7c6"]
-[ext_resource type="Texture2D" uid="uid://c3di1g16y5mcl" path="res://assets/art/Card_Green.png" id="5_4s025"]
-[ext_resource type="Texture2D" uid="uid://bv4i4odikm1ue" path="res://assets/art/Card_Yellow.png" id="6_ko1e3"]
-[ext_resource type="Texture2D" uid="uid://4dtxr53ii61c" path="res://assets/art/Card_Orange.png" id="7_omqxp"]
-[ext_resource type="Texture2D" uid="uid://dgwve33dp1fvv" path="res://assets/art/Card_Purple.png" id="8_v1iid"]
-[ext_resource type="Texture2D" uid="uid://bka340h4p12t6" path="res://assets/art/Card_Black.png" id="9_t101e"]
-[ext_resource type="Texture2D" uid="uid://citi1rxcqtdgq" path="res://assets/art/Card_White.png" id="10_rdfp6"]
+[ext_resource type="Texture2D" uid="uid://wrnhcpfl17qj" path="res://assets/art/Background_Inventory.png" id="2_7qi1v"]
+[ext_resource type="Texture2D" uid="uid://bis480f7w4fx7" path="res://assets/art/Cabinet.png" id="4_0rhfj"]
+[ext_resource type="Texture2D" uid="uid://d0nwdh3g3gklo" path="res://assets/art/Drawer_Red_Closed.png" id="5_thrlq"]
+[ext_resource type="Texture2D" uid="uid://ca4me35hfn18x" path="res://assets/art/Drawer_Red_Full_Opened.png" id="6_5oow1"]
+[ext_resource type="Texture2D" uid="uid://dntxn5m18h2go" path="res://assets/art/Drawer_Blue_Closed.png" id="7_xi75l"]
+[ext_resource type="Texture2D" uid="uid://bc2tw6k3j5gfv" path="res://assets/art/Drawer_Blue_Full_Opened.png" id="8_7ynjt"]
+[ext_resource type="Texture2D" uid="uid://c65o8w3jexn23" path="res://assets/art/Drawer_Green_Closed.png" id="9_yl8ul"]
+[ext_resource type="Texture2D" uid="uid://dc0dfibd88loc" path="res://assets/art/Drawer_Green_Full_Opened.png" id="10_fcbb0"]
 [ext_resource type="AudioStream" uid="uid://6n4bblcq0lhb" path="res://assets/music/Picking.mp3" id="11_4s025"]
+[ext_resource type="Texture2D" uid="uid://c4uh0ysi733hm" path="res://assets/art/Drawer_Yellow_Closed.png" id="11_j05j4"]
 [ext_resource type="AudioStream" uid="uid://dlb1qdy6l88e8" path="res://assets/music/sfx/Miku_Ready_Start.mp3" id="11_omqxp"]
 [ext_resource type="AudioStream" uid="uid://ccw7y5iw04u7j" path="res://assets/music/sfx/Miku_Finish.mp3" id="12_v1iid"]
+[ext_resource type="Texture2D" uid="uid://ctaxl4blrvbfd" path="res://assets/art/Drawer_Yellow_Full_Opened.png" id="12_yyve2"]
+[ext_resource type="Texture2D" uid="uid://d0w84nvkvffwk" path="res://assets/art/Drawer_Orange_Closed.png" id="13_qke54"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="13_t101e"]
+[ext_resource type="Texture2D" uid="uid://bc63trud6r1n7" path="res://assets/art/Drawer_Orange_Full_Opened.png" id="14_u6bmb"]
+[ext_resource type="Texture2D" uid="uid://dyj70f7sev34t" path="res://assets/art/Drawer_Purple_Closed.png" id="15_qkf41"]
+[ext_resource type="Texture2D" uid="uid://dufsh63teyfth" path="res://assets/art/Drawer_Purple_Full_Opened.png" id="16_urmwe"]
+[ext_resource type="Texture2D" uid="uid://cf4dmm4gdikst" path="res://assets/art/Drawer_Black_Closed.png" id="17_virtl"]
+[ext_resource type="Texture2D" uid="uid://diwktu8iekvya" path="res://assets/art/Drawer_Black_Full_Opened.png" id="18_jnnur"]
+[ext_resource type="Texture2D" uid="uid://cy35cmrl5h1du" path="res://assets/art/Drawer_White_Closed.png" id="19_34okb"]
+[ext_resource type="Texture2D" uid="uid://y85ip72148m6" path="res://assets/art/Drawer_White_Full_Opened.png" id="20_tsv04"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x6mnd"]
+texture = ExtResource("2_7qi1v")
 
 [node name="Picking" type="Node2D"]
 script = ExtResource("1_hrbhj")
@@ -21,86 +34,175 @@ script = ExtResource("1_hrbhj")
 [node name="Background" type="Panel" parent="."]
 offset_right = 1151.0
 offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_x6mnd")
 
 [node name="GameTimer" parent="." instance=ExtResource("1_vttta")]
 
+[node name="Cabinet" type="Sprite2D" parent="."]
+position = Vector2(1006, 418)
+texture = ExtResource("4_0rhfj")
+
+[node name="Cabinet2" type="Sprite2D" parent="."]
+position = Vector2(720, 419)
+texture = ExtResource("4_0rhfj")
+
+[node name="Cabinet3" type="Sprite2D" parent="."]
+position = Vector2(434, 420)
+texture = ExtResource("4_0rhfj")
+
+[node name="Cabinet4" type="Sprite2D" parent="."]
+position = Vector2(148, 420)
+texture = ExtResource("4_0rhfj")
+
 [node name="RedCabinet" type="TextureButton" parent="."]
-offset_left = 317.0
-offset_top = 208.0
-offset_right = 451.0
-offset_bottom = 383.0
-texture_normal = ExtResource("3_nhsyr")
+offset_left = 30.0
+offset_top = 273.0
+offset_right = 268.0
+offset_bottom = 417.0
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="DrawerRedClosed" type="Sprite2D" parent="RedCabinet"]
+position = Vector2(119.25, 70.5)
+scale = Vector2(0.405201, 0.432203)
+texture = ExtResource("5_thrlq")
+
+[node name="DrawerRedFullOpened" type="Sprite2D" parent="RedCabinet"]
+visible = false
+z_index = 1
+position = Vector2(48, 115)
+scale = Vector2(0.408347, 0.434358)
+texture = ExtResource("6_5oow1")
 
 [node name="BlueCabinet" type="TextureButton" parent="."]
-offset_left = 319.0
-offset_top = 382.0
-offset_right = 452.0
-offset_bottom = 555.0
-texture_normal = ExtResource("4_gv7c6")
+offset_left = 35.0
+offset_top = 427.0
+offset_right = 262.0
+offset_bottom = 574.0
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="DrawerBlueClosed" type="Sprite2D" parent="BlueCabinet"]
+position = Vector2(113, -7)
+texture = ExtResource("7_xi75l")
+
+[node name="DrawerBlueFullOpened" type="Sprite2D" parent="BlueCabinet"]
+visible = false
+position = Vector2(54, 23)
+texture = ExtResource("8_7ynjt")
 
 [node name="GreenCabinet" type="TextureButton" parent="."]
-offset_left = 452.0
-offset_top = 209.0
-offset_right = 585.0
-offset_bottom = 382.0
-texture_normal = ExtResource("5_4s025")
+offset_left = 314.0
+offset_top = 268.0
+offset_right = 552.0
+offset_bottom = 416.0
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="DrawerGreenClosed" type="Sprite2D" parent="GreenCabinet"]
+position = Vector2(120, -4)
+texture = ExtResource("9_yl8ul")
+
+[node name="DrawerGreenFullOpened" type="Sprite2D" parent="GreenCabinet"]
+visible = false
+z_index = 1
+position = Vector2(62, 25)
+texture = ExtResource("10_fcbb0")
 
 [node name="YellowCabinet" type="TextureButton" parent="."]
-offset_left = 450.0
-offset_top = 383.0
-offset_right = 583.0
-offset_bottom = 556.0
-texture_normal = ExtResource("6_ko1e3")
+offset_left = 317.0
+offset_top = 425.0
+offset_right = 552.0
+offset_bottom = 571.0
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="DrawerYellowClosed" type="Sprite2D" parent="YellowCabinet"]
+position = Vector2(117, -5)
+texture = ExtResource("11_j05j4")
+
+[node name="DrawerYellowFullOpened" type="Sprite2D" parent="YellowCabinet"]
+visible = false
+position = Vector2(60, 23)
+texture = ExtResource("12_yyve2")
 
 [node name="OrangeCabinet" type="TextureButton" parent="."]
-offset_left = 589.0
-offset_top = 209.0
-offset_right = 722.0
-offset_bottom = 382.0
-texture_normal = ExtResource("7_omqxp")
+offset_left = 602.0
+offset_top = 267.0
+offset_right = 838.0
+offset_bottom = 417.0
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="DrawerOrangeClosed" type="Sprite2D" parent="OrangeCabinet"]
+position = Vector2(118, -3)
+texture = ExtResource("13_qke54")
+
+[node name="DrawerOrangeFullOpened" type="Sprite2D" parent="OrangeCabinet"]
+visible = false
+z_index = 1
+position = Vector2(61, 25)
+texture = ExtResource("14_u6bmb")
 
 [node name="PurpleCabinet" type="TextureButton" parent="."]
-offset_left = 588.0
-offset_top = 382.0
-offset_right = 721.0
-offset_bottom = 555.0
-texture_normal = ExtResource("8_v1iid")
+offset_left = 605.0
+offset_top = 423.0
+offset_right = 840.0
+offset_bottom = 574.0
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="DrawerPurpleClosed" type="Sprite2D" parent="PurpleCabinet"]
+position = Vector2(115, -3)
+texture = ExtResource("15_qkf41")
+
+[node name="DrawerPurpleFullOpened" type="Sprite2D" parent="PurpleCabinet"]
+visible = false
+z_index = 1
+position = Vector2(47, 112)
+scale = Vector2(0.401225, 0.400808)
+texture = ExtResource("16_urmwe")
 
 [node name="BlackCabinet" type="TextureButton" parent="."]
-offset_left = 725.0
-offset_top = 206.0
-offset_right = 858.0
-offset_bottom = 379.0
-texture_normal = ExtResource("9_t101e")
+offset_left = 891.0
+offset_top = 265.0
+offset_right = 1128.0
+offset_bottom = 413.0
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="DrawerBlackClosed" type="Sprite2D" parent="BlackCabinet"]
+position = Vector2(115, -4)
+texture = ExtResource("17_virtl")
+
+[node name="DrawerBlackFullOpened" type="Sprite2D" parent="BlackCabinet"]
+visible = false
+z_index = 1
+position = Vector2(57, 26)
+texture = ExtResource("18_jnnur")
 
 [node name="WhiteCabinet" type="TextureButton" parent="."]
-offset_left = 724.0
-offset_top = 383.0
-offset_right = 857.0
-offset_bottom = 556.0
-texture_normal = ExtResource("10_rdfp6")
+offset_left = 888.0
+offset_top = 424.0
+offset_right = 1124.0
+offset_bottom = 570.0
 ignore_texture_size = true
 stretch_mode = 4
 
+[node name="DrawerWhiteClosed" type="Sprite2D" parent="WhiteCabinet"]
+position = Vector2(118, -6)
+texture = ExtResource("19_34okb")
+
+[node name="DrawerWhiteFullOpened" type="Sprite2D" parent="WhiteCabinet"]
+visible = false
+position = Vector2(61, 22)
+texture = ExtResource("20_tsv04")
+
 [node name="CardTasks" type="VBoxContainer" parent="."]
-offset_left = 194.0
-offset_top = 36.0
-offset_right = 471.0
-offset_bottom = 312.0
+offset_left = 198.0
+offset_top = 8.0
+offset_right = 501.0
+offset_bottom = 248.0
 
 [node name="StartSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_omqxp")
@@ -109,6 +211,7 @@ stream = ExtResource("11_omqxp")
 stream = ExtResource("12_v1iid")
 
 [node name="ReadyText" type="Label" parent="."]
+visible = false
 offset_left = -1.0
 offset_top = 259.0
 offset_right = 1152.0
@@ -146,12 +249,29 @@ vertical_alignment = 1
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_4s025")
 
+[connection signal="mouse_entered" from="Background" to="." method="_on_background_mouse_entered"]
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]
+[connection signal="mouse_entered" from="RedCabinet" to="." method="_on_red_cabinet_mouse_entered"]
+[connection signal="mouse_exited" from="RedCabinet" to="." method="_on_red_cabinet_mouse_exited"]
 [connection signal="pressed" from="RedCabinet" to="." method="_on_red_cabinet_pressed"]
+[connection signal="mouse_entered" from="BlueCabinet" to="." method="_on_blue_cabinet_mouse_entered"]
+[connection signal="mouse_exited" from="BlueCabinet" to="." method="_on_blue_cabinet_mouse_exited"]
 [connection signal="pressed" from="BlueCabinet" to="." method="_on_blue_cabinet_pressed"]
+[connection signal="mouse_entered" from="GreenCabinet" to="." method="_on_green_cabinet_mouse_entered"]
+[connection signal="mouse_exited" from="GreenCabinet" to="." method="_on_green_cabinet_mouse_exited"]
 [connection signal="pressed" from="GreenCabinet" to="." method="_on_green_cabinet_pressed"]
+[connection signal="mouse_entered" from="YellowCabinet" to="." method="_on_yellow_cabinet_mouse_entered"]
+[connection signal="mouse_exited" from="YellowCabinet" to="." method="_on_yellow_cabinet_mouse_exited"]
 [connection signal="pressed" from="YellowCabinet" to="." method="_on_yellow_cabinet_pressed"]
+[connection signal="mouse_entered" from="OrangeCabinet" to="." method="_on_orange_cabinet_mouse_entered"]
+[connection signal="mouse_exited" from="OrangeCabinet" to="." method="_on_orange_cabinet_mouse_exited"]
 [connection signal="pressed" from="OrangeCabinet" to="." method="_on_orange_cabinet_pressed"]
+[connection signal="mouse_entered" from="PurpleCabinet" to="." method="_on_purple_cabinet_mouse_entered"]
+[connection signal="mouse_exited" from="PurpleCabinet" to="." method="_on_purple_cabinet_mouse_exited"]
 [connection signal="pressed" from="PurpleCabinet" to="." method="_on_purple_cabinet_pressed"]
+[connection signal="mouse_entered" from="BlackCabinet" to="." method="_on_black_cabinet_mouse_entered"]
+[connection signal="mouse_exited" from="BlackCabinet" to="." method="_on_black_cabinet_mouse_exited"]
 [connection signal="pressed" from="BlackCabinet" to="." method="_on_black_cabinet_pressed"]
+[connection signal="mouse_entered" from="WhiteCabinet" to="." method="_on_white_cabinet_mouse_entered"]
+[connection signal="mouse_exited" from="WhiteCabinet" to="." method="_on_white_cabinet_mouse_exited"]
 [connection signal="pressed" from="WhiteCabinet" to="." method="_on_white_cabinet_pressed"]
