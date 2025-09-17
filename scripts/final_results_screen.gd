@@ -1,10 +1,19 @@
 extends Control
 
 func _ready():
-	var totalTimeTaken = Global.DOCK_RECEIVE_TIME_TAKEN
-	+ Global.CONFIRM_RECEIVE_TIME_TAKEN + Global.INVENTORY_TIME_TAKEN
-	+ Global.PICKING_TIME_TAKEN + Global.PACKING_TIME_TAKEN
-	+ Global.SHIPPING_TIME_TAKEN
+	var totalTimeTaken = 0
+	
+	var times = [
+		Global.DOCK_RECEIVE_TIME_TAKEN,
+		Global.CONFIRM_RECEIVE_TIME_TAKEN,
+		Global.INVENTORY_TIME_TAKEN,
+		Global.PICKING_TIME_TAKEN,
+		Global.PACKING_TIME_TAKEN,
+		Global.SHIPPING_TIME_TAKEN
+	]
+	
+	for i in range(times.size()):
+		totalTimeTaken += int(times[i])
 	
 	var finalMedal = "Gold"
 	var goldCount = 0
