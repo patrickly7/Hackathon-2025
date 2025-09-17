@@ -1,15 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://ceacpxjb7yobl"]
+[gd_scene load_steps=12 format=3 uid="uid://dsn8h1ts7u4yu"]
 
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="1_2x1cg"]
 [ext_resource type="Script" uid="uid://dgpler4x3ap5t" path="res://scripts/shipping.gd" id="1_bgbwq"]
-[ext_resource type="Texture2D" uid="uid://dbb8cek1jr8u7" path="res://assets/art/Card_Blue.png" id="3_3jmdp"]
-[ext_resource type="Texture2D" uid="uid://5iu52a761pr4" path="res://assets/art/Card_Red.png" id="4_jsjnl"]
-[ext_resource type="Texture2D" uid="uid://bv4i4odikm1ue" path="res://assets/art/Card_Yellow.png" id="5_kn76w"]
-[ext_resource type="Texture2D" uid="uid://citi1rxcqtdgq" path="res://assets/art/Card_White.png" id="6_mk7gs"]
+[ext_resource type="Texture2D" uid="uid://bo6qw6w0mirt5" path="res://assets/art/Background_Shipping.png" id="2_ggsqc"]
+[ext_resource type="Texture2D" uid="uid://biudod7fm08ua" path="res://assets/art/Package.png" id="3_mk7gs"]
+[ext_resource type="Texture2D" uid="uid://dlvtxqwbwb163" path="res://assets/art/Package_Hover.png" id="4_ggsqc"]
+[ext_resource type="Texture2D" uid="uid://dk8ywswe3meg5" path="res://assets/art/Graybox.png" id="5_mk7gs"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="7_jsjnl"]
 [ext_resource type="AudioStream" uid="uid://ccw7y5iw04u7j" path="res://assets/music/sfx/Miku_Finish.mp3" id="7_kn76w"]
 [ext_resource type="AudioStream" uid="uid://dlb1qdy6l88e8" path="res://assets/music/sfx/Miku_Ready_Start.mp3" id="7_mk7gs"]
 [ext_resource type="AudioStream" uid="uid://bhtmtqq5jhho2" path="res://assets/music/Shipping.mp3" id="10_ggsqc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yyu10"]
+texture = ExtResource("2_ggsqc")
 
 [node name="Shipping" type="Node2D"]
 script = ExtResource("1_bgbwq")
@@ -17,15 +20,17 @@ script = ExtResource("1_bgbwq")
 [node name="Background" type="Panel" parent="."]
 offset_right = 1153.0
 offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_yyu10")
 
 [node name="GameTimer" parent="." instance=ExtResource("1_2x1cg")]
 
 [node name="SmallPackageButton" type="TextureButton" parent="."]
 offset_left = 130.0
-offset_top = 226.0
-offset_right = 301.0
+offset_top = 246.0
+offset_right = 263.0
 offset_bottom = 369.0
-texture_normal = ExtResource("3_3jmdp")
+texture_normal = ExtResource("3_mk7gs")
+texture_hover = ExtResource("4_ggsqc")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -34,16 +39,18 @@ offset_left = 316.0
 offset_top = 104.0
 offset_right = 491.0
 offset_bottom = 377.0
-texture_normal = ExtResource("4_jsjnl")
+texture_normal = ExtResource("3_mk7gs")
+texture_hover = ExtResource("4_ggsqc")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="MediumPackageButton" type="TextureButton" parent="."]
 offset_left = 242.0
 offset_top = 309.0
-offset_right = 415.0
+offset_right = 458.0
 offset_bottom = 500.0
-texture_normal = ExtResource("5_kn76w")
+texture_normal = ExtResource("3_mk7gs")
+texture_hover = ExtResource("4_ggsqc")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -57,51 +64,52 @@ offset_bottom = 115.0
 
 [node name="TruckSpot1" type="TextureButton" parent="TruckArrangement"]
 layout_mode = 0
-offset_left = -31.0
-offset_top = 248.0
-offset_right = 142.0
-offset_bottom = 439.0
-texture_normal = ExtResource("6_mk7gs")
+offset_left = -74.0
+offset_top = 175.0
+offset_right = 99.0
+offset_bottom = 366.0
+texture_normal = ExtResource("5_mk7gs")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="TruckSpot2" type="TextureButton" parent="TruckArrangement"]
+z_index = 1
 layout_mode = 0
-offset_left = 144.0
-offset_top = 292.0
-offset_right = 309.0
-offset_bottom = 435.0
-texture_normal = ExtResource("6_mk7gs")
+offset_left = 111.0
+offset_top = 2.0
+offset_right = 256.0
+offset_bottom = 128.0
+texture_normal = ExtResource("5_mk7gs")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="TruckSpot3" type="TextureButton" parent="TruckArrangement"]
 layout_mode = 0
-offset_left = -32.0
-offset_top = -25.0
-offset_right = 143.0
-offset_bottom = 248.0
-texture_normal = ExtResource("6_mk7gs")
+offset_left = 90.0
+offset_top = 87.0
+offset_right = 265.0
+offset_bottom = 360.0
+texture_normal = ExtResource("5_mk7gs")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="TruckSpot4" type="TextureButton" parent="TruckArrangement"]
 layout_mode = 0
-offset_left = 143.0
-offset_top = 141.0
-offset_right = 314.0
-offset_bottom = 284.0
-texture_normal = ExtResource("6_mk7gs")
+offset_left = -46.0
+offset_top = 84.0
+offset_right = 88.0
+offset_bottom = 207.0
+texture_normal = ExtResource("5_mk7gs")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="TruckSpot5" type="TextureButton" parent="TruckArrangement"]
 layout_mode = 0
-offset_left = 141.0
-offset_top = -21.0
-offset_right = 315.0
-offset_bottom = 139.0
-texture_normal = ExtResource("6_mk7gs")
+offset_left = -40.0
+offset_top = -16.0
+offset_right = 90.0
+offset_bottom = 107.0
+texture_normal = ExtResource("5_mk7gs")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -109,6 +117,7 @@ stretch_mode = 0
 stream = ExtResource("7_mk7gs")
 
 [node name="ReadyText" type="Label" parent="."]
+visible = false
 offset_left = -1.0
 offset_top = 259.0
 offset_right = 1152.0

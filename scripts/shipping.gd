@@ -4,8 +4,8 @@ const GAME_TIME = 10
 const truckArrangement = ["Medium", "Small", "Large", "Small", "Small"]
 const truckArrangements = [truckArrangement]
 
-const activeTruckSpotSprite = "res://assets/art/Card_Black.png"
-const finishedTruckSpotSprite = "res://assets/art/Card_Green.png"
+const activeTruckSpotSprite = "res://assets/art/Graybox_Highlighted.png"
+const finishedTruckSpotSprite = "res://assets/art/Package.png"
 
 var currentSpotIndex = 0
 var currentTruckArrangement = []
