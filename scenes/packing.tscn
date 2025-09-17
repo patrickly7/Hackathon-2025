@@ -1,12 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://watxeyj4r1bb"]
+[gd_scene load_steps=14 format=3 uid="uid://2b0xpkj01y5p"]
 
 [ext_resource type="Script" uid="uid://mi8hwpw46uhb" path="res://scripts/packing.gd" id="1_4gyy1"]
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="2_0gomr"]
-[ext_resource type="Texture2D" uid="uid://dk8ywswe3meg5" path="res://assets/art/Graybox.png" id="3_0gomr"]
+[ext_resource type="Texture2D" uid="uid://bhinkoppb0muj" path="res://assets/art/Background_Dock_Receive.png" id="2_46etp"]
+[ext_resource type="Texture2D" uid="uid://14c8w6frpd57" path="res://assets/art/Conveyor_Belt.png" id="4_8dvam"]
 [ext_resource type="AudioStream" uid="uid://dlb1qdy6l88e8" path="res://assets/music/sfx/Miku_Ready_Start.mp3" id="4_ju4qu"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="5_co7df"]
 [ext_resource type="AudioStream" uid="uid://ccw7y5iw04u7j" path="res://assets/music/sfx/Miku_Finish.mp3" id="5_flqre"]
+[ext_resource type="Texture2D" uid="uid://cd4jniqotng3l" path="res://assets/art/Package_Open.png" id="5_khy8k"]
+[ext_resource type="Texture2D" uid="uid://biudod7fm08ua" path="res://assets/art/Package.png" id="5_ldn6l"]
+[ext_resource type="Texture2D" uid="uid://b6k61tluj0y52" path="res://assets/art/GameTracker_Mini-Bubble.png" id="6_8dvam"]
+[ext_resource type="Texture2D" uid="uid://cgmns52qb3x4x" path="res://assets/art/Package_Filled.png" id="6_86k3w"]
 [ext_resource type="AudioStream" uid="uid://dm7rbs6lr8fho" path="res://assets/music/Packing.mp3" id="7_kp4uy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_khy8k"]
+texture = ExtResource("2_46etp")
 
 [node name="Packing" type="Node2D"]
 script = ExtResource("1_4gyy1")
@@ -14,33 +22,69 @@ script = ExtResource("1_4gyy1")
 [node name="Background" type="Panel" parent="."]
 offset_right = 1153.0
 offset_bottom = 652.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_khy8k")
 
 [node name="GameTimer" parent="." instance=ExtResource("2_0gomr")]
 
+[node name="ConveyorBelt" type="Sprite2D" parent="."]
+position = Vector2(575.75, 305)
+scale = Vector2(1.1067, 1)
+texture = ExtResource("4_8dvam")
+
+[node name="PackageOpen" type="Sprite2D" parent="."]
+position = Vector2(565, 332)
+scale = Vector2(0.303125, 0.290625)
+texture = ExtResource("5_khy8k")
+
+[node name="PackageFilled" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(570, 333.5)
+scale = Vector2(0.30625, 0.299219)
+texture = ExtResource("6_86k3w")
+
 [node name="Box" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(564, 333)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_0gomr")
+texture = ExtResource("5_ldn6l")
+
+[node name="GameTrackerMini-bubble3" type="Sprite2D" parent="."]
+position = Vector2(416, 535)
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_8dvam")
 
 [node name="LeftLabel" type="Label" parent="."]
-offset_left = 400.0
-offset_top = 515.0
-offset_right = 440.0
-offset_bottom = 538.0
+offset_left = 398.0
+offset_top = 521.0
+offset_right = 438.0
+offset_bottom = 544.0
 text = "Left"
 
+[node name="GameTrackerMini-bubble" type="Sprite2D" parent="."]
+position = Vector2(551, 530)
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_8dvam")
+
 [node name="MiddleLabel" type="Label" parent="."]
-offset_left = 529.0
-offset_top = 514.0
-offset_right = 582.0
-offset_bottom = 537.0
+offset_left = 527.0
+offset_top = 521.0
+offset_right = 580.0
+offset_bottom = 544.0
 text = "Middle"
 
+[node name="GameTrackerMini-bubble2" type="Sprite2D" parent="."]
+position = Vector2(692, 532)
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_8dvam")
+
 [node name="RightLabel" type="Label" parent="."]
-offset_left = 673.0
-offset_top = 512.0
-offset_right = 714.0
-offset_bottom = 535.0
+offset_left = 675.0
+offset_top = 519.0
+offset_right = 716.0
+offset_bottom = 542.0
 text = "Right"
 
 [node name="StartSFX" type="AudioStreamPlayer2D" parent="."]
@@ -50,10 +94,10 @@ stream = ExtResource("4_ju4qu")
 stream = ExtResource("5_flqre")
 
 [node name="ReadyText" type="Label" parent="."]
-offset_left = -1.0
-offset_top = 259.0
-offset_right = 1152.0
-offset_bottom = 389.0
+offset_left = 7.0
+offset_top = 35.0
+offset_right = 1160.0
+offset_bottom = 165.0
 theme_override_fonts/font = ExtResource("5_co7df")
 theme_override_font_sizes/font_size = 96
 text = "ready..."
