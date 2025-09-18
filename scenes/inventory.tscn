@@ -15,9 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://dgwve33dp1fvv" path="res://assets/art/Card_Purple.png" id="8_ylenm"]
 [ext_resource type="Texture2D" uid="uid://5iu52a761pr4" path="res://assets/art/Card_Red.png" id="9_0df5h"]
 [ext_resource type="Texture2D" uid="uid://c8wju5lvsg5i2" path="res://assets/art/Inventory_Up_Arrow_Hover.png" id="9_w24ly"]
-[ext_resource type="Texture2D" uid="uid://bihyblpyfa2se" path="res://assets/art/Enter_Button.png" id="11_k86sa"]
-[ext_resource type="Texture2D" uid="uid://b20ndpbnfsjdu" path="res://assets/art/Enter_Button_Pressed.png" id="12_tla8l"]
-[ext_resource type="Texture2D" uid="uid://do1my1od637y7" path="res://assets/art/Enter_Button_Hover.png" id="13_w24ly"]
+[ext_resource type="Texture2D" uid="uid://dlw2rkjsokml0" path="res://assets/art/Button.png" id="11_b5wre"]
+[ext_resource type="Texture2D" uid="uid://b4hqe8i833dlk" path="res://assets/art/Button_Pressed.png" id="12_1ilke"]
+[ext_resource type="Texture2D" uid="uid://e5ls2lm1sqyc" path="res://assets/art/Button_Hover.png" id="13_nrd71"]
 [ext_resource type="Texture2D" uid="uid://dto5hk2jtf6i" path="res://assets/art/Drawer_Opened_Empty.png" id="16_j8d85"]
 [ext_resource type="Texture2D" uid="uid://bis480f7w4fx7" path="res://assets/art/Cabinet.png" id="20_ohgsq"]
 [ext_resource type="Texture2D" uid="uid://dyj70f7sev34t" path="res://assets/art/Drawer_Purple_Closed.png" id="21_j8d85"]
@@ -100,9 +100,9 @@ offset_left = 455.0
 offset_top = 593.0
 offset_right = 681.0
 offset_bottom = 645.0
-texture_normal = ExtResource("11_k86sa")
-texture_pressed = ExtResource("12_tla8l")
-texture_hover = ExtResource("13_w24ly")
+texture_normal = ExtResource("11_b5wre")
+texture_pressed = ExtResource("12_1ilke")
+texture_hover = ExtResource("13_nrd71")
 ignore_texture_size = true
 stretch_mode = 0
 

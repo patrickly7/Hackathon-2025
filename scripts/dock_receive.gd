@@ -13,6 +13,8 @@ var currentBox: Area2D
 const BOXES_TO_BOOP = 15
 var currentBoxesBooped = 0
 
+var lockMovement = true
+
 func _ready():	
 	$StartSFX.play()
 	await get_tree().create_timer(1).timeout
@@ -33,7 +35,12 @@ func _ready():
 	await get_tree().create_timer(0.25).timeout
 	$StartText.hide()
 	
+	lockMovement = false
+	
 func _input(event):
+	if (lockMovement):
+		return
+	
 	if event.is_action_pressed("move_up") && $PlayerBody.position.y != startingPos.y - MOVEMENT:
 		$PlayerBody.position.y -= MOVEMENT
 		$PlayerBody/Player.texture = BACK_SPRITE
