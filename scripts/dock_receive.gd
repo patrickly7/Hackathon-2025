@@ -2,8 +2,8 @@ extends Node2D
 
 const GAME_TIME = 15
 const MOVEMENT = 200
-var FRONT_SPRITE = load("res://assets/art/Stick_Figure_Front.png")
-var BACK_SPRITE = load("res://assets/art/Stick_Figure_Back.png")
+var FRONT_SPRITE = load("res://assets/art/Robot_Figure.png")
+var BACK_SPRITE = load("res://assets/art/Robot_Figure_Back.png")
 
 var startingPos = Vector2.ZERO
 
