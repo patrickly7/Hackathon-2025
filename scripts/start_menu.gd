@@ -1,9 +1,11 @@
 extends Control
 
 func _on_start_button_pressed():
+	$SlowBoxSpawner.stopSpawning()
 	get_tree().change_scene_to_file("res://scenes/game_tracker.tscn")
 
 func _on_quit_button_pressed():
+	$SlowBoxSpawner.stopSpawning()
 	get_tree().quit()
 
 func _on_practice_button_pressed():
@@ -35,3 +37,4 @@ func _on_shippingbutton_pressed():
 
 func _on_ready():
 	$BGMusic.play()
+	$SlowBoxSpawner.startSpawning()

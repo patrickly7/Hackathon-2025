@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dxxpi4v2yy1de"]
+[gd_scene load_steps=14 format=3 uid="uid://dxxpi4v2yy1de"]
 
 [ext_resource type="Script" uid="uid://cjtu2ovujngms" path="res://scripts/final_results_screen.gd" id="1_uel5l"]
 [ext_resource type="FontFile" uid="uid://dy3mkbdhno5r2" path="res://assets/fonts/Pixel Game Extrude.otf" id="2_sprhc"]
-[ext_resource type="Texture2D" uid="uid://c3ssbvae82jk2" path="res://assets/art/GameTrackerBackground.png" id="2_u5qtb"]
+[ext_resource type="Texture2D" uid="uid://cqmtolbysmwjo" path="res://assets/art/GameTrackerBackground_Plain.png" id="2_www78"]
 [ext_resource type="FontFile" uid="uid://bypmpvinq8cf6" path="res://assets/fonts/Pixel Game.otf" id="3_l2pof"]
 [ext_resource type="Texture2D" uid="uid://dlw2rkjsokml0" path="res://assets/art/Button.png" id="4_ymtg7"]
 [ext_resource type="AudioStream" uid="uid://ce8yho37cuihy" path="res://assets/music/sfx/Good_Job_Final.mp3" id="5_qjy8y"]
@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://x70ite0s0lec" path="res://assets/music/sfx/Drumroll.mp3" id="11_u5qtb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_www78"]
-texture = ExtResource("2_u5qtb")
+texture = ExtResource("2_www78")
 
 [node name="FinalResultsScreen" type="Control"]
 layout_mode = 3
@@ -34,10 +34,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_www78")
 [node name="FinalResultsTitle" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 229.0
-offset_top = 7.0
-offset_right = 716.0
-offset_bottom = 128.0
+offset_left = 46.0
+offset_right = 533.0
+offset_bottom = 121.0
 
 [node name="BackText" type="Label" parent="FinalResultsTitle"]
 layout_mode = 0
@@ -88,13 +87,14 @@ theme_override_font_sizes/font_size = 32
 text = "Play Again"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="HomeButton" type="TextureButton" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 428.0
+offset_left = 415.0
 offset_top = 521.0
-offset_right = 618.0
+offset_right = 605.0
 offset_bottom = 587.0
 texture_normal = ExtResource("4_ymtg7")
 texture_pressed = ExtResource("5_u5qtb")
@@ -114,14 +114,15 @@ theme_override_font_sizes/font_size = 32
 text = "Home"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="TotalTimeText" type="Label" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 6.0
-offset_top = 438.0
+offset_top = 450.0
 offset_right = 783.0
-offset_bottom = 504.0
+offset_bottom = 516.0
 theme_override_colors/font_color = Color(0.388235, 0.607843, 1, 1)
 theme_override_fonts/font = ExtResource("3_l2pof")
 theme_override_font_sizes/font_size = 64

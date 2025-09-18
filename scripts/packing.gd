@@ -11,6 +11,8 @@ var currentKeySetIndex = 0
 
 var mistakes = 0
 
+var lockInputs = false
+
 func _ready():
 	$StartSFX.play()
 	await get_tree().create_timer(1).timeout
@@ -41,6 +43,9 @@ func _ready():
 	$StartText.hide()
 
 func _input(event):
+	if (lockInputs):
+		return
+	
 	if (event.is_action_pressed("move_left")):
 		if (keySets[currentKeySetIndex][currentKeyIndex] == "Left"):
 			changeToPressed()
@@ -132,6 +137,8 @@ func updateKeys():
 		$GameTimer.stopTimer()
 
 func _on_game_timer_game_timer_end(secondsLeft):
+	lockInputs = true
+	
 	$FinishText.show()
 	$FinishSFX.play()
 	await get_tree().create_timer(1).timeout
