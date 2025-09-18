@@ -140,6 +140,7 @@ scale = Vector2(0.0855985, 0.0671008)
 texture = ExtResource("21_q1sms")
 
 [node name="PracticeButton" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1069.0
 offset_top = 607.0

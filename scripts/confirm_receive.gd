@@ -31,7 +31,7 @@ func _ready():
 	await get_tree().create_timer(0.25).timeout
 	$StartText.hide()
 	
-	$Checklist.show()
+	#$Checklist.show()
 	$CurrentCardTask.show()
 
 func init_game():

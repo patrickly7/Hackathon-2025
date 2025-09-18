@@ -10,9 +10,9 @@ func _on_quit_button_pressed():
 
 func _on_practice_button_pressed():
 	Global.IS_PRACTICE = true
-	Global.PRACTICE_GAME = "res://scenes/confirm_receive.tscn"
+	Global.PRACTICE_GAME = "res://scenes/picking.tscn"
 	
-	Global.CURRENT_GAME = "Confirm Receive"
+	Global.CURRENT_GAME = "Picking"
 	
 	get_tree().change_scene_to_file(Global.PRACTICE_GAME)
 

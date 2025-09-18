@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cgsdin784fyvh"]
+[gd_scene load_steps=30 format=3 uid="uid://cgsdin784fyvh"]
 
 [ext_resource type="Script" uid="uid://de38jmx2a1k7w" path="res://scripts/picking.gd" id="1_hrbhj"]
 [ext_resource type="PackedScene" uid="uid://dd5d7d2xh71xl" path="res://scenes/game_timer.tscn" id="1_vttta"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://y85ip72148m6" path="res://assets/art/Drawer_White_Full_Opened.png" id="20_tsv04"]
 [ext_resource type="AudioStream" uid="uid://cm3evwukd83gb" path="res://assets/music/sfx/Rong.mp3" id="25_5oow1"]
 [ext_resource type="AudioStream" uid="uid://cpw5sdywrdg13" path="res://assets/music/sfx/Correct.mp3" id="26_xi75l"]
+[ext_resource type="Texture2D" uid="uid://bbgflges7l3mp" path="res://assets/art/checklist_paper.png" id="27_7ynjt"]
+[ext_resource type="Texture2D" uid="uid://4a501cuw7d26" path="res://assets/art/checkmark.png" id="28_yl8ul"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x6mnd"]
 texture = ExtResource("2_7qi1v")
@@ -201,6 +203,7 @@ position = Vector2(61, 22)
 texture = ExtResource("20_tsv04")
 
 [node name="CardTasks" type="VBoxContainer" parent="."]
+visible = false
 offset_left = 198.0
 offset_top = 8.0
 offset_right = 501.0
@@ -259,6 +262,29 @@ stream = ExtResource("25_5oow1")
 [node name="Correct" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(14, 38)
 stream = ExtResource("26_xi75l")
+
+[node name="Checklist" type="Sprite2D" parent="."]
+position = Vector2(573, 100)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("27_7ynjt")
+
+[node name="CurrentCardTask" type="Label" parent="."]
+visible = false
+offset_left = 489.0
+offset_top = 35.0
+offset_right = 743.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_t101e")
+theme_override_font_sizes/font_size = 72
+text = "yellow"
+horizontal_alignment = 1
+
+[node name="Checkmark" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(470, 52)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("28_yl8ul")
 
 [connection signal="mouse_entered" from="Background" to="." method="_on_background_mouse_entered"]
 [connection signal="game_timer_end" from="GameTimer" to="." method="_on_game_timer_game_timer_end"]

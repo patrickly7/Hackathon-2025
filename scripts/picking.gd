@@ -32,15 +32,26 @@ func _ready():
 		
 	await get_tree().create_timer(0.25).timeout
 	$StartText.hide()
+	
+	$CurrentCardTask.text = tasks[currentTask]
+	#$Checklist.show()
+	$CurrentCardTask.show()
+	
 func confirm_label_text(task: int):
 	var label = $CardTasks.get_child(task) as Label
 	label.text = "Picked!"
 
 func moveToNextTask():
+	$Checkmark.show()
+	await get_tree().create_timer(0.2).timeout
+	
 	confirm_label_text(currentTask)
 	currentTask += 1
 	if (currentTask == NUM_TASKS):
 		$GameTimer.stopTimer()
+	else:
+		$CurrentCardTask.text = tasks[currentTask]
+		$Checkmark.hide()
 
 func _on_game_timer_game_timer_end(secondsLeft):
 	$FinishText.show()
