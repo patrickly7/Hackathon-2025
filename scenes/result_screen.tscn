@@ -33,14 +33,15 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_vrrhk")
 
 [node name="StationTitle" type="Label" parent="."]
 layout_mode = 0
-offset_left = 221.0
+offset_left = 213.0
 offset_top = 16.0
-offset_right = 1314.0
+offset_right = 931.0
 offset_bottom = 146.0
 theme_override_colors/font_color = Color(0.356863, 0.431373, 0.882353, 1)
 theme_override_fonts/font = ExtResource("2_raeeo")
 theme_override_font_sizes/font_size = 96
 text = "STATION Tile"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TimeTakenText" type="Label" parent="."]
