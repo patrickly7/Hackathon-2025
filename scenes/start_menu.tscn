@@ -54,15 +54,6 @@ theme_override_font_sizes/font_size = 102
 text = "WMS: AGILE EDITIOn"
 horizontal_alignment = 1
 
-[node name="PracticeButton" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 1069.0
-offset_top = 607.0
-offset_right = 1139.0
-offset_bottom = 638.0
-text = "picking"
-
 [node name="packingbutton" type="Button" parent="."]
 visible = false
 layout_mode = 0
@@ -148,6 +139,14 @@ position = Vector2(1064, 162)
 scale = Vector2(0.0855985, 0.0671008)
 texture = ExtResource("21_q1sms")
 
+[node name="PracticeButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1069.0
+offset_top = 607.0
+offset_right = 1139.0
+offset_bottom = 638.0
+text = "picking"
+
 [node name="StartButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -215,8 +214,8 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [connection signal="ready" from="." to="." method="_on_ready"]
-[connection signal="pressed" from="PracticeButton" to="." method="_on_practice_button_pressed"]
 [connection signal="pressed" from="packingbutton" to="." method="_on_packingbutton_pressed"]
 [connection signal="pressed" from="shippingbutton" to="." method="_on_shippingbutton_pressed"]
+[connection signal="pressed" from="PracticeButton" to="." method="_on_practice_button_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

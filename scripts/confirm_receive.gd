@@ -30,6 +30,9 @@ func _ready():
 
 	await get_tree().create_timer(0.25).timeout
 	$StartText.hide()
+	
+	$Checklist.show()
+	$CurrentCardTask.show()
 
 func init_game():
 	Global.CURRENT_GAME = "Confirm Receive"
@@ -50,6 +53,8 @@ func init_game():
 			
 		cards.append(RES_FORMAT % cardImage)
 
+	$CurrentCardTask.text = tasks[currentTask]
+
 	var texture = load(cards[currentTask])
 	$Card.texture = texture
 
@@ -67,6 +72,9 @@ func choose_card_except(cardIndex: int):
 	return exceptionIndex
 	
 func set_next_card():
+	$Checkmark.show()
+	await get_tree().create_timer(0.2).timeout
+	
 	if currentTask + 1 == NUM_TASKS:
 		confirm_label_text(currentTask)
 		babaIsWin = true
@@ -75,11 +83,15 @@ func set_next_card():
 		confirm_label_text(currentTask)
 		currentTask = currentTask + 1
 		
+		$CurrentCardTask.text = tasks[currentTask]
+		
 		$Card.position = OFF_SCREEN_POSITION
 		var texture = load(cards[currentTask])
 		$Card.texture = texture
 		var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_ELASTIC)
 		tween.tween_property($Card, "position", CARD_POSITION, 0.5)
+		
+		$Checkmark.hide()
 
 func create_label(text: String):
 	var label = Label.new()
