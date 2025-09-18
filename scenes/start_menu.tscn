@@ -43,13 +43,13 @@ metadata/_edit_lock_ = true
 
 [node name="GameTitle" type="Label" parent="."]
 layout_mode = 0
-offset_left = -1.0
-offset_top = 16.0
-offset_right = 1147.0
-offset_bottom = 163.0
+offset_left = 212.0
+offset_top = 33.0
+offset_right = 932.0
+offset_bottom = 137.0
 theme_override_colors/font_color = Color(0.356863, 0.431373, 0.882353, 1)
 theme_override_fonts/font = ExtResource("2_thu50")
-theme_override_font_sizes/font_size = 144
+theme_override_font_sizes/font_size = 102
 text = "WMS: AGILE EDITIOn"
 horizontal_alignment = 1
 
