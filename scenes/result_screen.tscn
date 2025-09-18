@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bvfcnhb5qqj12"]
+[gd_scene load_steps=14 format=3 uid="uid://bvfcnhb5qqj12"]
 
 [ext_resource type="Script" uid="uid://c7ckxuatbprfk" path="res://scripts/result_screen.gd" id="1_y7kih"]
 [ext_resource type="Texture2D" uid="uid://c3ssbvae82jk2" path="res://assets/art/GameTrackerBackground.png" id="2_46yes"]
@@ -63,6 +63,7 @@ offset_left = 372.0
 offset_top = 173.0
 offset_right = 1148.0
 offset_bottom = 303.0
+theme_override_colors/font_color = Color(0.388235, 0.607843, 1, 1)
 theme_override_fonts/font = ExtResource("2_raeeo")
 theme_override_font_sizes/font_size = 72
 text = "1 million secs"
@@ -88,6 +89,7 @@ offset_left = 372.0
 offset_top = 227.0
 offset_right = 1196.0
 offset_bottom = 357.0
+theme_override_colors/font_color = Color(0.388235, 0.607843, 1, 1)
 theme_override_fonts/font = ExtResource("2_raeeo")
 theme_override_font_sizes/font_size = 72
 text = "100"
